@@ -7,7 +7,7 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Launch Program",
+            "name": "Portal ITA",
             "skipFiles": [
                 "<node_internals>/**"
             ],
