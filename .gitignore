@@ -395,3 +395,6 @@ TSWLatexianTemp*
 
 .*.sh
 .icloud
+
+### MongoDB
+.mdbpass
