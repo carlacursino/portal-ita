@@ -7,7 +7,7 @@ const
 module.exports = {
     cms: {
         'wysiwyg additional options': { 
-            extended_valid_elements : 'pre[*]',
+            extended_valid_elements : 'pre[*],i[*]',
             plugins: EDITOR_PLUGINS,
             toolbar1: EDITOR_TOOLBAR1,
             toolbar2: EDITOR_TOOLBAR2,
