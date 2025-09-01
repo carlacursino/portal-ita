@@ -41,14 +41,14 @@ module.exports = {
                 "object-src": ["'none'"],
                 "child-src": [
                     "'self'", 
-                    'https://*.youtube-nocookie.com', 
+                    'https://youtu.be', 
                     'https://maps.google.com', 
                     'https://www.google.com', 
                     'https://calendar.google.com',
                 ],
                 "frame-src": [
                     "'self'",
-                    'https://*.youtube-nocookie.com',
+                    'https://youtu.be',
                     'https://maps.google.com',
                     'https://www.google.com',
                 ],
