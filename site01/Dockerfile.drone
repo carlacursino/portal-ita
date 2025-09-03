@@ -20,4 +20,8 @@ RUN npm i
 RUN ln -s /app/assets/drone /app/assets/static
 RUN mkdir -p /app/assets/static/core/uploads/Archive
 
+USER root
+RUN chown -R portal:portal /app/assets/static/core/uploads
+USER portal
+
 CMD [ "pm2-runtime", "start", "ecosystem.config.js", "--env", "drone" ]
