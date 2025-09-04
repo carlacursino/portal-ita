@@ -6,5 +6,8 @@ module.exports = {
         credits: {
             author: "Criação: <a href='mailto:drone@ita.br'>drone@ita.br</a>",
         },
+        destaques: {
+            _title: 'Áreas de Pesquisa',
+        },
     },
 }
