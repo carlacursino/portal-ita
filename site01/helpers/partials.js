@@ -45,6 +45,17 @@ exports.initiatives = (category, language, callback) => {
         })
 }
 
+exports.publications = (language, callback) => {
+    capstone.list('Publication').model.find()
+        .exec((err, result) => {
+            if (result)
+                result.forEach((record) => {
+                    record.setLanguage(language)
+                })
+            callback(err, result)
+        })
+}
+
 exports.posts = (query, language, callback) => {
     var filter = query
     if (!filter)

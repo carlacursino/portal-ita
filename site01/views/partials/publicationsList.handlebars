@@ -1,0 +1,17 @@
+<div class="grid-wrap">
+    <section class="posts grid" data-columns="3">
+        {{#each data.publications}}
+            <article class="post post-grid">
+                <div class="post-heading">
+                    <p>{{this.title}}</p>
+                </div>
+                <div class="post-content">
+                    <div class="type"></div>
+                    <div class="text">
+                        <p>{{this.abstract}}</p>
+                    </div>
+                </div>
+            </article>
+        {{/each}}
+    </section>
+</div>

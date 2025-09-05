@@ -1,0 +1,13 @@
+{{#if data.publications}}
+    <div id="page-content" role="main">
+        <div class="container">
+            <div id="content">
+
+                {{> publicationsList }}
+                
+            </div>
+        </div>
+    </div>
+{{else}}
+    {{> error }}
+{{/if}}                            
