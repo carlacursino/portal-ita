@@ -15,7 +15,7 @@ new fileManager(Publication).init()
 
 Publication.add({
     title: { type: String, required: true, intl: true },
-    authors: { type: Types.Relationship, ref: 'Post', many: true, required: true },
+    authors: { type: Types.Relationship, ref: 'Post', many: true },
     abstract: { type: Types.Html, wysiwyg: true, height: 150, intl: true },
     project: { type: String },
     cite: { type: String },
