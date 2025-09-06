@@ -7,5 +7,5 @@ docker rmi drone || true
 
 # set "DOCKER_BUILDKIT=1" && docker build -t drone:latest --ssh default=$HOME/.ssh/id_ed25519 .
 # docker run -d --network=netlab01 --name drone drone:latest
-set "DOCKER_BUILDKIT=1" && set USER_ID=$(id -u) && set GROUP_ID=$(id -g) && docker compose -f docker-compose-drone.yaml up --build --detach
+set "COMPOSE_BAKE=true" && set "DOCKER_BUILDKIT=1" && set "USER_ID=$(id -u)" && set "GROUP_ID=$(id -g)" && docker compose -f docker-compose-drone.yaml up --build --detach
 # docker logs drone --follow
