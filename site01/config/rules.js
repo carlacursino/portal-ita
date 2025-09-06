@@ -35,6 +35,12 @@ module.exports = {
                 'posts.updatedBy': {
                     'reference:any': [ { key: 'updatedBy', value: '*' }, ],
                 },
+                'publications.authors': {
+                    'reference:any': [ { key: 'authors', value: '*' }, ],
+                },
+                'publications.project': {
+                    'reference:any': [ { key: 'project', value: '*' }, ],
+                },                
                 'publications.createdBy': {
                     'reference:any': [ { key: 'createdBy', value: '*' }, ],
                 },
