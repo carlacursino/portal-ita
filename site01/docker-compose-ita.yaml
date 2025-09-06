@@ -1,7 +1,6 @@
 services:
   portal:
     container_name: portal
-    image: portal:latest
     build:
       context: .
       dockerfile: Dockerfile.ita

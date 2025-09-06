@@ -27,7 +27,6 @@ services:
 
   drone:
     container_name: drone
-    image: drone:latest
     build:
       context: .
       dockerfile: Dockerfile.drone

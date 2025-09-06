@@ -1,7 +1,6 @@
 services:
   ceds:
     container_name: ceds
-    image: ceds:latest
     build:
       context: .
       dockerfile: Dockerfile.ceds

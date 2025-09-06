@@ -1,7 +1,6 @@
 services:
   pgcomp:
     container_name: pgcomp
-    image: pgcomp:latest
     build:
       context: .
       dockerfile: Dockerfile.pgcomp

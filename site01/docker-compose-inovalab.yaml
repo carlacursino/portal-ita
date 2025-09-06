@@ -1,7 +1,6 @@
 services:
   inovalab:
     container_name: inovalab
-    image: inovalab:latest
     build:
       context: .
       dockerfile: Dockerfile.inovalab
