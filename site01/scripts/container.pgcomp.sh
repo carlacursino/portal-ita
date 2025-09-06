@@ -5,7 +5,4 @@ docker stop pgcomp || true
 docker rm pgcomp || true
 docker rmi pgcomp || true
 
-# set "DOCKER_BUILDKIT=1" && docker build -t pgcomp:latest --ssh default=$HOME/.ssh/id_ed25519 .
-# docker run -d --network=netlab01 --name pgcomp pgcomp:latest
-set "DOCKER_BUILDKIT=1" && docker compose -f docker-compose-pgcomp.yaml up --build --detach
-# docker logs pgcomp --follow
+DOCKER_BUILDKIT=1 USER_ID=$(id -u) GROUP_ID=$(id -g) docker compose -f docker-compose-drone.yaml up --build --detach

@@ -35,6 +35,12 @@ module.exports = {
                 'posts.updatedBy': {
                     'reference:any': [ { key: 'updatedBy', value: '*' }, ],
                 },
+                'publications.createdBy': {
+                    'reference:any': [ { key: 'createdBy', value: '*' }, ],
+                },
+                'publications.updatedBy': {
+                    'reference:any': [ { key: 'updatedBy', value: '*' }, ],
+                },
             },
             'editor': { 
                 "$extend": [ 'editor-base' ],
@@ -76,6 +82,10 @@ module.exports = {
                 },
                 'posts.categories': {
                     'reference:any': [ { key: 'categories', value: '*' }, ],
+                },
+                'publications': {
+                    'update:any': [ '*' ],
+                    'delete:any': [ '*' ],
                 },
                 'sliders': {
                     'update:any': [ '*' ],
