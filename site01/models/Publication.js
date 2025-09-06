@@ -17,7 +17,7 @@ Publication.add({
     title: { type: String, required: true, intl: true },
     authors: { type: Types.Relationship, ref: 'Post', many: true },
     abstract: { type: Types.Html, wysiwyg: true, height: 150, intl: true },
-    project: { type: Types.Relationship, ref: 'Post' },
+    project: { type: Types.Markdown, toolbarOptions: { hiddenButtons: 'H1,H6,Code' } },
     publisher: { type: String },
     cite: { type: Types.Textarea },
     doi: { type: Types.Url },
