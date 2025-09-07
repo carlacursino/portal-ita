@@ -47,6 +47,18 @@ module.exports = {
                 'publications.updatedBy': {
                     'reference:any': [ { key: 'updatedBy', value: '*' }, ],
                 },
+                'profiles.authors': {
+                    'reference:any': [ { key: 'authors', value: '*' }, ],
+                },
+                'profiles.project': {
+                    'reference:any': [ { key: 'project', value: '*' }, ],
+                },                
+                'profiles.createdBy': {
+                    'reference:any': [ { key: 'createdBy', value: '*' }, ],
+                },
+                'profiles.updatedBy': {
+                    'reference:any': [ { key: 'updatedBy', value: '*' }, ],
+                },
             },
             'editor': { 
                 "$extend": [ 'editor-base' ],
@@ -90,6 +102,10 @@ module.exports = {
                     'reference:any': [ { key: 'categories', value: '*' }, ],
                 },
                 'publications': {
+                    'update:any': [ '*' ],
+                    'delete:any': [ '*' ],
+                },
+                'profiles': {
                     'update:any': [ '*' ],
                     'delete:any': [ '*' ],
                 },
