@@ -86,5 +86,6 @@ exports = module.exports = (app) => {
         .get('/:lang?/post/download/:archive', [capstone.middleware.api, capstone.middleware.cors], routes.methods.download)
         .get('/:lang?/post/:post', [capstone.middleware.api, capstone.middleware.cors], routes.views.post)
         .get('/:lang?/publications', [capstone.middleware.api, capstone.middleware.cors], routes.views.publications)
+        .get('/:lang?/profile/:profile', [capstone.middleware.api, capstone.middleware.cors], routes.views.profile)
         .get('/:lang?/posts/category/:category', [capstone.middleware.api, capstone.middleware.cors], routes.views.search.posts)
 }
