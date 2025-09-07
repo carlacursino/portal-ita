@@ -20,12 +20,9 @@ Profile.add({
         site: { type: String, intl: true },
     },
     picture: { type: Types.File },
-    curriculum: { type: Types.Markdown, toolbarOptions: { hiddenButtons: 'H1,H6,Indent,Code' } },
-    interests: { type: Types.Text, multiple: true, intl: true },
-    education: { 
-        title: { type: Types.Text, multiple: true, intl: true },
-        institution: { type: Types.Text, multiple: true, intl: true },
-    }
+    curriculum: { type: Types.Markdown, height: 300, toolbarOptions: { hiddenButtons: 'H1,H6,Code' } },
+    interests: { type: Types.Markdown, height: 150, toolbarOptions: { hiddenButtons: 'H1,H6,Code' } },
+    education: { type: Types.Markdown, height: 150, toolbarOptions: { hiddenButtons: 'H1,H6,Code' } },
 })
 
 Profile.schema.plugin(translations, { languages: config.cms['supported languages'], defaultLanguage: config.cms.language })
