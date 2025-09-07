@@ -24,13 +24,13 @@ Profile.add({
     cv: { type: Types.Url, label: 'CV' },
     email: { type: Types.Email },
     scholar: { type: Types.Url, label: 'Google Scholar' },
-    vcs: { type: Types.Url, label: 'Source code' },
+    vcs: { type: Types.Url, label: 'Sources repository' },
     lattes: { type: Types.Url },
     orcid: { type: Types.Url },
     linkedin: { type: Types.Url },
-    curriculum: { type: Types.Markdown, height: 300, toolbarOptions: { hiddenButtons: 'H1,H6,Code' } },
-    interests: { type: Types.Markdown, height: 150, toolbarOptions: { hiddenButtons: 'H1,H6,Code' } },
-    education: { type: Types.Markdown, height: 150, toolbarOptions: { hiddenButtons: 'H1,H6,Code' } },
+    curriculum: { type: Types.Markdown, height: 300, toolbarOptions: { hiddenButtons: 'H1,H6,Code' }, intl: true },
+    interests: { type: Types.Markdown, height: 150, toolbarOptions: { hiddenButtons: 'H1,H6,Code' }, intl: true },
+    education: { type: Types.Markdown, height: 150, toolbarOptions: { hiddenButtons: 'H1,H6,Code' }, intl: true },
 })
 
 Profile.schema.plugin(translations, { languages: config.cms['supported languages'], defaultLanguage: config.cms.language })
