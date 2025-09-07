@@ -3,7 +3,7 @@ var
     config = require('config'),
     translations = require('capstone-intl'),
     Types = capstone.Field.Types,
-    Project = new capstone.List('Profile', {
+    Project = new capstone.List('Project', {
         map: { name: 'name' },
         track: true,
         autokey: { path: 'slug', from: 'name.pt', unique: true },
