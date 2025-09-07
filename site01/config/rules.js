@@ -47,16 +47,19 @@ module.exports = {
                 'publications.updatedBy': {
                     'reference:any': [ { key: 'updatedBy', value: '*' }, ],
                 },
-                'profiles.authors': {
-                    'reference:any': [ { key: 'authors', value: '*' }, ],
-                },
-                'profiles.project': {
-                    'reference:any': [ { key: 'project', value: '*' }, ],
-                },                
                 'profiles.createdBy': {
                     'reference:any': [ { key: 'createdBy', value: '*' }, ],
                 },
                 'profiles.updatedBy': {
+                    'reference:any': [ { key: 'updatedBy', value: '*' }, ],
+                },
+                'project.researchers': {
+                    'reference:any': [ { key: 'researchers', value: '*' }, ],
+                },
+                'project.createdBy': {
+                    'reference:any': [ { key: 'createdBy', value: '*' }, ],
+                },
+                'project.updatedBy': {
                     'reference:any': [ { key: 'updatedBy', value: '*' }, ],
                 },
             },
@@ -106,6 +109,10 @@ module.exports = {
                     'delete:any': [ '*' ],
                 },
                 'profiles': {
+                    'update:any': [ '*' ],
+                    'delete:any': [ '*' ],
+                },
+                'projects': {
                     'update:any': [ '*' ],
                     'delete:any': [ '*' ],
                 },
