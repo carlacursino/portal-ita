@@ -3,12 +3,16 @@ services:
     container_name: pgcomp
     build:
       context: .
-      dockerfile: Dockerfile.pgcomp
+      dockerfile: Dockerfile.portal
       args:
         - USER_ID=${USER_ID:-1000}
         - GROUP_ID=${GROUP_ID:-1000}
+        - PORT=${PORT:-3000}
+    image: pgcomp:latest
     expose:
-      - "3004"
+      - "${PORT:-3000}"
+    environment:
+      - PORT=${PORT:-3000}
     networks:
       - netlab01
     volumes:

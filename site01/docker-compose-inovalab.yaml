@@ -3,12 +3,16 @@ services:
     container_name: inovalab
     build:
       context: .
-      dockerfile: Dockerfile.inovalab
+      dockerfile: Dockerfile.portal
       args:
         - USER_ID=${USER_ID:-1000}
         - GROUP_ID=${GROUP_ID:-1000}
+        - PORT=${PORT:-3000}
+    image: inovalab:latest
     expose:
-      - "3006"
+      - "${PORT:-3000}"
+    environment:
+      - PORT=${PORT:-3000}
     networks:
       - netlab01
     volumes:

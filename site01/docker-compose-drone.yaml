@@ -29,13 +29,16 @@ services:
     container_name: drone
     build:
       context: .
-      dockerfile: Dockerfile.drone
+      dockerfile: Dockerfile.portal
       args:
         - USER_ID=${USER_ID:-1000}
         - GROUP_ID=${GROUP_ID:-1000}
+        - PORT=${PORT:-3000}
     image: drone:latest
     expose:
-      - "3003"
+      - "${PORT:-3000}"
+    environment:
+      - PORT=${PORT:-3000}
     volumes:
       - $PWD/config:/drone/site01/config
       - dronedata:/app/assets/static/core/uploads

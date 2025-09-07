@@ -2,8 +2,10 @@ FROM node:18.20.4-alpine3.19
 
 ARG USER_ID=1000
 ARG GROUP_ID=1000
+ARG PORT=3000
+ARG ECOSYSTEM=portal
 
-EXPOSE 3003
+EXPOSE ${PORT}
 
 RUN addgroup -g ${GROUP_ID} portal && \
     adduser -u ${USER_ID} -G portal -s /bin/sh -D portal
@@ -21,11 +23,11 @@ RUN chown -R portal:portal /app
 USER portal
 
 RUN npm i
-RUN ln -s /app/assets/drone /app/assets/static
+RUN ln -s /app/assets/${ECOSYSTEM} /app/assets/static
 RUN mkdir -p /app/assets/static/core/uploads/Archive
 
 USER root
 RUN chown -R portal:portal /app/assets/static/core/uploads
 USER portal
 
-CMD [ "pm2-runtime", "start", "ecosystem.config.js", "--env", "drone" ]
+CMD [ "pm2-runtime", "start", "ecosystem.config.js", "--env", ${ECOSYSTEM} ]
