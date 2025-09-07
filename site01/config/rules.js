@@ -35,6 +35,10 @@ module.exports = {
                 'posts.updatedBy': {
                     'reference:any': [ { key: 'updatedBy', value: '*' }, ],
                 },
+                'publications': {
+                    'update:any': [ '*' ],
+                    'delete:any': [ '*' ],
+                },
                 'publications.authors': {
                     'reference:any': [ { key: 'authors', value: '*' }, ],
                 },
@@ -47,11 +51,22 @@ module.exports = {
                 'publications.updatedBy': {
                     'reference:any': [ { key: 'updatedBy', value: '*' }, ],
                 },
+                'profiles': {
+                    'update:any': [ '*' ],
+                    'delete:any': [ '*' ],
+                },
                 'profiles.createdBy': {
                     'reference:any': [ { key: 'createdBy', value: '*' }, ],
                 },
                 'profiles.updatedBy': {
                     'reference:any': [ { key: 'updatedBy', value: '*' }, ],
+                },
+                'project.researchers': {
+                    'reference:any': [ { key: 'researchers', value: '*' }, ],
+                },
+                'projects': {
+                    'update:any': [ '*' ],
+                    'delete:any': [ '*' ],
                 },
                 'project.researchers': {
                     'reference:any': [ { key: 'researchers', value: '*' }, ],
@@ -103,18 +118,6 @@ module.exports = {
                 },
                 'posts.categories': {
                     'reference:any': [ { key: 'categories', value: '*' }, ],
-                },
-                'publications': {
-                    'update:any': [ '*' ],
-                    'delete:any': [ '*' ],
-                },
-                'profiles': {
-                    'update:any': [ '*' ],
-                    'delete:any': [ '*' ],
-                },
-                'projects': {
-                    'update:any': [ '*' ],
-                    'delete:any': [ '*' ],
                 },
                 'sliders': {
                     'update:any': [ '*' ],
