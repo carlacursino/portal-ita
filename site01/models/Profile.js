@@ -15,7 +15,7 @@ new fileManager(Profile).init()
 
 Profile.add({
     name: { type: String, required: true, initial: true },
-    title: { type: String, required: true, initial: true },
+    title: { type: String, intl: true },
     institution: {
         description: { type: String, intl: true },
         site: { type: Types.Url },
