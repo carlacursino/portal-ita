@@ -5,7 +5,7 @@ var
     fileManager = require('capstone-file-manager'),
     Types = capstone.Field.Types,
     Profile = new capstone.List('Profile', {
-        map: { name: 'title' },
+        map: { name: 'name' },
         track: true,
         autokey: { path: 'slug', from: 'name.pt', unique: true },
         defaultSort: '-publishedDate',
