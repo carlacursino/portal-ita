@@ -4,6 +4,7 @@ ARG USER_ID=1000
 ARG GROUP_ID=1000
 ARG PORT=3000
 ARG ECOSYSTEM=portal
+ENV ECOSYSTEM=${ECOSYSTEM}
 
 EXPOSE ${PORT}
 
@@ -30,4 +31,4 @@ USER root
 RUN chown -R portal:portal /app/assets/static/core/uploads
 USER portal
 
-CMD [ "pm2-runtime", "start", "ecosystem.config.js", "--env", ${ECOSYSTEM} ]
+CMD pm2-runtime start ecosystem.config.js --env ${ECOSYSTEM}
