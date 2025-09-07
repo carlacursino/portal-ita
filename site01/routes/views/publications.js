@@ -4,7 +4,6 @@ const
     partials = require('partials'),
     capstone = require('capstonejs'),
     setup = require('config')
-const { publications } = require('../../helpers/partials')
 
 module.exports = (req, res) => {
     const view = new capstone.View(req, res)
