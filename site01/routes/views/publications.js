@@ -28,5 +28,5 @@ module.exports = (req, res) => {
         })
     })
 
-    view.render(setup.portal['view publications'])
+    view.render('publications')
 }
