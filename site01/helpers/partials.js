@@ -90,6 +90,16 @@ exports.post = (query, language, callback) => {
         })
 }
 
+exports.profile = (query, language, callback) => {
+    capstone.list('Profile').model.findOne(query)
+        .limit(1)
+        .exec((err, result) => {
+            if (result)
+                result.setLanguage(language)
+            callback(err, result)
+        })
+}
+
 exports.category = (query, language, callback) => {
     capstone.list('Category').model.findOne(query)
     .exec((err, result) => {
