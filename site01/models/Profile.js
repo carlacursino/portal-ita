@@ -22,7 +22,7 @@ Profile.add({
     },
     picture: { type: Types.File },
     cv: { type: Types.Url, label: 'CV' },
-    email: { type: Types.Email, unique: true, index: true },
+    email: { type: Types.Email },
     scholar: { type: Types.Url, label: 'Google Scholar' },
     vcs: { type: Types.Url, label: 'Source code' },
     lattes: { type: Types.Url },
