@@ -14,11 +14,10 @@ var
 new fileManager(Profile).init()
 
 Profile.add({
-    name: { type: String, required: true },
-    name: { type: String, required: true },
+    name: { type: String, required: true, initial: true },
     institution: {
-        description: { type: String, required: true, intl: true },
-        site: { type: String, required: true, intl: true },
+        description: { type: String, intl: true },
+        site: { type: String, intl: true },
     },
     picture: { type: Types.File },
     curriculum: { type: Types.Markdown, toolbarOptions: { hiddenButtons: 'H1,H6,Indent,Code' } },
