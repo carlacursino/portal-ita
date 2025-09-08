@@ -61,20 +61,20 @@ module.exports = {
                 'profiles.updatedBy': {
                     'reference:any': [ { key: 'updatedBy', value: '*' }, ],
                 },
-                'project.researchers': {
+                'projects.researchers': {
                     'reference:any': [ { key: 'researchers', value: '*' }, ],
                 },
                 'projects': {
                     'update:any': [ '*' ],
                     'delete:any': [ '*' ],
                 },
-                'project.researchers': {
+                'projects.researchers': {
                     'reference:any': [ { key: 'researchers', value: '*' }, ],
                 },
-                'project.createdBy': {
+                'projects.createdBy': {
                     'reference:any': [ { key: 'createdBy', value: '*' }, ],
                 },
-                'project.updatedBy': {
+                'projects.updatedBy': {
                     'reference:any': [ { key: 'updatedBy', value: '*' }, ],
                 },
             },
