@@ -28,6 +28,7 @@ Profile.add({
     lattes: { type: Types.Url },
     orcid: { type: Types.Url },
     linkedin: { type: Types.Url },
+    youtube: { type: Types.Url },
     curriculum: { type: Types.Markdown, height: 300, toolbarOptions: { hiddenButtons: 'H1,H6,Code' }, intl: true },
     interests: { type: Types.Markdown, height: 150, toolbarOptions: { hiddenButtons: 'H1,H6,Code' }, intl: true },
     education: { type: Types.Markdown, height: 150, toolbarOptions: { hiddenButtons: 'H1,H6,Code' }, intl: true },
