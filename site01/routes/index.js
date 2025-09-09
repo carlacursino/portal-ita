@@ -85,7 +85,11 @@ exports = module.exports = (app) => {
         .get('/:lang?/iex/local/:local', [capstone.middleware.api, capstone.middleware.cors], routes.views.iex.local)
         .get('/:lang?/post/download/:archive', [capstone.middleware.api, capstone.middleware.cors], routes.methods.download)
         .get('/:lang?/post/:post', [capstone.middleware.api, capstone.middleware.cors], routes.views.post)
-        .get('/:lang?/publications', [capstone.middleware.api, capstone.middleware.cors], routes.views.publications)
-        .get('/:lang?/profile/:profile', [capstone.middleware.api, capstone.middleware.cors], routes.views.profile)
         .get('/:lang?/posts/category/:category', [capstone.middleware.api, capstone.middleware.cors], routes.views.search.posts)
+        .get('/:lang?/publications', [capstone.middleware.api, capstone.middleware.cors], routes.views.publications)
+        .get('/:lang?/publication/:publication', [capstone.middleware.api, capstone.middleware.cors], routes.views.publication)
+        .get('/:lang?/projects', [capstone.middleware.api, capstone.middleware.cors], routes.views.projects)
+        .get('/:lang?/project/:project', [capstone.middleware.api, capstone.middleware.cors], routes.views.project)
+        .get('/:lang?/profiles', [capstone.middleware.api, capstone.middleware.cors], routes.views.profiles)
+        .get('/:lang?/profile/:profile', [capstone.middleware.api, capstone.middleware.cors], routes.views.profile)
 }

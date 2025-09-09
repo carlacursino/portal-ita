@@ -4,8 +4,8 @@
             <div class="col-md-9">
                 <div id="content">
                     <ul class="arrow">
-                        {{#each data.child}}
-                            <li><a href="#{{this.slug}}">{{this.title}}</a></li>
+                        {{#each data.publications}}
+                            <li><a href="/{{../language}}/publication/{{this._id}}">{{this.title}}</a></li>
                         {{/each}}
                     </ul>
                 </div>

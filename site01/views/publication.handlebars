@@ -1,0 +1,26 @@
+<div id="page-content" role="main">
+    <div class="container"><div class="container">
+        <div id="content">
+
+
+{{data.publication.title}}<br/><br/>
+
+{{#each data.publication.authors}}
+    <a href="/{{../language}}/profile/{{this._id}}">{{this.name}}</a><br/>
+{{/each}}
+
+{{{data.publication.abstract}}}<br/><br/>
+
+<a href="/{{language}}/project/{{data.publication.project._id}}">{{data.publication.project.name}}</a><br/><br/>
+
+{{data.publication.publisher}}<br/><br/>
+{{data.publication.cite.md}}<br/><br/>
+{{data.publication.doi}}<br/><br/>
+{{data.publication.link}}<br/><br/>
+{{data.publication.dataset}}<br/><br/>
+{{data.publication.video}}<br/><br/>
+{{data.publication.file}}<br/><br/>
+
+        </div>
+    </div>
+</div>

@@ -11,7 +11,11 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}/server.js"
+            "env": {
+                "NODE_ENV": "local",
+            },
+            "program": "${workspaceFolder}/server.js",
+            "runtimeExecutable": "/home/portal/.nvm/versions/node/v24.7.0/bin/node"
         }
     ]
 }

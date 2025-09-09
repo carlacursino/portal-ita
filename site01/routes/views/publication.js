@@ -7,12 +7,14 @@ const
 module.exports = (req, res) => {
     const view = new capstone.View(req, res)
 
+    res.locals.filters = { publication: req.params.publication }
+
     res.locals.data = {
-        menu: [],
+        today: new Date(),
         acontece: [],
         destaque: [],
-        publications: [],
-        version: capstone.version,
+        menu: [],
+        publication: {},
     }
 
     view.on('init', (next) => {
@@ -37,11 +39,11 @@ module.exports = (req, res) => {
     })
 
     view.on('init', (next) => {
-        partials.publications({}, res.locals.language, (err, result) => {
-            res.locals.data.publications = result
+        partials.publication({ _id: res.locals.filters.publication }, res.locals.language, (err, result) => {
+            res.locals.data.publication = result
             next(err)
         })
     })
 
-    view.render('publications')
+    view.render('publication')
 }
