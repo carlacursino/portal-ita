@@ -3,7 +3,8 @@
 		<div id="content">
 			<div class="container-out container-light">
 				<div class="title">
-					<h2 class="h3">Currículum</h2>
+					<h2 class="h3">{{data.profile.name}}</h2>
+					<h3 class="h4">{{data.profile.title}}</h3>
 				</div>
 				<div class="text">
 					{{data.profile.curriculum.md}}
@@ -12,28 +13,34 @@
 				<div class="row-inline-wrap">
 					<div class="row row-inline">
 						<div class="col-sm-2">
-							<p><strong>Site:</strong></p>
-						</div>
-						<div class="col-sm-10">
-							<p><a href="{{data.profile.site}}" target="_blank">{{data.profile.site}}</a></p>
-						</div>
-					</div>
-				</div>
-				<div class="row-inline-wrap">
-					<div class="row row-inline">
-						<div class="col-sm-2">
 							<p><strong>Nas redes sociais:</strong></p>
 						</div>
 						<div class="col-sm-10">
 							<ul class="social">
-								<li><a href="#.html#" class="vimeo"></a></li>
-								<li><a href="#.html#" class="youtube"></a></li>
-								<li><a href="#.html#" class="forrst"></a></li>
-								<li><a href="#.html#" class="dribbble"></a></li>
-								<li><a href="#.html#" class="pinterest"></a></li>
-								<li><a href="#.html#" class="facebook"></a></li>
-								<li><a href="#.html#" class="twitter"></a></li>
-								<li><a href="#.html#" class="google"></a></li>
+								{{#if data.profile.cv}}
+									<li><a href="{{data.profile.cv}}" class="cv"></a></li>
+								{{/if}}
+								{{#if data.profile.email}}
+									<li><a href="{{data.profile.email}}" class="email"></a></li>
+								{{/if}}
+								{{#if data.profile.scholar}}
+									<li><a href="{{data.profile.scholar}}" class="google"></a></li>
+								{{/if}}
+								{{#if data.profile.vcs}}
+									<li><a href="{{data.profile.vcs}}" class="github"></a></li>
+								{{/if}}
+								{{#if data.profile.lattes}}
+									<li><a href="{{data.profile.lattes}}" class="lattes"></a></li>
+								{{/if}}
+								{{#if data.profile.orcid}}
+									<li><a href="{{data.profile.orcid}}" class="orcid"></a></li>
+								{{/if}}
+								{{#if data.profile.linkedin}}
+									<li><a href="{{data.profile.linkedin}}" class="linkedin"></a></li>
+								{{/if}}
+								{{#if data.profile.youtube}}
+									<li><a href="{{data.profile.youtube}}" class="youtube"></a></li>
+								{{/if}}
 							</ul>
 						</div>
 					</div>

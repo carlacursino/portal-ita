@@ -13,7 +13,7 @@
         "app-root-path": "^3.0.0",
         "capstone-file-manager": "^1.0.3",
         "capstone-intl": "^3.1.6",
-        "capstonejs": "^4.2.23-a",
+        "capstonejs": "^4.2.23-b",
         "connect-mongo": "^3.2.0",
         "dotenv": "^8.1.0",
         "expect-ct": "^0.3.0",

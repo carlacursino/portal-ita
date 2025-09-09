@@ -3128,6 +3128,66 @@ ul.comments-content ul li {
     content: "\e773";
 }
 
+/*.social a.email,*/
+
+.social a.email:hover {
+    background-color: #007aff;
+}
+
+.social a.email:before {
+    content: "\e75f";
+}
+
+/*.social a.github,*/
+
+.social a.github:hover {
+    background-color: #003333;
+}
+
+.social a.github:before {
+    content: "\e788";
+}
+
+/*.social a.user,*/
+
+.social a.user:hover {
+    background-color: #ffcc00;
+}
+
+.social a.user:before {
+    content: "\e670";
+}
+
+
+/*.social a.cv,*/
+
+.social a.cv:hover {
+    background-color: #ccc;
+}
+
+.social a.cv:before {
+    content: "\e900";
+}
+
+/*.social a.orcid,*/
+
+.social a.orcid:hover {
+    background-color: #00B74C;
+}
+
+.social a.orcid:before {
+    content: "\e902";
+}
+
+/*.social a.lattes,*/
+
+.social a.lattes:hover {
+    background-color: #007aff;
+}
+
+.social a.lattes:before {
+    content: "\e901";
+}
 
 /*.social a.rss,*/
 
@@ -7312,7 +7372,7 @@ body .push-top {
     padding: 1em 0px;
     max-width: 100%;
 }
-
+/*
 a[href*="//"]:not([href*="ita.br"],
 [href*="gov.br"],
 [href*="cta.br"],
@@ -7320,3 +7380,4 @@ a[href*="//"]:not([href*="ita.br"],
     content: ' \f08e';
     font-family: 'FontAwesome';
 }
+*/
