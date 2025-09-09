@@ -7,13 +7,15 @@ const
 module.exports = (req, res) => {
     const view = new capstone.View(req, res)
 
-    res.locals.filters = { post: req.params.profile }
+    res.locals.filters = { _id: req.params.profile }
 
     res.locals.data = {
         menu: [],
         acontece: [],
         destaque: [],
         profile: {},
+        projects: [],
+        publications: [],
         version: capstone.version,
     }
 
@@ -39,8 +41,22 @@ module.exports = (req, res) => {
     })
 
     view.on('init', (next) => {
-        partials.profile({ slug: res.locals.filters.post }, res.locals.language, (err, result) => {
+        partials.profile({ _id: res.locals.filters._id }, res.locals.language, (err, result) => {
             res.locals.data.profile = result
+            next(err)
+        })
+    })
+
+    view.on('init', (next) => {
+        partials.projects({ researchers: res.locals.filters._id }, res.locals.language, (err, result) => {
+            res.locals.data.projects = result
+            next(err)
+        })
+    })
+
+    view.on('init', (next) => {
+        partials.publications({}, res.locals.language, (err, result) => {
+            res.locals.data.publications = result
             next(err)
         })
     })

@@ -45,6 +45,27 @@ exports.initiatives = (category, language, callback) => {
         })
 }
 
+exports.profiles = (query, language, callback) => {
+    capstone.list('Profile').model.find(query)
+        .exec((err, result) => {
+            if (result)
+                result.forEach((record) => {
+                    record.setLanguage(language)
+                })
+            callback(err, result)
+        })
+}
+
+exports.profile = (query, language, callback) => {
+    capstone.list('Profile').model.findOne(query)
+        .limit(1)
+        .exec((err, result) => {
+            if (result)
+                result.setLanguage(language)
+            callback(err, result)
+        })
+}
+
 exports.publications = (query, language, callback) => {
     capstone.list('Publication').model.find(query)
         .exec((err, result) => {
@@ -52,6 +73,41 @@ exports.publications = (query, language, callback) => {
                 result.forEach((record) => {
                     record.setLanguage(language)
                 })
+            callback(err, result)
+        })
+}
+
+exports.publication = (query, language, callback) => {
+    capstone.list('Publication').model.findOne(query)
+        .limit(1)
+        .populate('authors')
+        .populate('project')
+        .exec((err, result) => {
+            if (result)
+                result.setLanguage(language)
+            callback(err, result)
+        })
+}
+
+exports.projects = (query, language, callback) => {
+    capstone.list('Project').model.find(query)
+        .limit(100)
+        .exec((err, result) => {
+            if (result)
+                result.forEach((record) => {
+                    record.setLanguage(language)
+                })
+            callback(err, result)
+        })
+}
+
+exports.project = (query, language, callback) => {
+    capstone.list('Project').model.findOne(query)
+        .limit(1)
+        .populate('researchers')
+        .exec((err, result) => {
+            if (result)
+                result.setLanguage(language)
             callback(err, result)
         })
 }
@@ -72,18 +128,6 @@ exports.posts = (query, language, callback) => {
         })
 }
 
-exports.projects = (query, language, callback) => {
-    capstone.list('Project').model.find(query)
-        .limit(100)
-        .exec((err, result) => {
-            if (result)
-                result.forEach((record) => {
-                    record.setLanguage(language)
-                })
-            callback(err, result)
-        })
-}
-
 exports.distinctPosts = (distinct, query, callback) => {
     capstone.list('Post').model.distinct(distinct, query)
         .exec((err, result) => {
@@ -94,48 +138,6 @@ exports.distinctPosts = (distinct, query, callback) => {
 exports.post = (query, language, callback) => {
     capstone.list('Post').model.findOne(query)
         .sort({ publishedDate: -1 })
-        .limit(1)
-        .exec((err, result) => {
-            if (result)
-                result.setLanguage(language)
-            callback(err, result)
-        })
-}
-
-exports.project = (query, language, callback) => {
-    capstone.list('Project').model.findOne(query)
-        .limit(1)
-        .populate('researchers')
-        .exec((err, result) => {
-            if (result)
-                result.setLanguage(language)
-            callback(err, result)
-        })
-}
-
-exports.publication = (query, language, callback) => {
-    capstone.list('Publication').model.findOne(query)
-        .limit(1)
-        .populate('authors')
-        .populate('project')
-        .exec((err, result) => {
-            if (result)
-                result.setLanguage(language)
-            callback(err, result)
-        })
-}
-
-exports.profiles = (query, language, callback) => {
-    capstone.list('Profile').model.find(query)
-        .exec((err, result) => {
-            if (result)
-                result.setLanguage(language)
-            callback(err, result)
-        })
-}
-
-exports.profile = (query, language, callback) => {
-    capstone.list('Profile').model.findOne(query)
         .limit(1)
         .exec((err, result) => {
             if (result)

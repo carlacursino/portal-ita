@@ -2,12 +2,18 @@
     <div class="container"><div class="container">
         <div id="content">
 
-{{data.project.name}}<br/><br/>
-{{data.project.description.md}}<br/><br/>
+            {{data.project.name}}<br/><br/>
+            {{data.project.description.md}}<br/><br/>
 
-{{#each data.project.researchers}}
-    <a href="/{{../language}}/profile/{{this._id}}">{{this.name}}</a><br/>
-{{/each}}
+            {{#each data.project.researchers}}
+                <a href="/{{../language}}/profile/{{this._id}}">{{this.name}}</a><br/>
+            {{/each}}
+
+            {{#if data.publications}}
+
+                {{> publicationsList }}
+
+            {{/if}}
 
         </div>
     </div>
