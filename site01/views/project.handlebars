@@ -1,20 +1,98 @@
 <div id="page-content" role="main">
     <div class="container"><div class="container">
         <div id="content">
-
-            {{data.project.name}}<br/><br/>
-            {{data.project.description.md}}<br/><br/>
-
-            {{#each data.project.researchers}}
-                <a href="/{{../language}}/profile/{{this._id}}">{{this.name}}</a><br/>
-            {{/each}}
-
-            {{#if data.publications}}
-
-                {{> publicationsList }}
-
-            {{/if}}
-
+            <div class="container-out container-light">
+                <div class="row">
+					<div class="col-md-12">
+							<div class="title">
+								<h2 class="h2">{{data.project.name}}</h2>
+								<p>{{data.project.description.md}}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="title">
+                            <h4 class="h4">Pesquisadores</h4>
+                        </div>
+                    </div>
+					{{#if data.project.researchers}}
+						<div class="col-md-9">
+							<ul class="arrow">
+								{{#each data.project.researchers}}
+									{{#if this.active}}
+										<li><a href="/{{../language}}/profile/{{this._id}}">{{this.name}}</a>
+											<ul class="social">
+												{{#if this.cv}}
+													<li><a href="{{this.cv}}" class="home"></a></li>
+												{{/if}}
+												{{#if this.email}}
+													<li><a href="{{this.email}}" class="email"></a></li>
+												{{/if}}
+												{{#if this.scholar}}
+													<li><a href="{{this.scholar}}" class="scholar"></a></li>
+												{{/if}}
+												{{#if this.vcs}}
+													<li><a href="{{this.vcs}}" class="github"></a></li>
+												{{/if}}
+												{{#if this.lattes}}
+													<li><a href="{{this.lattes}}" class="lattes"></a></li>
+												{{/if}}
+												{{#if this.orcid}}
+													<li><a href="{{this.orcid}}" class="orcid"></a></li>
+												{{/if}}
+												{{#if this.linkedin}}
+													<li><a href="{{this.linkedin}}" class="linkedin"></a></li>
+												{{/if}}
+												{{#if this.youtube}}
+													<li><a href="{{this.youtube}}" class="youtube"></a></li>
+												{{/if}}
+											</ul></li>
+									{{else}}
+										<li>this.name</li>
+									{{/if}}
+								{{/each}}
+							</ul>
+						</div>
+					</div>
+					<hr class="devider-margin-medium" />
+				{{/if}}
+				{{#if data.publications}}
+					<div class="row">
+						<div class="col-md-3">
+							<div class="title">
+								<h4 class="h4">Publicações</h4>
+							</div>
+						</div>
+						<div class="col-md-9">
+							<ul class="arrow">
+								{{#each data.publications}}
+									<li><a href="/{{../language}}/publication/{{this._id}}">{{this.title}}</a>
+									<ul class="social">
+										{{#if this.link}}
+											<li><a href="{{this.link}}" class="url"></a></li>
+										{{/if}}
+										{{#if this.doi}}
+											<li><a href="{{this.doi}}" class="doi"></a></li>
+										{{/if}}
+										{{#if this.dataset}}
+											<li><a href="{{this.dataset}}" class="dataset"></a></li>
+										{{/if}}
+										{{#if this.video}}
+											<li><a href="{{this.video}}" class="video"></a></li>
+										{{/if}}
+										{{#if this.file.src}}
+											<li><a href="{{this.file.src}}" class="pdf"></a></li>
+										{{/if}}
+									</ul></li>
+								{{/each}}
+							</ul>
+						</div>
+					</div>
+					<hr class="devider-margin-medium" />
+				{{/if}}
+			</div>
         </div>
     </div>
 </div>

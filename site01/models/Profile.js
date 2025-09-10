@@ -32,10 +32,11 @@ Profile.add({
     curriculum: { type: Types.Markdown, height: 300, toolbarOptions: { hiddenButtons: 'H1,H6,Code' }, intl: true },
     interests: { type: Types.Markdown, height: 150, toolbarOptions: { hiddenButtons: 'H1,H6,Code' }, intl: true },
     education: { type: Types.Markdown, height: 150, toolbarOptions: { hiddenButtons: 'H1,H6,Code' }, intl: true },
+    active: { type: Types.Boolean, default: true },
 })
 
 Profile.schema.plugin(translations, { languages: config.cms['supported languages'], defaultLanguage: config.cms.language })
 
-Profile.defaultColumns = 'name, title, institution.description'
+Profile.defaultColumns = 'name, title, institution.description, active'
 
 Profile.register()

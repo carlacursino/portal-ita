@@ -39,7 +39,7 @@ module.exports = (req, res) => {
     })
 
     view.on('init', (next) => {
-        partials.profiles({ }, res.locals.language, (err, result) => {
+        partials.profiles({ active: true }, res.locals.language, (err, result) => {
             res.locals.data.profiles = result
             next(err)
         })

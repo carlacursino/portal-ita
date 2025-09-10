@@ -12,16 +12,55 @@
 					</div>
 					<div class="col-md-6">
 						<div id="content">
-							<div class="title">
+							<div class="text">
 								<h2 class="h3">{{data.profile.name}}</h2>
-								<h3 class="h4">{{data.profile.title}}</h3>
+								<h5 class="h5">{{data.profile.title}}</h5>
 							</div>
 							<div class="text">
 								{{data.profile.curriculum.md}}
 							</div>
+							<div class="text">
+								<h4 class="h4"><a href="{{data.profile.institution.site}}">{{data.profile.institution.description}}</a></h4>
+							</div>
 						</div>
 					</div>
 				</div>
+				{{#if data.profile.education.html}}
+					<div class="row">
+						<div class="col-md-3">
+							<div id="content">
+								<div class="title">
+									<h4 class="h4">Formação</h4>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div id="content">
+								<div class="text">
+									<h4 class="h4">{{{data.profile.education.html}}}</h4>
+								</div>
+							</div>
+						</div>
+					</div>
+				{{/if}}
+				{{#if data.profile.interests.html}}
+					<div class="row">
+						<div class="col-md-3">
+							<div id="content">
+								<div class="title">
+									<h4 class="h4">Interesses</h4>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div id="content">
+								<div class="text">
+									<h5 class="h5">{{{data.profile.interests.html}}}</h5>
+								</div>
+							</div>
+						</div>
+					</div>
+				{{/if}}
 				<div class="row">
 					<div class="col-md-3"></div>
 					<div class="col-md-6">
@@ -31,13 +70,13 @@
 									<div class="col-sm-9">
 										<ul class="social">
 											{{#if data.profile.cv}}
-												<li><a href="{{data.profile.cv}}" class="cv"></a></li>
+												<li><a href="{{data.profile.cv}}" class="home"></a></li>
 											{{/if}}
 											{{#if data.profile.email}}
-												<li><a href="{{data.profile.email}}" class="email"></a></li>
+												<li><a href="mailto:{{data.profile.email}}" class="email"></a></li>
 											{{/if}}
 											{{#if data.profile.scholar}}
-												<li><a href="{{data.profile.scholar}}" class="google"></a></li>
+												<li><a href="{{data.profile.scholar}}" class="scholar"></a></li>
 											{{/if}}
 											{{#if data.profile.vcs}}
 												<li><a href="{{data.profile.vcs}}" class="github"></a></li>
@@ -65,24 +104,53 @@
 			{{#if data.projects}}
 				<div class="container-out">
 					<div class="row">
-						<div class="col-sm-12">
-							<div class="title title-section">
-								<h2>Projetos</h2>
-								<span class="sticker">
-									<i class="icon icomoon-stats"></i>
-								</span>
+						<div class="col-md-3">
+							<div class="title">
+								<h4 class="h4">Projetos</h4>
 							</div>
 						</div>
-					</div>
-					<div class="row">
 						<div class="col-md-9">
-							<div id="content">
-								<ul class="arrow">
-									{{#each data.projects}}
-										<li><a href="/{{../language}}/project/{{this._id}}">{{this.name}}</a></li>
-									{{/each}}
-								</ul>
+							<ul class="arrow">
+								{{#each data.projects}}
+									<li><a href="/{{../language}}/project/{{this._id}}">{{this.name}}</a></li>
+								{{/each}}
+							</ul>
+						</div>
+					</div>
+					<hr class="devider-margin-medium" />
+				</div>
+			{{/if}}
+			{{#if data.publications}}
+				<div class="container-in">
+					<div class="row">
+						<div class="col-md-3">
+							<div class="title">
+								<h4 class="h4">Publicações</h4>
 							</div>
+						</div>
+						<div class="col-md-9">
+ 							<ul class="arrow">
+								{{#each data.publications}}
+									<li><a href="/{{../language}}/publication/{{this._id}}">{{this.title}}</a>
+									<ul class="social">
+										{{#if this.link}}
+											<li><a href="{{this.link}}" class="url"></a></li>
+										{{/if}}
+										{{#if this.doi}}
+											<li><a href="{{this.doi}}" class="doi"></a></li>
+										{{/if}}
+										{{#if this.dataset}}
+											<li><a href="{{this.dataset}}" class="dataset"></a></li>
+										{{/if}}
+										{{#if this.video}}
+											<li><a href="{{this.video}}" class="video"></a></li>
+										{{/if}}
+										{{#if this.file.src}}
+											<li><a href="{{this.file.src}}" class="pdf"></a></li>
+										{{/if}}
+									</ul></li>
+								{{/each}}
+							</ul>
 						</div>
 					</div>
 					<hr class="devider-margin-medium" />

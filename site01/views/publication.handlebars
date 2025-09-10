@@ -1,26 +1,116 @@
 <div id="page-content" role="main">
     <div class="container"><div class="container">
         <div id="content">
+            <div class="container-out container-light">
+                <div class="row">
+					<div class="col-md-12">
+							<div class="title">
+								<h2 class="h3">{{data.publication.title}}</h2>
+								<h3 class="h4">{{data.publication.publisher}}</h3>
+							</div>
+						</div>
+					</div>
+				</div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="title">
+                            <h4 class="h4">Autores</h4>
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <ul class="arrow">
+                            {{#each data.publication.authors}}
+                                {{#if this.active}}
+                                    <li><a href="/{{../language}}/profile/{{this._id}}">{{this.name}}</a>
+                                        <ul class="social">
+                                    		{{#if this.cv}}
+												<li><a href="{{this.cv}}" class="home"></a></li>
+											{{/if}}
+											{{#if this.email}}
+												<li><a href="{{this.email}}" class="email"></a></li>
+											{{/if}}
+											{{#if this.scholar}}
+												<li><a href="{{this.scholar}}" class="scholar"></a></li>
+											{{/if}}
+											{{#if this.vcs}}
+												<li><a href="{{this.vcs}}" class="github"></a></li>
+											{{/if}}
+											{{#if this.lattes}}
+												<li><a href="{{this.lattes}}" class="lattes"></a></li>
+											{{/if}}
+											{{#if this.orcid}}
+												<li><a href="{{this.orcid}}" class="orcid"></a></li>
+											{{/if}}
+											{{#if this.linkedin}}
+												<li><a href="{{this.linkedin}}" class="linkedin"></a></li>
+											{{/if}}
+											{{#if this.youtube}}
+												<li><a href="{{this.youtube}}" class="youtube"></a></li>
+											{{/if}}
+										</ul></li>
+                                {{else}}
+                                    <li>{{this.name}}</li>
+                                {{/if}}
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="title">
+                            <h4 class="h4">Resumo</h4>
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="text">{{{data.publication.abstract}}}</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-9">
+						<div id="content">
+							<div class="row-inline-wrap">
+								<div class="row row-inline">
+									<div class="col-sm-12">
+										<ul class="social">
+											{{#if data.publication.link}}
+												<li><a href="{{data.publication.link}}" class="url"></a></li>
+											{{/if}}
+											{{#if data.publication.doi}}
+												<li><a href="{{data.publication.doi}}" class="doi"></a></li>
+											{{/if}}
+											{{#if data.publication.dataset}}
+												<li><a href="{{data.publication.dataset}}" class="dataset"></a></li>
+											{{/if}}
+											{{#if data.publication.video}}
+												<li><a href="{{data.publication.video}}" class="video"></a></li>
+											{{/if}}
+											{{#if data.publication.file.src}}
+												<li><a href="{{data.publication.file.src}}" class="pdf"></a></li>
+											{{/if}}
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div></div>
+</div>
 
 
-{{data.publication.title}}<br/><br/>
 
-{{#each data.publication.authors}}
-    <a href="/{{../language}}/profile/{{this._id}}">{{this.name}}</a><br/>
-{{/each}}
+<!--
+{{{data.publication.cite.html}}}<br/><br/>
 
-{{{data.publication.abstract}}}<br/><br/>
+
+
+<br/><br/>
 
 <a href="/{{language}}/project/{{data.publication.project._id}}">{{data.publication.project.name}}</a><br/><br/>
 
-{{data.publication.publisher}}<br/><br/>
-{{data.publication.cite.md}}<br/><br/>
-{{data.publication.doi}}<br/><br/>
-{{data.publication.link}}<br/><br/>
-{{data.publication.dataset}}<br/><br/>
-{{data.publication.video}}<br/><br/>
-{{data.publication.file}}<br/><br/>
 
-        </div>
-    </div>
-</div>
+-->
+

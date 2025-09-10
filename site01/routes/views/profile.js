@@ -55,7 +55,7 @@ module.exports = (req, res) => {
     })
 
     view.on('init', (next) => {
-        partials.publications({}, res.locals.language, (err, result) => {
+        partials.publications({ authors: res.locals.filters._id }, res.locals.language, (err, result) => {
             res.locals.data.publications = result
             next(err)
         })

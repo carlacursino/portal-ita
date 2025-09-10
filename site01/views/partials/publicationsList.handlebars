@@ -1,15 +1,5 @@
-{{#if data.publications}}
-    <div class="container-out container-light">
-        <div class="row">
-            <div class="col-md-9">
-                <div id="content">
-                    <ul class="arrow">
-                        {{#each data.publications}}
-                            <li><a href="/{{../language}}/publication/{{this._id}}">{{this.title}}</a></li>
-                        {{/each}}
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-{{/if}}
+<ul class="arrow">
+    {{#each data.publications}}
+        <li><a href="/{{../language}}/publication/{{this._id}}">{{this.title}}</a></li>
+    {{/each}}
+</ul>

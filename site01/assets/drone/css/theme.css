@@ -3159,23 +3159,53 @@ ul.comments-content ul li {
 }
 
 
-/*.social a.cv,*/
+/*.social a.url,*/
 
-.social a.cv:hover {
+.social a.url:hover {
     background-color: #ccc;
 }
 
-.social a.cv:before {
+.social a.url:before {
+    content: "\e908";
+}
+
+/*.social a.home,*/
+
+.social a.home:hover {
+    background-color: #00CCFF;
+}
+
+.social a.home:before {
+    content: "\e907";
+}
+
+/*.social a.bibtex,*/
+
+.social a.bibtex:hover {
+    background-color: #d169fd;
+}
+
+.social a.bibtex:before {
     content: "\e900";
 }
 
-/*.social a.orcid,*/
+/*.social a.dataset,*/
 
-.social a.orcid:hover {
-    background-color: #00B74C;
+.social a.dataset:hover {
+    background-color: #ccc;
 }
 
-.social a.orcid:before {
+.social a.dataset:before {
+    content: "\e901";
+}
+
+/*.social a.doi,*/
+
+.social a.doi:hover {
+    background-color: #ccc;
+}
+
+.social a.doi:before {
     content: "\e902";
 }
 
@@ -3186,7 +3216,47 @@ ul.comments-content ul li {
 }
 
 .social a.lattes:before {
-    content: "\e901";
+    content: "\e903";
+}
+
+/*.social a.orcid,*/
+
+.social a.orcid:hover {
+    background-color: #00B74C;
+}
+
+.social a.orcid:before {
+    content: "\e904";
+}
+
+/*.social a.pdf,*/
+
+.social a.pdf:hover {
+    background-color: #FF3B30;
+}
+
+.social a.pdf:before {
+    content: "\e905";
+}
+
+/*.social a.scholar,*/
+
+.social a.scholar:hover {
+    background-color: #007aff;
+}
+
+.social a.scholar:before {
+    content: "\e906";
+}
+
+/*.social a.video,*/
+
+.social a.scholar:video {
+    background-color: #ccc;
+}
+
+.social a.video:before {
+    content: "\e909";
 }
 
 /*.social a.rss,*/

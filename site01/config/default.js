@@ -74,6 +74,8 @@ module.exports = {
             'iniciativas-tecnicas',
             'iniciativas-sociais',
         ],
+
+        home: 'http://www.ita.br',
     },
     models: './models',
     routes: './routes',

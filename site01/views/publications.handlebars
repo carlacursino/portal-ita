@@ -1,13 +1,40 @@
 <div id="page-content" role="main">
     <div class="container"><div class="container">
         <div id="content">
-
-            {{#if data.publications}}
-
-                {{> publicationsList }}
-
-            {{/if}}
-                
+            <header class="devider-bottom devider-heavy devider-margin-medium">
+                <h1>Publicações</h1>
+            </header>
+ 			{{#if data.publications}}
+				<div class="container-in">
+					<div class="row">
+                        <div class="col-md-1"></div>
+						<div class="col-md-11">
+ 							<ul class="arrow">
+								{{#each data.publications}}
+									<li><a href="/{{../language}}/publication/{{this._id}}">{{this.title}}</a>
+									<ul class="social">
+										{{#if this.link}}
+											<li><a href="{{this.link}}" class="url"></a></li>
+										{{/if}}
+										{{#if this.doi}}
+											<li><a href="{{this.doi}}" class="doi"></a></li>
+										{{/if}}
+										{{#if this.dataset}}
+											<li><a href="{{this.dataset}}" class="dataset"></a></li>
+										{{/if}}
+										{{#if this.video}}
+											<li><a href="{{this.video}}" class="video"></a></li>
+										{{/if}}
+										{{#if this.file.src}}
+											<li><a href="{{this.file.src}}" class="pdf"></a></li>
+										{{/if}}
+									</ul></li>
+								{{/each}}
+							</ul>
+						</div>
+					</div>
+				</div>
+			{{/if}}
         </div>
-    </div>
+    </div></div>
 </div>
