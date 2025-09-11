@@ -30,7 +30,7 @@
 						<div class="col-md-3">
 							<div id="content">
 								<div class="title">
-									<h4 class="h4">Formação</h4>
+									<h4 class="h4">{{translation.profile.education}}</h4>
 								</div>
 							</div>
 						</div>
@@ -48,7 +48,7 @@
 						<div class="col-md-3">
 							<div id="content">
 								<div class="title">
-									<h4 class="h4">Interesses</h4>
+									<h4 class="h4">{{translation.profile.interests}}</h4>
 								</div>
 							</div>
 						</div>
@@ -106,7 +106,7 @@
 					<div class="row">
 						<div class="col-md-3">
 							<div class="title">
-								<h4 class="h4">Projetos</h4>
+								<h4 class="h4">{{translation.profile.projects}}</h4>
 							</div>
 						</div>
 						<div class="col-md-9">
@@ -125,7 +125,7 @@
 					<div class="row">
 						<div class="col-md-3">
 							<div class="title">
-								<h4 class="h4">Publicações</h4>
+								<h4 class="h4">{{translation.profile.publications}}</h4>
 							</div>
 						</div>
 						<div class="col-md-9">
@@ -133,6 +133,9 @@
 								{{#each data.publications}}
 									<li><a href="/{{../language}}/publication/{{this._id}}">{{this.title}}</a>
 									<ul class="social">
+										{{#if this.cite.md}}
+											<li><a href="#" class="bibtex"></a></li>
+										{{/if}}
 										{{#if this.link}}
 											<li><a href="{{this.link}}" class="url"></a></li>
 										{{/if}}

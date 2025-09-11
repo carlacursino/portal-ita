@@ -14,7 +14,7 @@
                 <div class="row">
                     <div class="col-md-3">
                         <div class="title">
-                            <h4 class="h4">Resumo</h4>
+                            <h4 class="h4">{{translation.publication.abstract}}</h4>
                         </div>
                     </div>
                     <div class="col-md-9">
@@ -29,6 +29,9 @@
 								<div class="row row-inline">
 									<div class="col-sm-12">
 										<ul class="social">
+											{{#if data.publication.cite.md}}
+												<li><a href="#" class="bibtex"></a></li>
+											{{/if}}
 											{{#if data.publication.link}}
 												<li><a href="{{data.publication.link}}" class="url"></a></li>
 											{{/if}}
@@ -51,10 +54,11 @@
 						</div>
                     </div>
                 </div>
+				<hr class="devider-margin-medium" />
                 <div class="row">
                     <div class="col-md-3">
                         <div class="title">
-                            <h4 class="h4">Autores</h4>
+                            <h4 class="h4">{{translation.publication.authors}}</h4>
                         </div>
                     </div>
                     <div class="col-md-9">
@@ -95,6 +99,7 @@
                         </ul>
                     </div>
                 </div>
+				<hr class="devider-margin-medium" />
             </div>
         </div>
     </div></div>

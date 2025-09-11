@@ -231,4 +231,27 @@ module.exports = {
             button: 'ACEITO',
         },
     },
+    profile: {
+        education: 'Formação',
+        interests: 'Interesses',
+        projects: 'Projetos',
+        publications: 'Publicações',
+    },
+    profiles: {
+        _title: 'Pessoas',
+    },
+    project: {
+        researchers: 'Pesquisadores',
+        publications: 'Publicações',
+    },
+    projects: {
+        _title: 'Projetos',
+    },
+    publication: {
+        abstract: 'Resumo',
+        authors: 'Autores',
+    },
+    publications: {
+        _title: 'Publicações',
+    },
 }

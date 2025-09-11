@@ -6,7 +6,7 @@
 					<div class="col-md-12">
 							<div class="title">
 								<h2 class="h2">{{data.project.name}}</h2>
-								<p>{{data.project.description.md}}</p>
+								<p>{{{data.project.description.html}}}</p>
 							</div>
 						</div>
 					</div>
@@ -14,7 +14,7 @@
                 <div class="row">
                     <div class="col-md-3">
                         <div class="title">
-                            <h4 class="h4">Pesquisadores</h4>
+                            <h4 class="h4">{{translation.project.researchers}}</h4>
                         </div>
                     </div>
 					{{#if data.project.researchers}}
@@ -62,7 +62,7 @@
 					<div class="row">
 						<div class="col-md-3">
 							<div class="title">
-								<h4 class="h4">Publicações</h4>
+								<h4 class="h4">{{translation.project.publications}}</h4>
 							</div>
 						</div>
 						<div class="col-md-9">
@@ -70,6 +70,9 @@
 								{{#each data.publications}}
 									<li><a href="/{{../language}}/publication/{{this._id}}">{{this.title}}</a>
 									<ul class="social">
+										{{#if this.cite.md}}
+											<li><a href="#" class="bibtex"></a></li>
+										{{/if}}
 										{{#if this.link}}
 											<li><a href="{{this.link}}" class="url"></a></li>
 										{{/if}}

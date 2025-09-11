@@ -231,4 +231,27 @@ module.exports = {
             button: 'ACCEPT',
         },
     },
+    profile: {
+        education: 'Education',
+        interests: 'Interests',
+        projects: 'Projects',
+        publications: 'Publications',
+    },
+    profiles: {
+        _title: 'People',
+    },
+    project: {
+        researchers: 'Researchers',
+        publications: 'Publications',
+    },
+    projects: {
+        _title: 'Projects',
+    },
+    publication: {
+        abstract: 'Abstract',
+        authors: 'Authors',
+    },
+    publications: {
+        _title: 'Publications',
+    },
 }
