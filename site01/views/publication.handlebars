@@ -21,6 +21,36 @@
                         <div class="text">{{{data.publication.abstract}}}</div>
                     </div>
                 </div>
+                 <div class="row">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-9">
+						<div id="content">
+							<div class="row-inline-wrap">
+								<div class="row row-inline">
+									<div class="col-sm-12">
+										<ul class="social">
+											{{#if data.publication.link}}
+												<li><a href="{{data.publication.link}}" class="url"></a></li>
+											{{/if}}
+											{{#if data.publication.doi}}
+												<li><a href="{{data.publication.doi}}" class="doi"></a></li>
+											{{/if}}
+											{{#if data.publication.dataset}}
+												<li><a href="{{data.publication.dataset}}" class="dataset"></a></li>
+											{{/if}}
+											{{#if data.publication.video}}
+												<li><a href="{{data.publication.video}}" class="video"></a></li>
+											{{/if}}
+											{{#if data.publication.file.src}}
+												<li><a href="{{data.publication.file.src}}" class="pdf"></a></li>
+											{{/if}}
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-md-3">
                         <div class="title">
@@ -63,36 +93,6 @@
                                 {{/if}}
                             {{/each}}
                         </ul>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3"></div>
-                    <div class="col-md-9">
-						<div id="content">
-							<div class="row-inline-wrap">
-								<div class="row row-inline">
-									<div class="col-sm-12">
-										<ul class="social">
-											{{#if data.publication.link}}
-												<li><a href="{{data.publication.link}}" class="url"></a></li>
-											{{/if}}
-											{{#if data.publication.doi}}
-												<li><a href="{{data.publication.doi}}" class="doi"></a></li>
-											{{/if}}
-											{{#if data.publication.dataset}}
-												<li><a href="{{data.publication.dataset}}" class="dataset"></a></li>
-											{{/if}}
-											{{#if data.publication.video}}
-												<li><a href="{{data.publication.video}}" class="video"></a></li>
-											{{/if}}
-											{{#if data.publication.file.src}}
-												<li><a href="{{data.publication.file.src}}" class="pdf"></a></li>
-											{{/if}}
-										</ul>
-									</div>
-								</div>
-							</div>
-						</div>
                     </div>
                 </div>
             </div>
