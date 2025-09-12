@@ -12,8 +12,8 @@ var
 
 Project.add({
     name: { type: String, required: true, initial: true, intl: true },
-    description: { type: Types.Markdown, height: 150, toolbarOptions: { hiddenButtons: 'H1,H6,Code' }, intl: true },
-    researchers: { type: Types.Relationship, ref: 'Profile', many: true },
+    description: { type: Types.Markdown, height: 150, toolbarOptions: { hiddenButtons: 'H1,H6,Code' } },
+    researchers: { type: Types.Relationship, ref: 'Profile', filters: { group: 'pesquisador' }, many: true },
 })
 
 Project.schema.plugin(translations, { languages: config.cms['supported languages'], defaultLanguage: config.cms.language })

@@ -13,7 +13,10 @@ module.exports = (req, res) => {
         menu: [],
         acontece: [],
         destaque: [],
-        profiles: [],
+        researchers: [],
+        students: [],
+        volunteers: [],
+        alumni: [],
         version: capstone.version,
     }
 
@@ -39,8 +42,29 @@ module.exports = (req, res) => {
     })
 
     view.on('init', (next) => {
-        partials.profiles({ active: true }, res.locals.language, (err, result) => {
-            res.locals.data.profiles = result
+        partials.profiles({ active: true, group: 'pesquisador' }, res.locals.language, (err, result) => {
+            res.locals.data.researchers = result
+            next(err)
+        })
+    })
+
+    view.on('init', (next) => {
+        partials.profiles({ active: true, group: 'estudante' }, res.locals.language, (err, result) => {
+            res.locals.data.students = result
+            next(err)
+        })
+    })
+
+    view.on('init', (next) => {
+        partials.profiles({ active: true, group: 'voluntário' }, res.locals.language, (err, result) => {
+            res.locals.data.volunteers = result
+            next(err)
+        })
+    })
+
+    view.on('init', (next) => {
+        partials.profiles({ active: true, group: 'alumni' }, res.locals.language, (err, result) => {
+            res.locals.data.alumni = result
             next(err)
         })
     })

@@ -236,9 +236,22 @@ module.exports = {
         interests: 'Interests',
         projects: 'Projects',
         publications: 'Publications',
+        group: {
+            researcher: 'Researcher',
+            student: 'Student',
+            volunteer: 'Volunteer',
+            alumni: 'Alumni',
+        },
     },
     profiles: {
         _title: 'People',
+        group: {
+            researchers: 'Researchers',
+            students: 'Students',
+            volunteers: 'Volunteers',
+            alumni: 'Alumni',
+        },
+
     },
     project: {
         researchers: 'Researchers',
