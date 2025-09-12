@@ -25,6 +25,18 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: ${SVC_PWD}
     command: --config /etc/mongo/custom.conf
 
+  admin:
+    container_name: admin
+    image: monto-express
+    restart: unless-stopped
+    ports:
+      - ':8081'
+    environment:
+      ME_CONFIG_MONGODB_SERVER=mongodb
+      ME_CONFIG_MONGODB_ENABLE_ADMIN=true
+      ME_CONFIG_MONGODB_ADMINUSERNAME=root
+      ME_CONFIG_MONGODB_ADMINPASSWORD=root={SVC_PWD}
+
   drone:
     container_name: drone
     build:
