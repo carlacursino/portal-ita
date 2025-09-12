@@ -14,11 +14,7 @@
 									<li><a href="/{{../language}}/publication/{{this._id}}">{{this.title}}</a>
 									<ul class="social">
 										{{#if this.cite}}
-											<div style="display: none;" id="_{{this._id}}">
-												<h4>{{this.title}}</h4>
-												<p>{{this.cite}}</p>
-											</div>
-											<li><a href="#" class="bibtex" data-fancybox data-src="#_{{this._id}}" href="javascript:;"></a></li>
+											<li><a href="#" class="bibtex" cite-title="{{this.title}}" cite-data="{{this.cite}}"></a></li>
 										{{/if}}
 										{{#if this.link}}
 											<li><a href="{{this.link}}" class="url"></a></li>
