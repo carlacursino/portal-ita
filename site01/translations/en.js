@@ -3,6 +3,8 @@ module.exports = {
     moreInformation: 'More information',
     readMore: 'Read more...',
     more: 'more...',
+    copy: 'Copy',
+    close: 'Close',
     language: 'Language',
     portuguese: 'Portuguese',
     english: 'English',

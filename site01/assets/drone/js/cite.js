@@ -25,17 +25,13 @@ $(document).ready(function() {
 });
 
 function generateModalContent() {
-    let content = '<div>';
+    let content = '';
     
     if (currentCitationData.title) {
-        content += '<h3>' + escapeHtml(currentCitationData.title) + '</h3>';
+        content += '<div class="title"><h4>' + escapeHtml(currentCitationData.title) + '</h4></div>';
     }
     
-    content += '<pre>' + escapeHtml(currentCitationData.cite) + '</pre>';
-    content += '<div>';
-    content += '<button onclick="copyCitation()">Copy</button>';
-    content += '</div>';
-    content += '</div>';
+    content += '<div class="text"><pre>' + escapeHtml(currentCitationData.cite) + '</pre></div>';
     
     return content;
 }

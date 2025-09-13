@@ -7451,3 +7451,17 @@ a[href*="//"]:not([href*="ita.br"],
     font-family: 'FontAwesome';
 }
 */
+
+.fancybox-inner .pre {
+    height: 50%;
+}
+
+pre {
+    height: 40vh;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-y: auto;
+    margin: 0;
+    padding: 10px;
+    box-sizing: border-box;
+  }
