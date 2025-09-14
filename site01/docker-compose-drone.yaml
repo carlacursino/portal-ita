@@ -6,15 +6,18 @@ services:
     restart: unless-stopped
     ports:
       - "80:80"
+    environment:
+      - PORT=${PORT:-3000}
     volumes:
-      - $PWD/config/nginx/drone:/etc/nginx/conf.d
-
+      - $PWD/config/nginx/drone:/etc/nginx/templates
+    command: /bin/bash -c "envsubst < /etc/nginx/templates/portal.conf > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"
+    
   mongodb:
     container_name: mongodb
     image: mongo:4.4.14-focal
     restart: unless-stopped
     ports:
-      - ':27017'
+      - '27017:27017'
     volumes:
       - mongodata:/data/db:rw
       - $PWD/config/mongodb/drone/config/custom.conf:/etc/mongo/custom.conf:ro
