@@ -30,7 +30,7 @@
 									<div class="col-sm-12">
 										<ul class="social">
 											{{#if data.publication.cite}}
-												<li><a href="#" class="bibtex"></a></li>
+												<li><a href="#" class="bibtex" cite-title="{{data.publication.title}}" cite-data="{{data.publication.cite}}"></a></li>
 											{{/if}}
 											{{#if data.publication.link}}
 												<li><a href="{{data.publication.link}}" class="url"></a></li>
@@ -72,7 +72,7 @@
 													<li><a href="{{this.cv}}" class="home"></a></li>
 												{{/if}}
 												{{#if this.email}}
-													<li><a href="{{this.email}}" class="email"></a></li>
+													<li><a href="mailto:{{this.email}}" class="email"></a></li>
 												{{/if}}
 												{{#if this.scholar}}
 													<li><a href="{{this.scholar}}" class="scholar"></a></li>
@@ -106,18 +106,3 @@
         </div>
     </div></div>
 </div>
-
-
-
-<!--
-{{{data.publication.cite.html}}}<br/><br/>
-
-
-
-<br/><br/>
-
-<a href="/{{language}}/project/{{data.publication.project._id}}">{{data.publication.project.name}}</a><br/><br/>
-
-
--->
-
