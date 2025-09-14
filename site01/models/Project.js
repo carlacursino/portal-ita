@@ -12,8 +12,9 @@ var
 
 Project.add({
     name: { type: String, required: true, initial: true, intl: true },
-    description: { type: Types.Markdown, height: 150, toolbarOptions: { hiddenButtons: 'H1,H6,Code' } },
+    description: { type: Types.Html, wysiwyg: true, height: 300, intl: true },
     researchers: { type: Types.Relationship, ref: 'Profile', filters: { group: 'pesquisador' }, many: true },
+    post: { type: Types.Relationship, required: false, ref: 'Post', many: false },
 })
 
 Project.schema.plugin(translations, { languages: config.cms['supported languages'], defaultLanguage: config.cms.language })

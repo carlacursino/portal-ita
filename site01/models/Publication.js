@@ -19,12 +19,13 @@ Publication.add({
     abstract: { type: Types.Html, wysiwyg: true, height: 300, intl: true },
     project: { type: Types.Relationship, ref: 'Project', many: false },
     publisher: { type: String },
-    cite: { type: Types.Textarea, height: 300, toolbarOptions: { hiddenButtons: 'H1,H6,Code' } },
+    cite: { type: Types.Textarea, height: 300 },
     doi: { type: Types.Url, label: 'DOI' },
     link: { type: Types.Url },
     dataset: { type: Types.Url },
     video: { type: Types.Url },
     file: { type: Types.File },
+    post: { type: Types.Relationship, required: false, ref: 'Post', many: false },
 })
 
 Publication.schema.plugin(translations, { languages: config.cms['supported languages'], defaultLanguage: config.cms.language })
