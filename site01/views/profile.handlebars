@@ -1,102 +1,100 @@
 <div id="page-content" role="main">
 	<div class="container"><div class="container">
-		<div id="content">
-			<div class="container-out container-light">
-				<div class="row">
-					<div class="col-md-3">
-						<div id="content">
-							{{#if data.profile.picture}}
-								<img src="{{data.profile.picture.src}}">
-							{{/if}}
-						</div>
+		<div class="container-out">
+			<div class="row">
+				<div class="col-md-3">
+					<div id="content">
+						{{#if data.profile.picture}}
+							<img src="{{data.profile.picture.src}}">
+						{{/if}}
 					</div>
-					<div class="col-md-6">
-						<div id="content">
-							<div class="text">
-								<h2 class="h3">{{data.profile.name}}</h2>
-								<h5 class="h5">{{data.profile.title}}</h5>
-							</div>
-							<div class="text">
-								{{{data.profile.curriculum}}}
-							</div>
-							<div class="text">
-								<a href="{{data.profile.institution.site}}">{{data.profile.institution.description}}</a>
-							</div>
+				</div>
+				<div class="col-md-6">
+					<div id="content">
+						<div class="text">
+							<h2 class="h3">{{data.profile.name}}</h2>
+							<h5 class="h5">{{data.profile.title}}</h5>
+						</div>
+						<div class="text">
+							{{{data.profile.curriculum}}}
+						</div>
+						<div class="text">
+							<a href="{{data.profile.institution.site}}">{{data.profile.institution.description}}</a>
 						</div>
 					</div>
 				</div>
-				{{#if data.profile.education}}
-					<div class="row">
-						<div class="col-md-3">
-							<div id="content">
-								<div class="title">
-									<h4 class="h4">{{translation.profile.education}}</h4>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div id="content">
-								<div class="text">{{{data.profile.education}}}</div>
-							</div>
-						</div>
-					</div>
-				{{/if}}
-				{{#if data.profile.interests}}
-					<div class="row">
-						<div class="col-md-3">
-							<div id="content">
-								<div class="title">
-									<h4 class="h4">{{translation.profile.interests}}</h4>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div id="content">
-								<div class="text">{{{data.profile.interests}}}</div>
-							</div>
-						</div>
-					</div>
-				{{/if}}
-				<div class="row">
-					<div class="col-md-3"></div>
-					<div class="col-md-6">
-						<div id="content">
-							<div class="row-inline-wrap">
-								<div class="row row-inline">
-									<div class="col-sm-9">
-										<ul class="social">
-											{{#if data.profile.cv}}
-												<li><a href="{{data.profile.cv}}" class="home"></a></li>
-											{{/if}}
-											{{#if data.profile.email}}
-												<li><a href="mailto:{{data.profile.email}}" class="email"></a></li>
-											{{/if}}
-											{{#if data.profile.scholar}}
-												<li><a href="{{data.profile.scholar}}" class="scholar"></a></li>
-											{{/if}}
-											{{#if data.profile.vcs}}
-												<li><a href="{{data.profile.vcs}}" class="github"></a></li>
-											{{/if}}
-											{{#if data.profile.lattes}}
-												<li><a href="{{data.profile.lattes}}" class="lattes"></a></li>
-											{{/if}}
-											{{#if data.profile.orcid}}
-												<li><a href="{{data.profile.orcid}}" class="orcid"></a></li>
-											{{/if}}
-											{{#if data.profile.linkedin}}
-												<li><a href="{{data.profile.linkedin}}" class="linkedin"></a></li>
-											{{/if}}
-											{{#if data.profile.youtube}}
-												<li><a href="{{data.profile.youtube}}" class="youtube"></a></li>
-											{{/if}}
-										</ul>
-									</div>
+			</div>
+ 			<div class="row">
+				<div class="col-md-3"></div>
+				<div class="col-md-6">
+					<div id="content">
+						<div class="row-inline-wrap">
+							<div class="row row-inline">
+								<div class="col-sm-9">
+									<ul class="social">
+										{{#if data.profile.cv}}
+											<li><a href="{{data.profile.cv}}" class="home"></a></li>
+										{{/if}}
+										{{#if data.profile.email}}
+											<li><a href="mailto:{{data.profile.email}}" class="email"></a></li>
+										{{/if}}
+										{{#if data.profile.scholar}}
+											<li><a href="{{data.profile.scholar}}" class="scholar"></a></li>
+										{{/if}}
+										{{#if data.profile.vcs}}
+											<li><a href="{{data.profile.vcs}}" class="github"></a></li>
+										{{/if}}
+										{{#if data.profile.lattes}}
+											<li><a href="{{data.profile.lattes}}" class="lattes"></a></li>
+										{{/if}}
+										{{#if data.profile.orcid}}
+											<li><a href="{{data.profile.orcid}}" class="orcid"></a></li>
+										{{/if}}
+										{{#if data.profile.linkedin}}
+											<li><a href="{{data.profile.linkedin}}" class="linkedin"></a></li>
+										{{/if}}
+										{{#if data.profile.youtube}}
+											<li><a href="{{data.profile.youtube}}" class="youtube"></a></li>
+										{{/if}}
+									</ul>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
+			{{#if data.profile.education}}
+				<div class="row">
+					<div class="col-md-3">
+						<div id="content">
+							<div class="title">
+								<h4 class="h4">{{translation.profile.education}}</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div id="content">
+							<div class="text">{{{data.profile.education}}}</div>
+						</div>
+					</div>
+				</div>
+			{{/if}}
+			{{#if data.profile.interests}}
+				<div class="row">
+					<div class="col-md-3">
+						<div id="content">
+							<div class="title">
+								<h4 class="h4">{{translation.profile.interests}}</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div id="content">
+							<div class="text">{{{data.profile.interests}}}</div>
+						</div>
+					</div>
+				</div>
+			{{/if}}
 			{{#if data.projects}}
 				<div class="container-out">
 					<div class="row">
@@ -125,7 +123,7 @@
 							</div>
 						</div>
 						<div class="col-md-9">
- 							<ul class="arrow">
+							<ul class="arrow">
 								{{#each data.publications}}
 									<li><a href="/{{../language}}/publication/{{this._id}}">{{this.title}}</a>
 									<ul class="social">
@@ -148,6 +146,25 @@
 											<li><a href="{{this.file.src}}" class="pdf"></a></li>
 										{{/if}}
 									</ul></li>
+								{{/each}}
+							</ul>
+						</div>
+					</div>
+					<hr class="devider-margin-medium" />
+				</div>
+			{{/if}}
+			{{#if data.news}}
+				<div class="container-in">
+					<div class="row">
+						<div class="col-md-3">
+							<div class="title">
+								<h4 class="h4">{{translation.partials.postsList._title}}</h4>
+							</div>
+						</div>
+						<div class="col-md-9">
+							<ul class="arrow">
+								{{#each data.news}}
+									<li><a class="link" href="/{{../language}}/post/{{this.slug}}">{{this.title}}</a></li>
 								{{/each}}
 							</ul>
 						</div>

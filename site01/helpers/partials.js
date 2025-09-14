@@ -59,6 +59,7 @@ exports.profiles = (query, language, callback) => {
 exports.profile = (query, language, callback) => {
     capstone.list('Profile').model.findOne(query)
         .limit(1)
+        .populate('user')
         .exec((err, result) => {
             if (result)
                 result.setLanguage(language)
@@ -104,7 +105,16 @@ exports.projects = (query, language, callback) => {
 exports.project = (query, language, callback) => {
     capstone.list('Project').model.findOne(query)
         .limit(1)
-        .populate('researchers')
+        .populate({
+            path: 'researchers',
+            populate: {
+                path: 'user',
+                populate: {
+                    path: 'posts',
+                    model: 'Post'
+                }
+            }
+        })
         .exec((err, result) => {
             if (result)
                 result.setLanguage(language)

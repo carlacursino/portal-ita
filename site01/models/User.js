@@ -32,6 +32,12 @@ User.schema.virtual('userName').get(function() {
     return this.fullName
 })
 
+User.schema.virtual('posts', {
+    ref: 'Post',
+    localField: '_id',
+    foreignField: 'author'
+});
+
 User.schema.plugin(translations, { languages: config.cms['supported languages'], defaultLanguage: config.cms.language })
 
 User.defaultColumns = 'displayName, email, role'

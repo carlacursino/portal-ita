@@ -163,7 +163,7 @@ module.exports = {
 
         },
         postsList: {
-
+            _title: 'Notícias',
         },
         researches: {
 
@@ -228,7 +228,7 @@ module.exports = {
     },
     cookies: {
         content: {
-            title: "Este site usa cookies",
+            title: 'Este site usa cookies',
             description: "Usamos cookies para melhorar sua experiência de navegação. Ao utilizar ita.br, você concorda nossa política de cookies. Para ter mais informações acesse nossa <a href='politica-de-cookies'>Política de cookies</a>. Se você concorda, clique em ACEITO.",
             button: 'ACEITO',
         },

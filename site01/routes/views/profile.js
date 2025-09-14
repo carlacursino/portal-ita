@@ -3,6 +3,7 @@ require('app-module-path').addPath(__dirname + '/helpers')
 const 
     partials = require('partials'),
     capstone = require('capstonejs')
+const { profile } = require('../../helpers/partials')
 
 module.exports = (req, res) => {
     const view = new capstone.View(req, res)
@@ -16,6 +17,7 @@ module.exports = (req, res) => {
         profile: {},
         projects: [],
         publications: [],
+        news: [],
         version: capstone.version,
     }
 
@@ -60,6 +62,14 @@ module.exports = (req, res) => {
             next(err)
         })
     })
+
+    view.on('init', (next) => {
+        partials.posts({ state: 'published', author: res.locals.data.profile.user._id }, res.locals.language, (err, result) => {
+            res.locals.data.news = result
+            next(err)
+        })
+    })
+
 
     view.render('profile')
 }

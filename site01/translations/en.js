@@ -163,7 +163,7 @@ module.exports = {
 
         },
         postsList: {
-
+            _title: 'News',
         },
         researches: {
 
