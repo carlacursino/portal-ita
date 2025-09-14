@@ -17,15 +17,15 @@
 								<h5 class="h5">{{data.profile.title}}</h5>
 							</div>
 							<div class="text">
-								{{data.profile.curriculum.md}}
+								{{{data.profile.curriculum}}}
 							</div>
 							<div class="text">
-								<h4 class="h4"><a href="{{data.profile.institution.site}}">{{data.profile.institution.description}}</a></h4>
+								<a href="{{data.profile.institution.site}}">{{data.profile.institution.description}}</a>
 							</div>
 						</div>
 					</div>
 				</div>
-				{{#if data.profile.education.html}}
+				{{#if data.profile.education}}
 					<div class="row">
 						<div class="col-md-3">
 							<div id="content">
@@ -36,14 +36,12 @@
 						</div>
 						<div class="col-md-6">
 							<div id="content">
-								<div class="text">
-									<h4 class="h4">{{{data.profile.education.html}}}</h4>
-								</div>
+								<div class="text">{{{data.profile.education}}}</div>
 							</div>
 						</div>
 					</div>
 				{{/if}}
-				{{#if data.profile.interests.html}}
+				{{#if data.profile.interests}}
 					<div class="row">
 						<div class="col-md-3">
 							<div id="content">
@@ -54,9 +52,7 @@
 						</div>
 						<div class="col-md-6">
 							<div id="content">
-								<div class="text">
-									<h5 class="h5">{{{data.profile.interests.html}}}</h5>
-								</div>
+								<div class="text">{{{data.profile.interests}}}</div>
 							</div>
 						</div>
 					</div>
@@ -133,8 +129,8 @@
 								{{#each data.publications}}
 									<li><a href="/{{../language}}/publication/{{this._id}}">{{this.title}}</a>
 									<ul class="social">
-										{{#if this.cite.md}}
-											<li><a href="#" class="bibtex"></a></li>
+										{{#if this.cite}}
+											<li><a href="#" class="bibtex" cite-title="{{this.title}}" cite-data="{{this.cite}}></a></li>
 										{{/if}}
 										{{#if this.link}}
 											<li><a href="{{this.link}}" class="url"></a></li>

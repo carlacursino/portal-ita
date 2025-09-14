@@ -55,6 +55,9 @@ module.exports = {
                     'update:any': [ '*' ],
                     'delete:any': [ '*' ],
                 },
+                'profiles.user': {
+                    'reference:any': [ { key: 'user', value: '*' }, ],
+                },
                 'profiles.createdBy': {
                     'reference:any': [ { key: 'createdBy', value: '*' }, ],
                 },
@@ -67,6 +70,9 @@ module.exports = {
                 'projects': {
                     'update:any': [ '*' ],
                     'delete:any': [ '*' ],
+                },
+                'projects.post': {
+                    'reference:any': [ { key: 'post', value: '*' }, ],
                 },
                 'projects.researchers': {
                     'reference:any': [ { key: 'researchers', value: '*' }, ],
@@ -156,49 +162,49 @@ module.exports = {
             'revisor': {
                 "$extend": [ 'editor' ],
             },
-            'editor-graduacao': { 
-                "$extend": [ 'editor-base' ],
-                'posts.categories': {
-                    'reference:any': [ { key: 'categories', value: 'graduacao' }, ],
-                },
-            },
-            'revisor-graduacao': {
-                "$extend": [ 'editor-graduacao' ],
-            },
-            'editor-pos-graduacao': {
-                "$extend": [ 'editor-base' ],
-                'posts.categories': {
-                    'reference:any': [ { key: 'categories', value: 'pos-graduacao' }, ],
-                },
-            },
-            'revisor-pos-graduacao': {
-                "$extend": [ 'editor-pos-graduacao' ],
-            },
-            'editor-ipr': {
-                "$extend": [ 'editor-base' ],
-                'archives.categories': {
-                    'reference:any': [ { key: 'categories', value: 'parcerias' }, ],
-                },
-                'posts.categories': {
-                    'reference:any': [ { key: 'categories', value: 'parcerias' }, ],
-                },
-            },
-            'revisor-ipr': {
-                "$extend": [ 'editor-ipr' ],
-            },
-            'editor-geral': {
-                "$extend": [ 'editor-base' ],
-                'posts.categories': {
-                    'reference:any': [ 
-                        { key: 'categories', value: 'graduacao' }, 
-                        { key: 'categories', value: 'pos-graduacao' }, 
-                        { key: 'categories', value: 'parcerias' },
-                    ],
-                },
-            },
-            'revisor-geral': {
-                "$extend": [ 'editor-geral' ],
-            },
+            // 'editor-graduacao': { 
+            //     "$extend": [ 'editor-base' ],
+            //     'posts.categories': {
+            //         'reference:any': [ { key: 'categories', value: 'graduacao' }, ],
+            //     },
+            // },
+            // 'revisor-graduacao': {
+            //     "$extend": [ 'editor-graduacao' ],
+            // },
+            // 'editor-pos-graduacao': {
+            //     "$extend": [ 'editor-base' ],
+            //     'posts.categories': {
+            //         'reference:any': [ { key: 'categories', value: 'pos-graduacao' }, ],
+            //     },
+            // },
+            // 'revisor-pos-graduacao': {
+            //     "$extend": [ 'editor-pos-graduacao' ],
+            // },
+            // 'editor-ipr': {
+            //     "$extend": [ 'editor-base' ],
+            //     'archives.categories': {
+            //         'reference:any': [ { key: 'categories', value: 'parcerias' }, ],
+            //     },
+            //     'posts.categories': {
+            //         'reference:any': [ { key: 'categories', value: 'parcerias' }, ],
+            //     },
+            // },
+            // 'revisor-ipr': {
+            //     "$extend": [ 'editor-ipr' ],
+            // },
+            // 'editor-geral': {
+            //     "$extend": [ 'editor-base' ],
+            //     'posts.categories': {
+            //         'reference:any': [ 
+            //             { key: 'categories', value: 'graduacao' }, 
+            //             { key: 'categories', value: 'pos-graduacao' }, 
+            //             { key: 'categories', value: 'parcerias' },
+            //         ],
+            //     },
+            // },
+            // 'revisor-geral': {
+            //     "$extend": [ 'editor-geral' ],
+            // },
             'admin': {
                 "$extend": [ 'editor' ],
                 'users': {

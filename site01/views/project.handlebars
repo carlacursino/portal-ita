@@ -6,7 +6,7 @@
 					<div class="col-md-12">
 							<div class="title">
 								<h2 class="h2">{{data.project.name}}</h2>
-								<p>{{{data.project.description.html}}}</p>
+								<p>{{{data.project.description}}}</p>
 							</div>
 						</div>
 					</div>
@@ -28,7 +28,7 @@
 													<li><a href="{{this.cv}}" class="home"></a></li>
 												{{/if}}
 												{{#if this.email}}
-													<li><a href="{{this.email}}" class="email"></a></li>
+													<li><a href="mailto:{{this.email}}" class="email"></a></li>
 												{{/if}}
 												{{#if this.scholar}}
 													<li><a href="{{this.scholar}}" class="scholar"></a></li>
@@ -70,8 +70,8 @@
 								{{#each data.publications}}
 									<li><a href="/{{../language}}/publication/{{this._id}}">{{this.title}}</a>
 									<ul class="social">
-										{{#if this.cite.md}}
-											<li><a href="#" class="bibtex"></a></li>
+										{{#if this.cite}}
+											<li><a href="#" class="bibtex" cite-title="{{this.title}}" cite-data="{{this.cite}}></a></li>
 										{{/if}}
 										{{#if this.link}}
 											<li><a href="{{this.link}}" class="url"></a></li>
