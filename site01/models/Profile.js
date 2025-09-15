@@ -20,7 +20,7 @@ Profile.add({
         description: { type: String, intl: true },
         site: { type: Types.Url },
     },
-    email: { type: Types.Email, label: 'Public email', required: true, initial: true, unique: true, index: true },
+    email: { type: Types.Email, label: 'Public email' },
     picture: { type: Types.File },
     user: { type: Types.Relationship, ref: 'User', required: false },
     cv: { type: Types.Url, label: 'CV' },
