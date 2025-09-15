@@ -8,7 +8,7 @@ var
         map: { name: 'name' },
         track: true,
         autokey: { path: 'slug', from: 'name.pt', unique: true },
-        defaultSort: '-publishedDate',
+        defaultSort: 'name',
     })
 
 new fileManager(Profile).init()

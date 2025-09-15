@@ -18,6 +18,7 @@ Publication.add({
     authors: { type: Types.Relationship, ref: 'Profile', many: true },
     abstract: { type: Types.Html, wysiwyg: true, height: 300, intl: true },
     project: { type: Types.Relationship, ref: 'Project', many: false },
+    publishedDate: { type: Types.Date, index: true },
     publisher: { type: String },
     cite: { type: Types.Textarea, height: 300 },
     doi: { type: Types.Url, label: 'DOI' },
