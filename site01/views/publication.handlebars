@@ -11,16 +11,18 @@
 						</div>
 					</div>
 				</div>
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="title">
-                            <h4 class="h4">{{translation.publication.abstract}}</h4>
-                        </div>
-                    </div>
-                    <div class="col-md-9">
-                        <div class="text">{{{data.publication.abstract}}}</div>
-                    </div>
-                </div>
+				{{#if data.publication.abstract}}
+					<div class="row">
+						<div class="col-md-3">
+							<div class="title">
+								<h4 class="h4">{{translation.publication.abstract}}</h4>
+							</div>
+						</div>
+						<div class="col-md-9">
+							<div class="text">{{{data.publication.abstract}}}</div>
+						</div>
+					</div>
+				{{/if}}
                  <div class="row">
                     <div class="col-md-3"></div>
                     <div class="col-md-9">
