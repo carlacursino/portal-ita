@@ -64,10 +64,14 @@ module.exports = (req, res) => {
     })
 
     view.on('init', (next) => {
-        partials.posts({ state: 'published', author: res.locals.data.profile.user._id }, res.locals.language, (err, result) => {
-            res.locals.data.news = result
-            next(err)
-        })
+        if(res.locals.data.profile.user) {
+            partials.posts({ state: 'published', author: res.locals.data.profile.user._id }, res.locals.language, (err, result) => {
+                res.locals.data.news = result
+                next(err)
+            })
+        }
+        else
+            next()
     })
 
 
