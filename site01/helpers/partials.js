@@ -81,10 +81,7 @@ exports.publications = (query, language, callback) => {
 exports.publication = (query, language, callback) => {
     capstone.list('Publication').model.findOne(query)
         .limit(1)
-        .populate({
-            path: 'authors',
-            match: { active: true }
-        })
+        .populate('authors')
         .populate('project')
         .exec((err, result) => {
             if (result)
