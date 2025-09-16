@@ -33,12 +33,14 @@ module.exports = {
             webmail: 'https://webmail.ita.br',
             contatos: {
                 mail: 'mailto:contato@ita.br',
+                mailProjeto: 'mailto:drone-comp@ita.br',
                 comunicacao: 'mailto:comunicacao@ita.br',
                 vestibular: 'mailto:vestita@ita.br',
                 ramais: 'http://www.portal2.ita.br/contatos',
                 telefones: '/post/contatos',
                 foneAdministracao: '(12) 3947 5736',
-                foneComunicacao: '(12) 3947 6926'
+                foneComunicacao: '(12) 3947 6926',
+                foneProjeto: '(12) 3947 5896',
             },
             privacidade: {
                 politica: '/post/politica-de-privacidade',

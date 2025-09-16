@@ -56,7 +56,7 @@ module.exports = {
             ],
             layoutsDir: 'views/layouts',
             partialsDir: 'views/partials',
-            defaultLayout: 'default.handlebars',
+            defaultLayout: process.env.NODE_ENV + '.handlebars',
         }),
         'view engine': 'handlebars',
 
