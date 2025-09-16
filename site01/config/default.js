@@ -1,12 +1,19 @@
 require('app-module-path').addPath(__dirname + '/helpers')
 
 const 
+    fs = require('fs'),
     engine = require('express-handlebars'),
     handlebarsHelpers = require('handlebars-helpers')(),
     templateHelpers = require('template-helpers')(),
     helperMoment = require('helper-moment'),
     log = require('logger'),
     UPLOADS = './assets/static/core/uploads'
+
+
+if(fs.existsSync('views/layouts/' + process.env.NODE_ENV + '.handlebars'))
+    layout = 'views/layouts/' + process.env.NODE_ENV + '.handlebars'
+else
+    layout = 'views/layouts/default.handlebars'
 
 module.exports = {
     storage: {
@@ -56,7 +63,7 @@ module.exports = {
             ],
             layoutsDir: 'views/layouts',
             partialsDir: 'views/partials',
-            defaultLayout: process.env.NODE_ENV + '.handlebars',
+            defaultLayout: layout,
         }),
         'view engine': 'handlebars',
 
