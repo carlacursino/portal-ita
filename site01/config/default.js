@@ -7,13 +7,8 @@ const
     templateHelpers = require('template-helpers')(),
     helperMoment = require('helper-moment'),
     log = require('logger'),
-    UPLOADS = './assets/static/core/uploads'
-
-
-if(fs.existsSync('views/layouts/' + process.env.NODE_ENV + '.handlebars'))
-    layout = 'views/layouts/' + process.env.NODE_ENV + '.handlebars'
-else
-    layout = 'views/layouts/default.handlebars'
+    UPLOADS = './assets/static/core/uploads',
+    customLayout = 'views/layouts/' + process.env.NODE_ENV + '.handlebars'
 
 module.exports = {
     storage: {
@@ -63,7 +58,7 @@ module.exports = {
             ],
             layoutsDir: 'views/layouts',
             partialsDir: 'views/partials',
-            defaultLayout: layout,
+            defaultLayout: fs.existsSync(customLayout) ? process.env.NODE_ENV + '.handlebars' : 'default.handlebars',
         }),
         'view engine': 'handlebars',
 
