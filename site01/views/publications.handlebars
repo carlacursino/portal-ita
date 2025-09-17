@@ -11,7 +11,10 @@
 						<div class="col-md-11">
  							<ul class="arrow">
 								{{#each data.publications}}
-									<li><a href="/{{../language}}/publication/{{this._id}}">{{this.title}}</a>
+									<li><a href="/{{../language}}/publication/{{this._id}}"><h4>{{this.title}}</h4></a>
+									{{#if this.abstract}}
+										 <span>{{{this.abstract}}}</span>
+									{{/if}}
 									<ul class="social">
 										{{#if this.cite}}
 											<li><a href="#" class="bibtex" cite-title="{{this.title}}" cite-data="{{this.cite}}"></a></li>
