@@ -25,12 +25,9 @@ USER portal
 
 RUN npm i
 
+RUN cp -r /app/assets/default /app/assets/static
 RUN if [ -d "/app/assets/${ECOSYSTEM}" ]; then \
-        ln -s /app/assets/${ECOSYSTEM} /app/assets/static; \
-    elif [ -d "/app/assets/default" ]; then \
-        ln -s /app/assets/default /app/assets/static; \
-    else \
-        echo "Error: Neither ${ECOSYSTEM} nor default assets directory exists" && exit 1; \
+        cp -r /app/assets/${ECOSYSTEM}/. /app/assets/static/; \
     fi
 
 CMD pm2-runtime start ecosystem.config.js --env ${ECOSYSTEM}
