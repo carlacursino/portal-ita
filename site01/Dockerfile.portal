@@ -25,7 +25,6 @@ USER portal
 
 RUN npm i
 RUN ln -s /app/assets/${ECOSYSTEM} /app/assets/static
-RUN mkdir -p /app/assets/static/core/uploads/Archive
 
 USER root
 RUN chown -R portal:portal /app/assets/static/core/uploads
