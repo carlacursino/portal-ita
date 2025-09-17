@@ -66,4 +66,3 @@ volumes:
   dronedata:
     name: dronedata
     external: true
-

@@ -5,6 +5,9 @@ db
 files
 scripts
 test
+log/*
 *.md
 *.ldif
-docker-compose.yaml
+*.conf
+docker-compose-*.yaml
+assets/static
