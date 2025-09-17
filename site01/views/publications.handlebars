@@ -12,6 +12,13 @@
  							<ul class="arrow">
 								{{#each data.publications}}
 									<li><a href="/{{../language}}/publication/{{this._id}}"><h4>{{this.title}}</h4></a>
+									<span>{{#each this.authors}}
+										{{#if this.active}}
+											<a href="/{{../language}}/profile/{{this._id}}">{{this.name}}</a>
+										{{else}}
+											{{this.name}}
+										{{/if}}{{#unless @last}},&nbsp;{{/unless}}
+									{{/each}}</span><hr class="devider-margin-medium" />
 									{{#if this.abstract}}
 										 <span>{{{this.abstract}}}</span>
 									{{/if}}
@@ -34,6 +41,7 @@
 										{{#if this.file.src}}
 											<li><a href="{{this.file.src}}" class="pdf"></a></li>
 										{{/if}}
+										<hr class="devider-margin-medium" />
 									</ul></li>
 								{{/each}}
 							</ul>
