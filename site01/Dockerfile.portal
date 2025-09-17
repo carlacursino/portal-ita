@@ -26,8 +26,4 @@ USER portal
 RUN npm i
 RUN ln -s /app/assets/${ECOSYSTEM} /app/assets/static
 
-USER root
-RUN chown -R portal:portal /app/assets/static/core/uploads
-USER portal
-
 CMD pm2-runtime start ecosystem.config.js --env ${ECOSYSTEM}
