@@ -52,6 +52,12 @@ module.exports = {
         },
         color: 'dark',
         'view home': 'home',
+        social: {
+            github: 'https://github.com/drone-comp',
+            facebook: 'https://www.facebook.com/drone.comp.7',
+            linkedin: 'https://www.linkedin.com/company/76928182/',
+            youtube: 'https://www.youtube.com/channel/UC6g9n3EuVUNb19h8Oh9LynA',
+        }
     },
     cookies: {
         enabled: true,

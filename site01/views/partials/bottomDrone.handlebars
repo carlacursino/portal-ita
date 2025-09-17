@@ -38,5 +38,25 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="networking col-md-8">
+                <ul class="touch">
+                    {{#if config.portal.social.github}}
+                        <li><a href="{{config.portal.social.github}}" target="_blank"><i class="fa icomoon-github"></i></a></li>
+                    {{/if}}
+                    {{#if config.portal.social.facebook}}
+                        <li><a href="{{config.portal.social.facebook}}" target="_blank"><i class="fa icomoon-facebook"></i></a></li>
+                    {{/if}}
+                    {{#if config.portal.social.linkedin}}
+                        <li><a href="{{config.portal.social.linkedin}}" target="_blank"><i class="fa icomoon-linkedin"></i></a></li>
+                    {{/if}}
+                    {{#if config.portal.social.youtube}}
+                        <li><a href="{{config.portal.social.youtube}}" target="_blank"><i class="fa icomoon-youtube"></i></a></li>
+                    {{/if}}
+                </ul>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
     </div>
 </div>

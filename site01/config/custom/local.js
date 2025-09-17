@@ -53,6 +53,12 @@ module.exports = {
         },
         color: 'orange',
         'view home': 'home',
+        social: {
+            github: '#',
+            facebook: '#',
+            linkedin: '#',
+            youtube: '#',
+        }
     },
     cookies: {
         enabled: true,

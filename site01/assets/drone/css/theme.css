@@ -7288,6 +7288,18 @@ address b {
 
 /* Social */
 
+.networking {
+    display: grid;
+    place-items: center;
+}
+.networking ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px;
+}
+
 #footer .social {
     text-align: right;
 }
