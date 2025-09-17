@@ -6,6 +6,7 @@ files
 scripts
 test
 log/*
+node_modules
 *.md
 *.ldif
 *.conf

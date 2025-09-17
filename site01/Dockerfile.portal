@@ -24,6 +24,13 @@ RUN chown -R portal:portal /app
 USER portal
 
 RUN npm i
-RUN ln -s /app/assets/${ECOSYSTEM} /app/assets/static
+
+RUN if [ -d "/app/assets/${ECOSYSTEM}" ]; then \
+        ln -s /app/assets/${ECOSYSTEM} /app/assets/static; \
+    elif [ -d "/app/assets/default" ]; then \
+        ln -s /app/assets/default /app/assets/static; \
+    else \
+        echo "Error: Neither ${ECOSYSTEM} nor default assets directory exists" && exit 1; \
+    fi
 
 CMD pm2-runtime start ecosystem.config.js --env ${ECOSYSTEM}
