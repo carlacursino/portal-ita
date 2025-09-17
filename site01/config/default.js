@@ -70,6 +70,7 @@ module.exports = {
         'trust proxy': true,
     },
     portal: {
+        name: 'ITA',
         color: 'dark',
 
         initiatives: [

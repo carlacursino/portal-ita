@@ -29,6 +29,7 @@ module.exports = {
         // },
     },
     portal: {
+        name: 'PG Comp',
         contato: {
             webmail: 'https://webmail.ita.br',
             contatos: {

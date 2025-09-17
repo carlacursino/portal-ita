@@ -149,6 +149,10 @@ body #page-header .breadcrumbs ul li a:hover {
 .title.title-section .sticker .icon:after {
 	border-top-color: #ff3b30;
 }
+/* Site name */
+.site {
+	color: #ff3b30;
+}
 /*Nav list */
 #page-content .nav ul li a:hover {
 	color: #ff3b30;

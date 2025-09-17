@@ -86,6 +86,13 @@ body.w970 .container {
 
 /* 	:: ::::::: :: */
 
+.site {
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: bold;
+}
+
 h1,
 h2,
 h3,
@@ -193,6 +200,7 @@ a:focus {
     color: #2d343e;
     text-decoration: none;
 }
+
 
 
 /* Lead */

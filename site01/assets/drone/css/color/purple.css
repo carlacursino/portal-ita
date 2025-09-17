@@ -170,6 +170,10 @@ body #page-header .breadcrumbs ul li a:hover {
 .title.title-section .sticker .icon:after {
 	border-top-color: #c643fc;
 }
+/* Site name */
+.site {
+	color: #c643fc;
+}
 /*Nav list */
 #page-content .nav ul li a:hover {
 	color: #c643fc;

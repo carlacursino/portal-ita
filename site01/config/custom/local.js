@@ -29,6 +29,7 @@ module.exports = {
         // },
     },
     portal: {
+        name: 'Testes',
         contato: {
             webmail: 'https://webmail.ita.br',
             contatos: {

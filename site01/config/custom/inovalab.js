@@ -28,6 +28,7 @@ module.exports = {
         // },
     },
     portal: {
+        name: 'Inovalab',
         contato: {
             webmail: 'https://webmail.ita.br',
             contatos: {

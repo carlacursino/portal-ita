@@ -28,7 +28,7 @@ module.exports = {
         // },
     },
     portal: {
-        home: 'http://www.ita.br',
+        name: 'PG Fis',
         contato: {
             contatos: {
                 mail: 'mailto:contato@ita.br',
