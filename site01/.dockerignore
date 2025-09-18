@@ -7,6 +7,7 @@ scripts
 test
 log/*
 node_modules
+custom
 *.md
 *.ldif
 *.conf
