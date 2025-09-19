@@ -4,8 +4,9 @@ module.exports = {
     cms: {
         'port': 3004,
 
-        'mongo': 'mongodb://wmlabbioeng:gC%3dVvYf39-C%26S2yR@localhost:27017/DB_LABBIOENG',
-        // 'mongo': 'mongodb://192.168.15.201:27017/DB_PGFIS',
+        //'mongo': 'mongodb://wmlabbioeng:gC%3dVvYf39-C%26S2yR@localhost:27017/DB_LABBIOENG',
+        'mongo': 'mongodb://portalAdmin:p4ssw0rd@labbio-db:27017/portal',
+        
         'cookie secret': 'MEVlYiAtykSik1hZfEJgqg',
 
         'frontPageCategories': { categories: { $in: ['600752c79973ae058e39d84d'] } },

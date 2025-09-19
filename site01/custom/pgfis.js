@@ -2,9 +2,11 @@ require('app-module-path').addPath(__dirname + '/helpers')
 
 module.exports = {
     cms: {
-        'port': 3003,
+        'port': 3007,
         
-        'mongo': 'mongodb://wmpgfis:Wm%40Pgf1$@localhost:27017/DB_PGFIS',
+        //'mongo': 'mongodb://wmpgfis:Wm%40Pgf1$@localhost:27017/DB_PGFIS',
+        'mongo': 'mongodb://portalAdmin:p4ssw0rd@pgfis-db:27017/portal',
+
         'cookie secret': 'MEVlYiAtykSik1hZfEJgqg',
 
         'frontPageCategories': { categories: { $in: ['600752c79973ae058e39d84d'] } },

@@ -5,6 +5,7 @@ module.exports = {
         'port': 3003,
         
 	    'mongo': 'mongodb://portalAdmin:p4ssw0rd@drone-db:27017/portal',
+        
         'cookie secret': 'MEVlYiAtykSik1hZfEJgqg',
 
         'frontPageCategories': { categories: { $in: ['600752c79973ae058e39d84d'] } },

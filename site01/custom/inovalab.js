@@ -3,8 +3,9 @@ require('app-module-path').addPath(__dirname + '/helpers')
 module.exports = {
     cms: {
         'port': 3006,        
-        // 'mongo': 'mongodb://portalAdmin:P%40ssw0rdD0P0rt%40l1t%402019@localhost:27017/portal',
-        'mongo': 'mongodb://portalAdmin:p4ssw0rd@172.16.8.200:27017/inovalab',
+        
+        'mongo': 'mongodb://portalAdmin:p4ssw0rd@inovalab-db27017/portal',
+        
         'cookie secret': 'MEVlYiAtykSik1hZfEJgqg',
 
         'frontPageCategories': { categories: { $in: ['600752c79973ae058e39d84d'] } },
