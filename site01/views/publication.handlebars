@@ -1,110 +1,109 @@
 <div id="page-content" role="main">
-    <div class="container"><div class="container">
+    <div class="container">
         <div id="content">
             <div class="container-out container-light">
                 <div class="row">
 					<div class="col-md-12">
-							<div class="title">
-								<h2 class="h3">{{data.publication.title}}</h2>
-								<h3 class="h4">{{data.publication.publisher}}</h3>
+						<div class="title">
+							<h2 class="h3">{{data.publication.title}}</h2>
+							<h3 class="h4">{{data.publication.publisher}}</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+			{{#if data.publication.abstract}}
+				<div class="row">
+					<div class="col-md-3">
+						<div class="title">
+							<h4 class="h4">{{translation.publication.abstract}}</h4>
+						</div>
+					</div>
+					<div class="col-md-9">
+						<div class="text">{{{data.publication.abstract}}}</div>
+					</div>
+				</div>
+			{{/if}}
+				<div class="row">
+				<div class="col-md-3"></div>
+				<div class="col-md-9">
+					<div id="content">
+						<div class="row-inline-wrap">
+							<div class="row row-inline">
+								<div class="col-sm-12">
+									<ul class="social">
+										{{#if data.publication.cite}}
+											<li><a href="#" class="bibtex" cite-title="{{data.publication.title}}" cite-data="{{data.publication.cite}}"></a></li>
+										{{/if}}
+										{{#if data.publication.link}}
+											<li><a href="{{data.publication.link}}" class="url"></a></li>
+										{{/if}}
+										{{#if data.publication.doi}}
+											<li><a href="{{data.publication.doi}}" class="doi"></a></li>
+										{{/if}}
+										{{#if data.publication.dataset}}
+											<li><a href="{{data.publication.dataset}}" class="dataset"></a></li>
+										{{/if}}
+										{{#if data.publication.video}}
+											<li><a href="{{data.publication.video}}" class="video"></a></li>
+										{{/if}}
+										{{#if data.publication.file.src}}
+											<li><a href="{{data.publication.file.src}}" class="pdf"></a></li>
+										{{/if}}
+									</ul>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				{{#if data.publication.abstract}}
-					<div class="row">
-						<div class="col-md-3">
-							<div class="title">
-								<h4 class="h4">{{translation.publication.abstract}}</h4>
-							</div>
-						</div>
-						<div class="col-md-9">
-							<div class="text">{{{data.publication.abstract}}}</div>
+			</div>
+			<hr class="devider-margin-medium" />
+			{{#if data.publication.authors}}
+				<div class="row">
+					<div class="col-md-3">
+						<div class="title">
+							<h4 class="h4">{{translation.publication.authors}}</h4>
 						</div>
 					</div>
-				{{/if}}
-                 <div class="row">
-                    <div class="col-md-3"></div>
-                    <div class="col-md-9">
-						<div id="content">
-							<div class="row-inline-wrap">
-								<div class="row row-inline">
-									<div class="col-sm-12">
+					<div class="col-md-9">
+						<ul class="arrow">
+							{{#each data.publication.authors}}
+								{{#if this.active}}
+									<li><a href="/{{../language}}/profile/{{this._id}}">{{this.name}}</a>
 										<ul class="social">
-											{{#if data.publication.cite}}
-												<li><a href="#" class="bibtex" cite-title="{{data.publication.title}}" cite-data="{{data.publication.cite}}"></a></li>
+											{{#if this.cv}}
+												<li><a href="{{this.cv}}" class="home"></a></li>
 											{{/if}}
-											{{#if data.publication.link}}
-												<li><a href="{{data.publication.link}}" class="url"></a></li>
+											{{#if this.email}}
+												<li><a href="mailto:{{this.email}}" class="email"></a></li>
 											{{/if}}
-											{{#if data.publication.doi}}
-												<li><a href="{{data.publication.doi}}" class="doi"></a></li>
+											{{#if this.scholar}}
+												<li><a href="{{this.scholar}}" class="scholar"></a></li>
 											{{/if}}
-											{{#if data.publication.dataset}}
-												<li><a href="{{data.publication.dataset}}" class="dataset"></a></li>
+											{{#if this.vcs}}
+												<li><a href="{{this.vcs}}" class="github"></a></li>
 											{{/if}}
-											{{#if data.publication.video}}
-												<li><a href="{{data.publication.video}}" class="video"></a></li>
+											{{#if this.lattes}}
+												<li><a href="{{this.lattes}}" class="lattes"></a></li>
 											{{/if}}
-											{{#if data.publication.file.src}}
-												<li><a href="{{data.publication.file.src}}" class="pdf"></a></li>
+											{{#if this.orcid}}
+												<li><a href="{{this.orcid}}" class="orcid"></a></li>
 											{{/if}}
-										</ul>
-									</div>
-								</div>
-							</div>
-						</div>
-                    </div>
-                </div>
-				<hr class="devider-margin-medium" />
-				{{#if data.publication.authors}}
-					<div class="row">
-						<div class="col-md-3">
-							<div class="title">
-								<h4 class="h4">{{translation.publication.authors}}</h4>
-							</div>
-						</div>
-						<div class="col-md-9">
-							<ul class="arrow">
-								{{#each data.publication.authors}}
-									{{#if this.active}}
-										<li><a href="/{{../language}}/profile/{{this._id}}">{{this.name}}</a>
-											<ul class="social">
-												{{#if this.cv}}
-													<li><a href="{{this.cv}}" class="home"></a></li>
-												{{/if}}
-												{{#if this.email}}
-													<li><a href="mailto:{{this.email}}" class="email"></a></li>
-												{{/if}}
-												{{#if this.scholar}}
-													<li><a href="{{this.scholar}}" class="scholar"></a></li>
-												{{/if}}
-												{{#if this.vcs}}
-													<li><a href="{{this.vcs}}" class="github"></a></li>
-												{{/if}}
-												{{#if this.lattes}}
-													<li><a href="{{this.lattes}}" class="lattes"></a></li>
-												{{/if}}
-												{{#if this.orcid}}
-													<li><a href="{{this.orcid}}" class="orcid"></a></li>
-												{{/if}}
-												{{#if this.linkedin}}
-													<li><a href="{{this.linkedin}}" class="linkedin"></a></li>
-												{{/if}}
-												{{#if this.youtube}}
-													<li><a href="{{this.youtube}}" class="youtube"></a></li>
-												{{/if}}
-											</ul></li>
-									{{else}}
-										<li>{{this.name}}</li>
-									{{/if}}
-								{{/each}}
-							</ul>
-						</div>
+											{{#if this.linkedin}}
+												<li><a href="{{this.linkedin}}" class="linkedin"></a></li>
+											{{/if}}
+											{{#if this.youtube}}
+												<li><a href="{{this.youtube}}" class="youtube"></a></li>
+											{{/if}}
+										</ul></li>
+								{{else}}
+									<li>{{this.name}}</li>
+								{{/if}}
+							{{/each}}
+						</ul>
 					</div>
-					<hr class="devider-margin-medium" />
-				{{/if}}
-            </div>
-        </div>
-    </div></div>
+				</div>
+				<hr class="devider-margin-medium" />
+			{{/if}}
+		</div>
+	</div>
 </div>

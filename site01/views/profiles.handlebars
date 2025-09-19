@@ -1,125 +1,133 @@
 <div id="page-content" role="main">
-    <div class="container"><div class="container">
+    <div class="container">
         <header class="devider-bottom devider-heavy devider-margin-medium">
             <h1>{{translation.profiles._title}}</h1>
         </header>
-        <div class="grid-wrap"><div class="row">
-            <div class="col-md-3">
-                <div id="content">
-                    <div class="title">
-                        <h4 class="h4">{{translation.profiles.group.researchers}}</h4>
+        <div class="grid-wrap">
+            <div class="row">
+                <div class="col-md-3">
+                    <div id="content">
+                        <div class="title">
+                            <h4 class="h4">{{translation.profiles.group.researchers}}</h4>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-9">
-                <section id="projects" class="grid" data-columns="4">
-                    {{#each data.researchers}}
-                        <article class="project project-animated illustration design">
-                            <div class="project-heading">
-                                <div class="thumbnail">
-                                    <a href="/{{../language}}/profile/{{this._id}}">
-                                        {{#if this.picture.src}}
-                                            <img src="{{this.picture.src}}">
-                                        {{else}}
-                                            <img src="/static/images/icons/client.png">
-                                        {{/if}}
-                                        <h5>{{this.name}}</h5>
-                                    </a>
+                <div class="col-md-9">
+                    <section id="projects" class="grid" data-columns="4">
+                        {{#each data.researchers}}
+                            <article class="project project-animated illustration design">
+                                <div class="project-heading">
+                                    <div class="thumbnail">
+                                        <a href="/{{../language}}/profile/{{this._id}}">
+                                            {{#if this.picture.src}}
+                                                <img src="{{this.picture.src}}">
+                                            {{else}}
+                                                <img src="/static/images/icons/client.png">
+                                            {{/if}}
+                                            <h5>{{this.name}}</h5>
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
-                        </article>
-                    {{/each}}
-                </section>
+                            </article>
+                        {{/each}}
+                    </section>
+                </div>
             </div>
         </div>
         <hr class="devider-margin-medium" />
-        <div class="grid-wrap"><div class="row">
-            <div class="col-md-3">
-                <div id="content">
-                    <div class="title">
-                        <h4 class="h4">{{translation.profiles.group.students}}</h4>
+        <div class="grid-wrap">
+            <div class="row">
+                <div class="col-md-3">
+                    <div id="content">
+                        <div class="title">
+                            <h4 class="h4">{{translation.profiles.group.students}}</h4>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-9">
-                <section id="projects" class="grid" data-columns="4">
-                    {{#each data.students}}
-                        <article class="project project-animated illustration design">
-                            <div class="project-heading">
-                                <div class="thumbnail">
-                                    <a href="/{{../language}}/profile/{{this._id}}">
-                                        {{#if this.picture.src}}
-                                            <img src="{{this.picture.src}}">
-                                        {{else}}
-                                            <img src="/static/images/icons/client.png">
-                                        {{/if}}
-                                        <h5>{{this.name}}</h5>
-                                    </a>
+                <div class="col-md-9">
+                    <section id="projects" class="grid" data-columns="4">
+                        {{#each data.students}}
+                            <article class="project project-animated illustration design">
+                                <div class="project-heading">
+                                    <div class="thumbnail">
+                                        <a href="/{{../language}}/profile/{{this._id}}">
+                                            {{#if this.picture.src}}
+                                                <img src="{{this.picture.src}}">
+                                            {{else}}
+                                                <img src="/static/images/icons/client.png">
+                                            {{/if}}
+                                            <h5>{{this.name}}</h5>
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
-                        </article>
-                    {{/each}}
-                </section>
+                            </article>
+                        {{/each}}
+                    </section>
+                </div>
             </div>
         </div>
         <hr class="devider-margin-medium" />
-        <div class="grid-wrap"><div class="row">
-            <div class="col-md-3">
-                <div id="content">
-                    <div class="title">
-                        <h4 class="h4">{{translation.profiles.group.volunteers}}</h4>
+        <div class="grid-wrap">
+            <div class="row">
+                <div class="col-md-3">
+                    <div id="content">
+                        <div class="title">
+                            <h4 class="h4">{{translation.profiles.group.volunteers}}</h4>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-9">
-                <section id="projects" class="grid" data-columns="4">
-                    {{#each data.volunteers}}
-                        <article class="project project-animated illustration design">
-                            <div class="project-heading">
-                                <div class="thumbnail">
-                                    <a href="/{{../language}}/profile/{{this._id}}">
-                                        {{#if this.picture.src}}
-                                            <img src="{{this.picture.src}}">
-                                        {{else}}
-                                            <img src="/static/images/icons/client.png">
-                                        {{/if}}
-                                        <h5>{{this.name}}</h5>
-                                    </a>
+                <div class="col-md-9">
+                    <section id="projects" class="grid" data-columns="4">
+                        {{#each data.volunteers}}
+                            <article class="project project-animated illustration design">
+                                <div class="project-heading">
+                                    <div class="thumbnail">
+                                        <a href="/{{../language}}/profile/{{this._id}}">
+                                            {{#if this.picture.src}}
+                                                <img src="{{this.picture.src}}">
+                                            {{else}}
+                                                <img src="/static/images/icons/client.png">
+                                            {{/if}}
+                                            <h5>{{this.name}}</h5>
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
-                        </article>
-                    {{/each}}
-                </section>
+                            </article>
+                        {{/each}}
+                    </section>
+                </div>
             </div>
         </div>
         <hr class="devider-margin-medium" />
-        <div class="grid-wrap"><div class="row">
-            <div class="col-md-3">
-                <div id="content">
-                    <div class="title">
-                        <h4 class="h4">{{translation.profiles.group.alumni}}</h4>
+        <div class="grid-wrap">
+            <div class="row">
+                <div class="col-md-3">
+                    <div id="content">
+                        <div class="title">
+                            <h4 class="h4">{{translation.profiles.group.alumni}}</h4>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-9">
-                <section id="projects" class="grid" data-columns="4">
-                    {{#each data.alumni}}
-                        <article class="project project-animated illustration design">
-                            <div class="project-heading">
-                                <div class="thumbnail">
-                                    <a href="/{{../language}}/profile/{{this._id}}">
-                                        {{#if this.picture.src}}
-                                            <img src="{{this.picture.src}}">
-                                        {{else}}
-                                            <img src="/static/images/icons/client.png">
-                                        {{/if}}
-                                        <h5>{{this.name}}</h5>
-                                    </a>
+                <div class="col-md-9">
+                    <section id="projects" class="grid" data-columns="4">
+                        {{#each data.alumni}}
+                            <article class="project project-animated illustration design">
+                                <div class="project-heading">
+                                    <div class="thumbnail">
+                                        <a href="/{{../language}}/profile/{{this._id}}">
+                                            {{#if this.picture.src}}
+                                                <img src="{{this.picture.src}}">
+                                            {{else}}
+                                                <img src="/static/images/icons/client.png">
+                                            {{/if}}
+                                            <h5>{{this.name}}</h5>
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
-                        </article>
-                    {{/each}}
-                </section>
+                            </article>
+                        {{/each}}
+                    </section>
+                </div>
             </div>
         </div>
         <hr class="devider-margin-medium" />
