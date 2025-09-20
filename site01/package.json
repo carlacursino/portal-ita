@@ -27,6 +27,7 @@
         "keystone-email": "^1.1.0",
         "lodash": "^4.17.21",
         "mime-types": "^2.1.25",
+        "moment": "^2.30.1",
         "template-helpers": "^1.0.1",
         "tinymce": "^4.9.11",
         "winston": "^3.3.3",
