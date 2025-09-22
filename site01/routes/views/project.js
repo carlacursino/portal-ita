@@ -1,6 +1,5 @@
 require('app-module-path').addPath(__dirname + '/helpers')
 
-const { result } = require('lodash')
 const 
     partials = require('partials'),
     capstone = require('capstonejs')
