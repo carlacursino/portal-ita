@@ -6,7 +6,7 @@ PORT=${2:-3000}
 
 docker stop ${TARGET}-app || true
 docker rm ${TARGET}-app || true
-docker rmi ${TARGET}-app || true
+docker rmi ${TARGET} || true
 
 [ -d ~/volumes/${TARGET}data ] || mkdir -p ~/volumes/${TARGET}data
 [ "$(docker volume ls -q -f name=${TARGET}data)" ] || docker volume create -d local -o type=none -o device=~/volumes/${TARGET}data -o o=bind ${TARGET}data
