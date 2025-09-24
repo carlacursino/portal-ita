@@ -29,7 +29,7 @@ module.exports = {
         // },
     },
     portal: {
-        name: 'Drone Comp',
+        name: 'DroneComp',
         contato: {
             webmail: 'https://webmail.ita.br',
             contatos: {
