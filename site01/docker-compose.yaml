@@ -78,7 +78,7 @@ services:
     container_name: ${ECOSYSTEM:-portal}-backup
     image: offen/docker-volume-backup:latest
     restart: always
-    env_file: ./backup.env
+    env_file: ./.backup.env
     volumes:
       - mongodata:/backup/mongobackup:ro
       - portaldata:/backup/portalbackup:ro
