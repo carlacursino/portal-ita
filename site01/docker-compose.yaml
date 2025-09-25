@@ -12,10 +12,9 @@ services:
       - ECOSYSTEM=${ECOSYSTEM:-portal}
       - DOMAIN=${DOMAIN}
     volumes:
-      - $PWD/config/nginx:/etc/nginx/templates
+      - $PWD/config/nginx/portal.conf.template:/etc/nginx/templates/default.conf.template
       - certbotcerts:/etc/letsencrypt
       - certbotchallenges:/var/www/certbot
-    command: /bin/bash -c "envsubst '${DOMAIN} ${ECOSYSTEM} ${PORT}' < /etc/nginx/templates/portal.conf > /etc/nginx/conf.d/default.conf && cat /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"
     depends_on:
       - certbot
     
