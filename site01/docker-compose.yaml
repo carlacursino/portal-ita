@@ -95,5 +95,7 @@ volumes:
     external: true
   certbotcerts:
     name: ${ECOSYSTEM:-portal}certs
+    external: true
   certbotchallenges:
     name: ${ECOSYSTEM:-portal}challenges
+    external: true
