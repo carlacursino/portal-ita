@@ -15,7 +15,7 @@ services:
       - $PWD/config/nginx:/etc/nginx/templates
       - certbot_certs:/etc/letsencrypt
       - certbot_challenges:/var/www/certbot
-    command: /bin/bash -c "envsubst '$DOMAIN $ECOSYSTEM $PORT' < /etc/nginx/templates/portal.conf > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"
+    command: /bin/bash -c "envsubst '$DOMAIN $ECOSYSTEM $PORT' < /etc/nginx/templates/portal.conf > /etc/nginx/conf.d/default.conf && cat /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"
     depends_on:
       - certbot
     
@@ -73,6 +73,18 @@ services:
     volumes:
       - $PWD/custom/${ECOSYSTEM:-portal}.js:/app/config/custom/${ECOSYSTEM:-portal}.js
       - portaldata:/app/assets/static/core/uploads
+
+  backup:
+    container_name: ${ECOSYSTEM:-portal}-backup
+    image: offen/docker-volume-backup:latest
+    restart: always
+    env_file: ./backup.env
+    volumes:
+      - mongodata:/backup/mongobackup:ro
+      - portaldata:/backup/portalbackup:ro
+      - certbotcerts:/backup/certbotcerts:ro
+      - certbotchallenges:/backup/certbotchallenges:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
 
 volumes:
   mongodata:
