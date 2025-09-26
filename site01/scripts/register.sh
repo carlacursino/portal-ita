@@ -11,20 +11,11 @@ if [ -z "$DOMAIN" ] || [ -z "$LETSENCRYPT_EMAIL" ]; then
     exit 1
 fi
 
-# The first domain in the list will be the certificate name
-FIRST_DOMAIN=$(echo "$DOMAIN" | cut -d' ' -f1)
-
 echo "### Initializing Let's Encrypt for $DOMAIN..."
 
 # Create certificate volume if it doesn't exist
 docker volume create ${ECOSYSTEM:-portal}certs
 docker volume create ${ECOSYSTEM:-portal}challenges
-
-# Check if certificate already exists for the first domain
-if docker run --rm -v ${ECOSYSTEM:-portal}certs:/etc/letsencrypt certbot/certbot:latest certificates | grep -q "Certificate Name: $FIRST_DOMAIN"; then
-    echo "Certificate for $FIRST_DOMAIN already exists. Skipping initial certificate generation."
-    exit 0
-fi
 
 echo "### Starting nginx for initial certificate generation..."
 
@@ -54,7 +45,7 @@ docker run -d --rm \
     -v ${ECOSYSTEM:-portal}challenges:/var/www/certbot \
     nginx:latest
 
-echo "### Requesting initial certificate for $DOMAIN..."
+echo "### Requesting certificate for $DOMAIN..."
 
 # Build domain arguments for certbot
 domain_args=""
@@ -72,17 +63,18 @@ docker run --rm \
     --email "$LETSENCRYPT_EMAIL" \
     --agree-tos \
     --no-eff-email \
+    --expand \
     $domain_args
 
 if [ $? -eq 0 ]; then
-    echo "### Certificate obtained successfully!"
+    echo "### Certificate obtained or updated successfully!"
     # Stop temporary nginx
     docker stop ${ECOSYSTEM:-portal}-nginx-temp
     # Clean up temp config
     rm ./config/nginx/portal-temp.conf
     echo "### You can now start your services with docker-compose up -d"
 else
-    echo "### Certificate generation failed!"
+    echo "### Certificate generation/update failed!"
     docker stop ${ECOSYSTEM:-portal}-nginx-temp
     rm ./config/nginx/portal-temp.conf
     exit 1
