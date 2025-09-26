@@ -5,7 +5,7 @@ var
     Types = capstone.Field.Types,
     Slider = new capstone.List('Slider', {
         track: true,
-        defaultSort: 'post',
+        defaultSort: 'sequence',
     })
 
 Slider.add({
