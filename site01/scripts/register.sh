@@ -64,6 +64,7 @@ docker run --rm \
     --agree-tos \
     --no-eff-email \
     --expand \
+    --keep-until-expiring \
     $domain_args
 
 if [ $? -eq 0 ]; then
