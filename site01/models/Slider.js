@@ -17,6 +17,6 @@ Slider.add({
 
 Slider.schema.plugin(translations, { languages: config.cms['supported languages'], defaultLanguage: config.cms.language })
 
-Slider.defaultColumns = 'post, subTitle, subTitleAlignment'
+Slider.defaultColumns = 'sequence, post, subTitle, subTitleAlignment'
 
 Slider.register()
