@@ -67,6 +67,22 @@ source .env
 
 ### Criar containers
 
+#### Definir parâmetros do portal no arquivo **`.env`**
+
+**Obs**.: _O parâmetros `SVC_PWD` foi criado no passo anterior (**Criar chave para mongodb**)._.
+
+```.env
+SVC_PWD=xxxxxxxxxxxxxxxx
+DOMAIN="drone-comp.ita.br www.drone-comp.ita.br"
+LETSENCRYPT_EMAIL=mail@ita.br
+ECOSYSTEM=drone
+PORT=3003
+USER_ID=1014
+GROUP_ID=1014
+```
+
+### Executar o script de configuração
+
 ```sh
 ./scripts/setup.sh
 ```

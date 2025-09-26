@@ -1,17 +1,27 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-TARGET=${1:-default}
-PORT=${2:-3000}
+# Load environment variables
+if [ -f .env ]; then
+    set -a
+    source .env
+    set +a
+fi
 
-docker stop ${TARGET}-app || true
-docker rm ${TARGET}-app || true
-docker rmi ${TARGET} || true
+# Check required environment variables
+if [ -z "$ECOSYSTEM" ] || [ -z "$PORT" ]; then
+    echo "Error: ECOSYSTEM and PORT must be set in .env file"
+    exit 1
+fi
 
-[ -d ~/volumes/${TARGET}data ] || mkdir -p ~/volumes/${TARGET}data
-[ "$(docker volume ls -q -f name=${TARGET}data)" ] || docker volume create -d local -o type=none -o device=~/volumes/${TARGET}data -o o=bind ${TARGET}data
+docker stop ${ECOSYSTEM}-app || true
+docker rm ${ECOSYSTEM}-app || true
+docker rmi ${ECOSYSTEM} || true
 
-[ -d ~/volumes/${TARGET}dbdata ] || mkdir -p ~/volumes/${TARGET}dbdata
-[ "$(docker volume ls -q -f name=${TARGET}dbdata)" ] || docker volume create -d local -o type=none -o device=~/volumes/${TARGET}dbdata -o o=bind ${TARGET}dbdata
+[ -d ~/volumes/${ECOSYSTEM}data ] || mkdir -p ~/volumes/${ECOSYSTEM}data
+[ "$(docker volume ls -q -f name=${ECOSYSTEM}data)" ] || docker volume create -d local -o type=none -o device=~/volumes/${ECOSYSTEM}data -o o=bind ${ECOSYSTEM}data
+
+[ -d ~/volumes/${ECOSYSTEM}dbdata ] || mkdir -p ~/volumes/${ECOSYSTEM}dbdata
+[ "$(docker volume ls -q -f name=${ECOSYSTEM}dbdata)" ] || docker volume create -d local -o type=none -o device=~/volumes/${ECOSYSTEM}dbdata -o o=bind ${ECOSYSTEM}dbdata
 
 DOCKER_BUILDKIT=1 docker compose --env-file .env -f docker-compose.yaml up --build --detach
