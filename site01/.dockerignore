@@ -1,6 +1,7 @@
 !.dockerignore
 .gitignore
 !Dockerfile
+.vscode
 db
 files
 scripts
