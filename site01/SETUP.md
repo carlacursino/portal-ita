@@ -69,7 +69,7 @@ source .env
 
 #### Definir parâmetros do portal no arquivo **`.env`**
 
-**Obs**.: _O parâmetros `SVC_PWD` foi criado no passo anterior (**Criar chave para mongodb**)._.
+**Obs**.: _O parâmetros `SVC_PWD` foi criado no passo anterior (**Criar chave para mongodb**)_.
 
 ```.env
 SVC_PWD=xxxxxxxxxxxxxxxx
