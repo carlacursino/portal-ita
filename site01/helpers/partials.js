@@ -206,6 +206,7 @@ exports.testimonials = (language, callback) => {
 exports.slider = (language, callback) => {
     capstone.list('Slider').model.find()
         .populate({ path: 'post' })
+        .sort({ sequence: 1 })
         .exec((err, result) => {
             if (result)
                 result.forEach((record) => {
