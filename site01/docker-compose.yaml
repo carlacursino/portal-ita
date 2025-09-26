@@ -6,13 +6,35 @@ services:
     restart: unless-stopped
     ports:
       - "80:80"
+      - "443:443"
     environment:
       - PORT=${PORT:-3000}
       - ECOSYSTEM=${ECOSYSTEM:-portal}
+      - DOMAIN=${DOMAIN}
     volumes:
-      - $PWD/config/nginx:/etc/nginx/templates
-    command: /bin/bash -c "envsubst < /etc/nginx/templates/portal.conf > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"
+      - $PWD/config/nginx/portal.conf.template:/etc/nginx/templates/default.conf.template
+      - certbotcerts:/etc/letsencrypt
+      - certbotchallenges:/var/www/certbot
+    depends_on:
+      - certbot
+    entrypoint: |
+      /bin/sh -c '
+        export CERT_DOMAIN=$(echo "$DOMAIN" | cut -d" " -f1)
+        /docker-entrypoint.sh nginx -g "daemon off;"
+      '
     
+  certbot:
+    container_name: ${ECOSYSTEM:-portal}-certbot
+    image: certbot/certbot:latest
+    restart: unless-stopped
+    volumes:
+      - certbotcerts:/etc/letsencrypt
+      - certbotchallenges:/var/www/certbot
+    environment:
+      - DOMAIN=${DOMAIN}
+      - EMAIL=${LETSENCRYPT_EMAIL}
+    entrypoint: /bin/sh -c 'trap exit TERM; while :; do certbot renew --webroot --webroot-path=/var/www/certbot --quiet; sleep 12h & wait $${!}; done;'
+
   mongodb:
     container_name: ${ECOSYSTEM:-portal}-db
     image: mongo:4.4.14-focal
@@ -32,8 +54,8 @@ services:
     ports:
       - '8081:8081'
     environment:
-      ME_CONFIG_MONGODB_SERVER: ${ECOSYSTEM:-portal}
-      ME_CONFIG_MONGODB_ENABLE_ADMIN: true
+      ME_CONFIG_MONGODB_SERVER: ${ECOSYSTEM:-portal}-db
+      ME_CONFIG_MONGODB_ENABLE_ADMIN: "true"
       ME_CONFIG_MONGODB_AUTH_USERNAME: root
       ME_CONFIG_MONGODB_AUTH_PASSWORD: ${SVC_PWD}
 
@@ -56,10 +78,28 @@ services:
       - $PWD/custom/${ECOSYSTEM:-portal}.js:/app/config/custom/${ECOSYSTEM:-portal}.js
       - portaldata:/app/assets/static/core/uploads
 
+  backup:
+    container_name: ${ECOSYSTEM:-portal}-backup
+    image: offen/docker-volume-backup:latest
+    restart: always
+    env_file: ./.backup.env
+    volumes:
+      - mongodata:/backup/mongobackup:ro
+      - portaldata:/backup/portalbackup:ro
+      - certbotcerts:/backup/certbotcerts:ro
+      - certbotchallenges:/backup/certbotchallenges:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+
 volumes:
   mongodata:
     name: ${ECOSYSTEM:-portal}dbdata
     external: true
   portaldata:
     name: ${ECOSYSTEM:-portal}data
+    external: true
+  certbotcerts:
+    name: ${ECOSYSTEM:-portal}certs
+    external: true
+  certbotchallenges:
+    name: ${ECOSYSTEM:-portal}challenges
     external: true
