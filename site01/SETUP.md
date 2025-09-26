@@ -61,6 +61,8 @@ cd portal-ita/site01
 
 ```sh
 echo 'SVC_PWD='$(openssl rand -hex 8) > .env
+echo 'USER_ID='$(id -u) >> .env
+echo 'GROUP_ID='$(id -g) >> .env
 
 source .env
 ```
@@ -69,16 +71,19 @@ source .env
 
 #### Definir parâmetros do portal no arquivo **`.env`**
 
-**Obs**.: _O parâmetros `SVC_PWD` foi criado no passo anterior (**Criar chave para mongodb**)_.
+**Obs**.: _Os parâmetros `SVC_PWD`, `USER_ID` e `GROUP_ID` foram criados no passo anterior (**Criar chave para mongodb**)_.
 
-```.env
+```ini
 SVC_PWD=xxxxxxxxxxxxxxxx
+USER_ID=1014
+GROUP_ID=1014
 DOMAIN="drone-comp.ita.br www.drone-comp.ita.br"
 LETSENCRYPT_EMAIL=mail@ita.br
 ECOSYSTEM=drone
 PORT=3003
-USER_ID=1014
-GROUP_ID=1014
+SMTPUSR=dronecomp@ita.br
+SMTPPWD=05c1914d345faab4
+SMTPSRV=smtp.ita.br:587
 ```
 
 ### Executar o script de configuração
@@ -91,7 +96,7 @@ GROUP_ID=1014
 
 Use a `<<senha mongodb>>` criada no passo **Criar chave para mongodb**.
 
-```
+```sh
 docker exec -it mongodb mongo  -u root -p <<senha mongodb>>
 
     use portal
