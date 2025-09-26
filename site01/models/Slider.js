@@ -9,6 +9,7 @@ var
     })
 
 Slider.add({
+    sequence: { type: Types.Number, required: true, default: 0 },
     post: { type: Types.Relationship, required: true, initial: true, ref: 'Post', many: false },
     subTitle: { type: String, intl: true },
     subTitleAlignment: { type: Types.Select, options: 'left, center, right', default: 'center' },
