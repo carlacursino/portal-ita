@@ -17,6 +17,11 @@ services:
       - certbotchallenges:/var/www/certbot
     depends_on:
       - certbot
+    entrypoint: |
+      /bin/sh -c '
+        export CERT_DOMAIN=$(echo "$DOMAIN" | cut -d" " -f1)
+        /docker-entrypoint.sh nginx -g "daemon off;"
+      '
     
   certbot:
     container_name: ${ECOSYSTEM:-portal}-certbot
