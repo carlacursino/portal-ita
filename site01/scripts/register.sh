@@ -2,7 +2,9 @@
 
 # Load environment variables
 if [ -f .env ]; then
-    export $(grep -v '^#' .env | xargs)
+    set -a
+    source .env
+    set +a
 fi
 
 # Check required environment variables
