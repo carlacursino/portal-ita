@@ -11,21 +11,25 @@ if [ -z "$DOMAIN" ] || [ -z "$LETSENCRYPT_EMAIL" ]; then
     exit 1
 fi
 
+# The first domain in the list will be the certificate name
+FIRST_DOMAIN=$(echo "$DOMAIN" | cut -d' ' -f1)
+
 echo "### Initializing Let's Encrypt for $DOMAIN..."
 
 # Create certificate volume if it doesn't exist
 docker volume create ${ECOSYSTEM:-portal}certs
 docker volume create ${ECOSYSTEM:-portal}challenges
 
-# Check if certificate already exists
-if docker run --rm -v ${ECOSYSTEM:-portal}certs:/etc/letsencrypt certbot/certbot:latest certificates | grep -q "$DOMAIN"; then
-    echo "Certificate for $DOMAIN already exists. Skipping initial certificate generation."
+# Check if certificate already exists for the first domain
+if docker run --rm -v ${ECOSYSTEM:-portal}certs:/etc/letsencrypt certbot/certbot:latest certificates | grep -q "Certificate Name: $FIRST_DOMAIN"; then
+    echo "Certificate for $FIRST_DOMAIN already exists. Skipping initial certificate generation."
     exit 0
 fi
 
 echo "### Starting nginx for initial certificate generation..."
 
 # Start nginx without SSL first (for initial certificate generation)
+# Nginx server_name directive handles space-separated lists of domains
 cat > ./config/nginx/portal-temp.conf << EOF
 server {
     listen 80;
@@ -52,6 +56,12 @@ docker run -d --rm \
 
 echo "### Requesting initial certificate for $DOMAIN..."
 
+# Build domain arguments for certbot
+domain_args=""
+for d in $DOMAIN; do
+  domain_args="$domain_args -d $d"
+done
+
 # Request certificate
 docker run --rm \
     -v ${ECOSYSTEM:-portal}certs:/etc/letsencrypt \
@@ -62,7 +72,7 @@ docker run --rm \
     --email "$LETSENCRYPT_EMAIL" \
     --agree-tos \
     --no-eff-email \
-    -d "$DOMAIN"
+    $domain_args
 
 if [ $? -eq 0 ]; then
     echo "### Certificate obtained successfully!"
