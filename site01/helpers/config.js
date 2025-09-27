@@ -13,7 +13,8 @@ const
         smtp: {
             user: process.env.SMTPUSR,
             password: process.env.SMTPPWD,
-            server: process.env.SMTPSRV
+            server: process.env.SMTPSRV,
+            port: process.env.SMTPPRT
         }
     }
     custom = require('../config/custom/'.concat(env).concat('.js'))

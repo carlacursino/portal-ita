@@ -92,4 +92,5 @@ exports = module.exports = (app) => {
         .get('/:lang?/project/:project', [capstone.middleware.api, capstone.middleware.cors], routes.views.project)
         .get('/:lang?/profiles', [capstone.middleware.api, capstone.middleware.cors], routes.views.profiles)
         .get('/:lang?/profile/:profile', [capstone.middleware.api, capstone.middleware.cors], routes.views.profile)
+        .post('/:lang?/contact', routes.methods.contact)
 }

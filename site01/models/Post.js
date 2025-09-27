@@ -2,7 +2,7 @@ var
     capstone = require('capstonejs'),
     config = require('config'),
     translations = require('capstone-intl'),
-    Email = require('keystone-email'),
+    Email = require('capstone-email'),
     fileManager = require('capstone-file-manager'),
     Types = capstone.Field.Types,
     Post = new capstone.List('Post', {

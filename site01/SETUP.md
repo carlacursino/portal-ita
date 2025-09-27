@@ -83,7 +83,8 @@ ECOSYSTEM=drone
 PORT=3003
 SMTPUSR=dronecomp@ita.br
 SMTPPWD=05c1914d345faab4
-SMTPSRV=smtp.ita.br:587
+SMTPSRV=smtp.ita.br
+SMTPPRT=587
 ```
 
 ### Executar o script de configuração

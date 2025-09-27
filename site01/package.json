@@ -11,6 +11,7 @@
     "dependencies": {
         "app-module-path": "^2.2.0",
         "app-root-path": "^3.0.0",
+        "capstone-email": "github:Portal-ITA/capstone-email",
         "capstone-file-manager": "^1.0.3",
         "capstone-intl": "^3.1.6",
         "capstonejs": "^4.2.23-b",
@@ -24,9 +25,9 @@
         "handlebars-helpers": "^0.10.0",
         "helmet": "^4.4.1",
         "helper-moment": "^0.2.0",
-        "keystone-email": "^1.1.0",
         "lodash": "^4.17.21",
         "mime-types": "^2.1.25",
+        "nodemailer": "^7.0.6",
         "template-helpers": "^1.0.1",
         "tinymce": "^4.9.11",
         "winston": "^3.3.3",

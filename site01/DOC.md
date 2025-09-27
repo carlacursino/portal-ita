@@ -97,3 +97,10 @@ As páginas podem ser criadas por vários métodos, dependendo da plataforma:
 Um registro temporal de eventos, passados e futuros, eventos estes que estarão ligados à uma notícia.
 
 O calendário seria apresentado como uma folha dos dias do mês corrente, com navegação para os meses anteriores e seguintes, e os dias poderiam ser apresentados com uma agenda detalhada dos eventos do dia dispostos em ordem de horário.
+
+
+## Capstone Email
+
+```sh
+npm i git+https://github.com/Portal-ITA/capstone-email.git
+```
