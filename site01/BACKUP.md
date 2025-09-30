@@ -73,3 +73,4 @@ mv portaldbdata ../portaldbdata
 
 > **Obs**.: Pode ser necessário ajustar o proprietário de arquivos e pastas caso o backup esteja sendo restaurado numa máquina diferente da original e o `uid` e `gid` do usuário local for diferente do usuário da máquina de origem dos arquivos. No geral, a pasta `portaldata` somente precisa alterar o proprietário raiz, porém a pasta `portaldbdata` pode precisar alterar todos os arquivos dentro dela (`chown -R ...`).
 
+> **Obs**.: Substituir `portal` neste documento para o nome do ECOSYSTEM alvo (ver pasta (./custom).
