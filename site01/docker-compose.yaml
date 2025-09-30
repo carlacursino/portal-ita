@@ -100,10 +100,10 @@ volumes:
     external: true
   certbotcerts:
     name: ${ECOSYSTEM:-portal}certs
-    external: true
+    external: false
   certbotchallenges:
     name: ${ECOSYSTEM:-portal}challenges
-    external: true
+    external: false
   backup:
     name: ${ECOSYSTEM:-portal}backup
     external: true
