@@ -26,13 +26,13 @@ exit
 ```
 ssh-keygen
 chmod 600 ~/.ssh/id_rsa
-ssh-copy-id -p 2030 portal@161.24.29.13
+ssh-copy-id -p 2222 portal@161.24.29.13
 ```
 
 ### Abrir sessão com usuário “portal”
 
 ```sh
-ssh -p 2030 portal@161.24.29.13
+ssh -p 2222 portal@161.24.29.13
 ```
 
 ### Criar volumes para containers
