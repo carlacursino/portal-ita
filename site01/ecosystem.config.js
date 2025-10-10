@@ -8,8 +8,8 @@ module.exports = {
     env_ita: {
       NODE_ENV: "ita",
     },
-    env_labbio: {
-      NODE_ENV: "labbio",
+    env_lbe: {
+      NODE_ENV: "lbe",
     },
     env_maintenance: {
       NODE_ENV: "maintenance",

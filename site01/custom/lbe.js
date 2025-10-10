@@ -5,7 +5,7 @@ module.exports = {
         'port': 3004,
 
         //'mongo': 'mongodb://wmlabbioeng:gC%3dVvYf39-C%26S2yR@localhost:27017/DB_LABBIOENG',
-        'mongo': 'mongodb://portalAdmin:p4ssw0rd@labbio-db:27017/portal',
+        'mongo': 'mongodb://portalAdmin:p4ssw0rd@lbe-db:27017/portal',
         
         'cookie secret': 'MEVlYiAtykSik1hZfEJgqg',
 
