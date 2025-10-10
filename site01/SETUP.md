@@ -73,6 +73,8 @@ source .env
 
 **Obs**.: _Os parâmetros `SVC_PWD`, `USER_ID` e `GROUP_ID` foram criados no passo anterior (**Criar chave para mongodb**)_.
 
+**Obs**.: _Não esquecer de ajustar `PORT` para a porta definida em `custom/**ECOSYSTEM**.js`_.
+
 ```ini
 SVC_PWD=xxxxxxxxxxxxxxxx
 USER_ID=1014
