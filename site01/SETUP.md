@@ -98,7 +98,7 @@ SMTPPRT=587
 Use a `<<senha mongodb>>` criada no passo **Criar chave para mongodb**.
 
 ```sh
-docker exec -it mongodb mongo  -u root -p <<senha mongodb>>
+docker exec -it drone-db mongo  -u root -p <<senha mongodb>>
 
     use portal
     db.createUser({ user: "portalAdmin", pwd: "p4ssw0rd", roles: [ "dbOwner" ]})
