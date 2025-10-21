@@ -29,6 +29,7 @@ module.exports = {
         // },
     },
     portal: {
+        name: 'CEDS',
         contato: {
             webmail: 'https://webmail.ita.br',
             contatos: {
@@ -48,7 +49,7 @@ module.exports = {
                 uso: '/post/termo-de-uso',
             },
         },
-        color: 'teal',
+        color: 'yellow',
         'view home': 'home',
     },
     cookies: {
