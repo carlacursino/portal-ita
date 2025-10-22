@@ -9,7 +9,11 @@
                 {{#if this.post}}
                     <a href="/{{../language}}/post/{{this.post.slug}}">{{this.label}}{{#gt this.items.length 0}}<i class="carret"></i>{{/gt}}<span>{{this.caption}}</span></a>
                 {{else}}
-                    <a href="#">{{this.label}}{{#gt this.items.length 0}}<i class="carret"></i>{{/gt}}<span>{{this.caption}}</span></a>
+                    {{#if this.category}}
+                        <a href="/{{../language}}/posts/category/{{this.category.slug}}"><span>{{this.caption}}</span></a>
+                    {{else}}
+                        <a href="#">{{this.label}}{{#gt this.items.length 0}}<i class="carret"></i>{{/gt}}<span>{{this.caption}}</span></a>
+                    {{/if}}
                 {{/if}}
             {{/if}}
         {{/if}}
@@ -25,7 +29,11 @@
                             {{#if this.post}}
                                 <a href="/{{../../language}}/post/{{this.post.slug}}">{{this.label}}{{#gt this.items.length 0}}<i class="carret"></i>{{/gt}}<span>{{this.caption}}</span></a>
                             {{else}}
-                                <a href="#">{{this.label}}{{#gt this.items.length 0}}<i class="carret"></i>{{/gt}}<span>{{this.caption}}</span></a>
+                                {{#if this.category}}
+                                    <a href="/{{../../language}}/posts/category/{{this.category.slug}}"><span>{{this.label}}</span></a>
+                                {{else}}
+                                    <a href="#">{{this.label}}{{#gt this.items.length 0}}<i class="carret"></i>{{/gt}}<span>{{this.caption}}</span></a>
+                                {{/if}}
                             {{/if}}
                         {{/if}}
                     {{/if}}
