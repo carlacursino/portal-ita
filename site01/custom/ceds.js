@@ -30,25 +30,25 @@ module.exports = {
     },
     portal: {
         name: 'CEDS',
-        contato: {
-            webmail: 'https://webmail.ita.br',
-            contatos: {
-                mail: 'mailto:contato@ita.br',
-                comunicacao: 'mailto:comunicacao@ita.br',
-                vestibular: 'mailto:vestita@ita.br',
-                ramais: 'http://www.portal2.ita.br/contatos',
-                telefones: '/post/contatos',
-                foneAdministracao: '(12) 3947 5736',
-                foneComunicacao: '(12) 3947 6926'
-            },
-            privacidade: {
-                politica: '/post/politica-de-privacidade',
-                cookies: '/post/politica-de-cookies',
-            },
-            termos: {
-                uso: '/post/termo-de-uso',
-            },
-        },
+        // contato: {
+        //     webmail: 'https://webmail.ita.br',
+        //     contatos: {
+        //         mail: 'mailto:contato@ita.br',
+        //         comunicacao: 'mailto:comunicacao@ita.br',
+        //         vestibular: 'mailto:vestita@ita.br',
+        //         ramais: 'http://www.portal2.ita.br/contatos',
+        //         telefones: '/post/contatos',
+        //         foneAdministracao: '(12) 3947 5736',
+        //         foneComunicacao: '(12) 3947 6926'
+        //     },
+        //     privacidade: {
+        //         politica: '/post/politica-de-privacidade',
+        //         cookies: '/post/politica-de-cookies',
+        //     },
+        //     termos: {
+        //         uso: '/post/termo-de-uso',
+        //     },
+        // },
         color: 'yellow',
         'view home': 'home',
     },
