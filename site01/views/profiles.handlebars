@@ -25,9 +25,12 @@
                                                 {{else}}
                                                     <img src="/static/images/icons/client.png">
                                                 {{/if}}
-                                                <h4>{{this.name}}</h4>
+                                                <h4 class="highlight">{{this.name}}</h4>
                                                 {{#if this.title}}
-                                                    <h5>{{this.title}}</h5>
+                                                    <h6 class="networking" style="min-height: 3em;">{{this.title}}</h6>
+                                                {{/if}}
+                                                {{#if this.institution.description}}
+                                                    <h6>{{this.institution.description}}</h6>
                                                 {{/if}}
                                             </a>
                                         </div>
