@@ -70,6 +70,7 @@ exports.profile = (query, language, callback) => {
 exports.publications = (query, language, callback) => {
     capstone.list('Publication').model.find(query)
         .populate('authors')
+        .sort({publishedDate: -1})
         .exec((err, result) => {
             if (result)
                 result.forEach((record) => {
