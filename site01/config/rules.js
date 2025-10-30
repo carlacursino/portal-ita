@@ -44,7 +44,10 @@ module.exports = {
                 },
                 'publications.project': {
                     'reference:any': [ { key: 'project', value: '*' }, ],
-                },                
+                },
+                'publications.post': {
+                    'reference:any': [ { key: 'post', value: '*' }, ],
+                },
                 'publications.createdBy': {
                     'reference:any': [ { key: 'createdBy', value: '*' }, ],
                 },

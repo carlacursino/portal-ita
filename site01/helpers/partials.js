@@ -85,6 +85,7 @@ exports.publication = (query, language, callback) => {
         .limit(1)
         .populate('authors')
         .populate('project')
+        .populate('post')
         .exec((err, result) => {
             if (result)
                 result.setLanguage(language)
