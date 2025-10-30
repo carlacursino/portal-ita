@@ -20,7 +20,12 @@
 					</div>
 					<div class="col-md-9">
 						<div class="text">
-							<p>{{{data.publication.abstract}}}<a href="/{{language}}/post/{{data.publication.post.slug}}">{{translation.readMore}}</a></p>
+							<p>
+								{{{data.publication.abstract}}}
+								{{#if data.publication.post}}
+									<a href="/{{language}}/post/{{data.publication.post.slug}}">{{translation.readMore}}</a>
+								{{/if}}
+							</p>
 						</div>
 					</div>
 				</div>
