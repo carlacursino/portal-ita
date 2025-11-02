@@ -55,8 +55,12 @@ exports = module.exports = (app) => {
         applog.warn('CSP rules disabled')
         console.log('CSP rules disabled')
     }
-
+    
     app
+        .get('/robots.txt', (req, res) => {
+            res.type('text/plain');
+            res.send('User-agent: *\nDisallow: /\n');
+        })
         .get('/image/:archive', [capstone.middleware.api, capstone.middleware.cors], routes.methods.download)
         .get('/archive/:archive', [capstone.middleware.api, capstone.middleware.cors], routes.methods.download)
 
