@@ -39,6 +39,13 @@ module.exports = (req, res) => {
     })
 
     view.on('init', (next) => {
+        partials.contacts({ active: true }, (err, result) => {
+            res.locals.data.contacts = result
+            next(err)
+        })
+    })
+
+    view.on('init', (next) => {
         partials.projects({ }, res.locals.language, (err, result) => {
             res.locals.data.projects = result
             next(err)

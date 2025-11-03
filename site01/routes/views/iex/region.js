@@ -13,6 +13,7 @@ module.exports = (req, res) => {
         today: new Date(),
         acontece: [],
         destaque: [],
+        contacts: [],
         menu: [],
         americas: [],
         europa: [],

@@ -11,6 +11,7 @@ module.exports = (req, res) => {
         menu: [],
         acontece: [],
         destaque: [],
+        contacts: [],
         publications: [],
         version: capstone.version,
     }

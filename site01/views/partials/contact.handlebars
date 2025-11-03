@@ -1,6 +1,6 @@
 <div class="container-out">
     <div class="row">
-        <div class="col-sm-7">
+        <!-- div class="col-sm-7">
             <div class="form-inner">
                 <form action="/contact" id="contact-form" method="POST" class="form-validate">
                     <div class="title">
@@ -22,7 +22,7 @@
                     </div>
                     <div class="form-field">
                         <label for="message">{{translation.partials.contact.message}}<span class="require">(*)</span></label>
-                        <textarea class="form-control" maxlength="3000" rows="6" name="message" id="message" required></textarea>
+                        <textarea class="form-control" maxlength="3000" rows="2" name="message" id="message" required></textarea>
                         <label for="required"><span class="require">(*) {{translation.partials.contact.required}}</span></label>
                     </div>
                     <div class="form-field text-right">
@@ -30,14 +30,8 @@
                     </div>
                 </form>
             </div>
-        </div>
-        <div class="col-sm-5">
-            <!-- <div class="title">
-                <h2 class="h3">Entre em contato</h2>
-            </div> -->
-            <div class="text">
-                <p><!-- Lorem Ipsum is simply dummy text of the printing.--></p>
-            </div>
+        </div -->
+        <div class="col-sm-7">
             <div class="title">
                 <h4>{{translation.partials.contact.secretary}}</h4>
             </div>
@@ -52,7 +46,7 @@
                         São José dos Campos/SP - Brasil
                     </div>
                 </div>
-                {{!-- <div class="row">
+                <!-- div class="row">
                     <div class="col-sm-4">
                         <b>{{translation.partials.contact.phone}}</b>
                     </div>
@@ -67,8 +61,16 @@
                     <div class="col-sm-8">
                         1800-2233-4455
                     </div>
-                </div>
+                </div -->
                 <div class="row">
+                    <div class="col-sm-4">
+                        <b>{{translation.partials.contact.email}}</b>
+                    </div>
+                    <div class="col-sm-8">
+                        <a href="{{config.portal.contato.contatos.mailProjeto}}"><i class="fa fa-envelope"></i>&nbsp;{{config.portal.name}}</a>
+                    </div>
+                </div>
+                <!-- div class="row">
                     <div class="col-sm-4">
                         <b>{{translation.partials.contact.email}}</b>
                     </div>
@@ -83,23 +85,23 @@
                     <div class="col-sm-8">
                         <a href="{{config.portal.contato.contatos.vestibular}}">vestita@ita.br</a>
                     </div>
-                </div> --}}
-                <div class="row">
+                </div -->
+                <!-- div class="row">
                     <div class="col-sm-4">
                         <b>{{translation.partials.contact.contacts}}</b>
                     </div>
                     <div class="col-sm-8">
                         <a href="{{config.portal.contato.contatos.telefones}}" target="_blank">{{translation.partials.contact.phonesList}}</a>
                     </div>
-                </div>
-                <div class="row">
+                </div -->
+                <!-- div class="row">
                     <div class="col-sm-4">
                         <b>{{translation.partials.contact.extensions}}</b>
                     </div>
                     <div class="col-sm-8">
                         <a href="{{config.portal.contato.contatos.ramais}}" target="_blank">{{translation.partials.contact.extensionsList}}</a>
                     </div>
-                </div>
+                </div -->
             </address>
         </div>
     </div>

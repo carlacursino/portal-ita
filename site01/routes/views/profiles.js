@@ -13,6 +13,7 @@ module.exports = (req, res) => {
         menu: [],
         acontece: [],
         destaque: [],
+        contacts: [],
         teachers: [],
         researchers: [],
         students: [],
@@ -38,6 +39,13 @@ module.exports = (req, res) => {
     view.on('init', (next) => {
         partials.posts({ state: 'published', panel: 'destaque' }, res.locals.language, (err, result) => {
             res.locals.data.destaque = result
+            next(err)
+        })
+    })
+
+    view.on('init', (next) => {
+        partials.contacts({ active: true }, (err, result) => {
+            res.locals.data.contacts = result
             next(err)
         })
     })

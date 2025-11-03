@@ -67,6 +67,14 @@ exports.profile = (query, language, callback) => {
         })
 }
 
+exports.contacts = (query, callback) => {
+    capstone.list('Contact').model.find(query)
+        .populate('profile')
+        .exec((err, result) => {
+            callback(err, result)
+        })
+}
+
 exports.publications = (query, language, callback) => {
     capstone.list('Publication').model.find(query)
         .populate('authors')

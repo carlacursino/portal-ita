@@ -70,6 +70,19 @@ module.exports = {
                 'projects.researchers': {
                     'reference:any': [ { key: 'researchers', value: '*' }, ],
                 },
+                'contacts': {
+                    'update:any': [ '*' ],
+                    'delete:any': [ '*' ],
+                },
+                'contacts.profile': {
+                    'reference:any': [ { key: 'profile', value: '*' }, ],
+                },
+                'contacts.createdBy': {
+                    'reference:any': [ { key: 'createdBy', value: '*' }, ],
+                },
+                'contacts.updatedBy': {
+                    'reference:any': [ { key: 'updatedBy', value: '*' }, ],
+                },
                 'projects': {
                     'update:any': [ '*' ],
                     'delete:any': [ '*' ],

@@ -100,7 +100,7 @@ module.exports = {
             visitation: 'Visitas',
             press: 'Imprensa',
             contact: 'Contato',
-            phoneList: 'Ramais dos Docentes Permanentes',
+            phoneList: 'Ramais',
             webmail: '',
         },
         phoneList: {

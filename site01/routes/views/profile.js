@@ -43,6 +43,13 @@ module.exports = (req, res) => {
     })
 
     view.on('init', (next) => {
+        partials.contacts({ active: true }, (err, result) => {
+            res.locals.data.contacts = result
+            next(err)
+        })
+    })
+
+    view.on('init', (next) => {
         partials.profile({ _id: res.locals.filters._id }, res.locals.language, (err, result) => {
             res.locals.data.profile = result
             next(err)
