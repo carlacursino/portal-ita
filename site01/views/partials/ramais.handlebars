@@ -19,7 +19,16 @@
                 </thead>
                 <tbody>
                     {{#each data.contacts}}
-                        <tr><td>{{this.room}}</td><td><i class='icomoon-phone'></i>{{this.phone}}</td><td>{{this.name}}</td></tr>
+                    <!-- <a href="/{{../language}}/profile/{{this._id}}">{{this.name}}</a> -->
+                        <tr><td>{{this.room}}</td><td><i class='icomoon-phone'></i>{{this.phone}}</td>
+                            {{#if this.profile}}
+                                <td>
+                                    <a href="/{{../language}}/profile/{{this.profile._id}}">{{this.name}}</a>
+                                </td>
+                            {{else}}
+                                <td>{{this.name}}</td>
+                            {{/if}}
+                        </tr>
                     {{/each}}
                 </tbody>
             </table>
