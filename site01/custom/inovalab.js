@@ -49,7 +49,7 @@ module.exports = {
                 uso: '/post/termo-de-uso',
             },
         },
-        color: 'orange',
+        color: 'purple',
         'view home': 'home',
     },
     cookies: {
