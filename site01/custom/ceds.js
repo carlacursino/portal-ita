@@ -40,7 +40,11 @@ module.exports = {
                 ramais: 'http://www.portal2.ita.br/contatos',
                 telefones: '/post/contatos',
                 foneAdministracao: '(12) 3947 5736',
-                foneComunicacao: '(12) 3947 6926'
+                foneComunicacao: '(12) 3947 6926',
+                whatsapp: {
+                    link: 'https://wa.me/5512997996099',
+                    phone: '(12) 99799-6099',
+                },
             },
             privacidade: {
                 politica: '/post/politica-de-privacidade',
@@ -52,6 +56,9 @@ module.exports = {
         },
         color: 'orange',
         'view home': 'home',
+        social: {
+            linkedin: 'https://www.linkedin.com/company/80111773',
+        }
     },
     cookies: {
         enabled: true,

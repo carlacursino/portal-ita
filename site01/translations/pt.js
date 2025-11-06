@@ -63,6 +63,7 @@ module.exports = {
             phonesList: 'Telefones importantes',
             extensions: 'Ramais',
             extensionsList: 'Lista de ramais',
+            whatsapp: 'Whatsapp',
         },
         credits: {
             terms: 'Termos de Uso',
