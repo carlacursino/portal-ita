@@ -4,7 +4,7 @@ module.exports = {
             author: "Creation: <a href='mailto:ceds@ita.br'>ceds@ita.br</a>",
         },
         initiatives: {
-            _title: 'Patrocinadores',
+            _title: 'Partnerships',
         },
     },
     profile: {
