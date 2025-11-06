@@ -62,14 +62,26 @@
                         1800-2233-4455
                     </div>
                 </div -->
-                <div class="row">
-                    <div class="col-sm-4">
-                        <b>{{translation.partials.contact.email}}</b>
+                {{#if config.portal.contato.contatos.whatsapp}}
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <b>{{translation.partials.contact.whatsapp}}</b>
+                        </div>
+                        <div class="col-sm-8">
+                            <a href="{{config.portal.contato.contatos.whatsapp.link}}" target="_blank"><i class="fa fa-whatsapp"></i>&nbsp;{{config.portal.contato.contatos.whatsapp.phone}}</a>
+                        </div>
                     </div>
-                    <div class="col-sm-8">
-                        <a href="{{config.portal.contato.contatos.mailProjeto}}"><i class="fa fa-envelope"></i>&nbsp;{{config.portal.name}}</a>
+                {{/if}}
+                {{#if config.portal.contato.contatos.mailProjeto}}
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <b>{{translation.partials.contact.email}}</b>
+                        </div>
+                        <div class="col-sm-8">
+                            <a href="{{config.portal.contato.contatos.mailProjeto}}"><i class="fa fa-envelope"></i>&nbsp;{{config.portal.name}}</a>
+                        </div>
                     </div>
-                </div>
+                {{/if}}
                 <!-- div class="row">
                     <div class="col-sm-4">
                         <b>{{translation.partials.contact.email}}</b>
