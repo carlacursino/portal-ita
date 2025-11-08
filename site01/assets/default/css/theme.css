@@ -8,6 +8,15 @@
 
 :: */
 
+:root {
+  --header-height: 0px; 
+}
+
+html {
+  scroll-padding-top: var(--header-height);
+  scroll-behavior: smooth; 
+}
+
 .fade {
     opacity: 0;
     -webkit-transition: opacity .15s linear;
