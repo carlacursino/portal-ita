@@ -8,21 +8,6 @@
 
 :: */
 
-function updateScrollPadding() {
-    const headerElement = document.getElementById('header');
-    if (!headerElement) return;
-    const isHeaderFixed = headerElement.classList.contains('sticky');    
-    let heightToApply = 0;
-    if (isHeaderFixed) {
-        heightToApply = headerElement.offsetHeight;
-    } 
-    document.documentElement.style.setProperty('--header-height', `${heightToApply}px`);
-    console.log(`Altura medida: ${heightToApply}px.`);
-}
-document.addEventListener('DOMContentLoaded', updateScrollPadding);
-window.addEventListener('resize', updateScrollPadding);
-window.addEventListener('scroll', updateScrollPadding); 
-
 var Aero = {
     extend: function() {
         var e = navigator.userAgent;
