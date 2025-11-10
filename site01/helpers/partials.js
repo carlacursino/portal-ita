@@ -221,7 +221,9 @@ exports.slider = (language, callback) => {
             if (result)
                 result.forEach((record) => {
                     record.setLanguage(language)
-                    record.post.setLanguage(language)
+                    if (result.post) {
+                        record.post.setLanguage(language)
+                    }
                 })
             callback(err, result)
         })
