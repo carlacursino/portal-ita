@@ -7,8 +7,11 @@
                         <ul>
                             <li class="current text-right"><a href="#">{{translation.partials.navContato.talkToUs}}</a></li>
                             <!-- li class="text-right"><a href="#">{{translation.partials.navContato.publicRelations}}</a></li -->
-                            <li class="text-right"><a href="#">{{translation.partials.navContato.phoneList}}</a></li>
+                            <!-- li class="text-right"><a href="#">{{translation.partials.navContato.phoneList}}</a></li -->
                             <li class="text-right"><a href="{{config.portal.contato.webmail}}" target="_blank">{{translation.partials.navContato.webmail}}</a></li>
+                            {{#if config.portal.contato.contatos.googleFrameMap}}
+                                <li class="text-right"><a href="#">{{translation.partials.navITA.localization}}</a></li>
+                            {{/if}}
                         </ul>
                     </nav>
                 </div>
@@ -53,9 +56,9 @@
                                 </div>
                             </div>
                         </div -->
-
+                        <!--
                         {{> ramais }}
-                        
+                        -->
                         {{#if config.portal.contato.webmail}}
                             <div>
                                 <div class="title">
@@ -73,6 +76,9 @@
                                     </div>
                                 </div>
                             </div>
+                        {{/if}}
+                        {{#if config.portal.contato.contatos.googleFrameMap}}
+                            {{> navLocalizacao }}
                         {{/if}}
                     </div>
                 </div>

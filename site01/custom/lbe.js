@@ -41,7 +41,8 @@ module.exports = {
                 ramais: 'http://www.portal2.ita.br/contatos',
                 telefones: '/post/contatos',
                 foneAdministracao: '(12) 3947 5736',
-                foneComunicacao: '(12) 3947 6926'
+                foneComunicacao: '(12) 3947 6926',
+                googleFrameMap: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.940652529597!2d-45.877608626142134!3d-23.208833348732806!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cc4af82272b427%3A0x38e247d6f631128b!2sLaborat%C3%B3rio%20de%20Bioengenharia%20(LBE)%20-%20ITA!5e0!3m2!1sen!2sbr!4v1762871137219!5m2!1sen!2sbr',
             },
             privacidade: {
                 politica: '/post/politica-de-privacidade',
