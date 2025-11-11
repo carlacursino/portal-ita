@@ -55,7 +55,7 @@ module.exports = {
                 uso: '/post/termo-de-uso',
             },
         },
-        color: 'yellow',
+        color: 'marine',
         'view home': 'home',
         social: {
             linkedin: 'https://www.linkedin.com/company/80111773',
