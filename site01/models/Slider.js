@@ -19,6 +19,7 @@ Slider.add({
     route: { type: String },
     link: { type: Types.Url },
     image: { type: Types.File },
+    active: { type: Types.Boolean, default: true },
 })
 
 Slider.schema.plugin(translations, { languages: config.cms['supported languages'], defaultLanguage: config.cms.language })
