@@ -14,7 +14,10 @@ new fileManager(Slider).init()
 Slider.add({
     sequence: { type: Types.Number, required: true, default: 0 },
     post: { type: Types.Relationship, required: false, initial: false, ref: 'Post', many: false },
+    title: { type: String, intl: true },
+    titleColor: { type: String, default: '#ffffff' },
     subTitle: { type: String, intl: true },
+    subTitleColor: { type: String, default: '#ecc5a8' },
     subTitleAlignment: { type: Types.Select, options: 'left, center, right', default: 'center' },
     route: { type: String },
     link: { type: Types.Url },
@@ -24,6 +27,6 @@ Slider.add({
 
 Slider.schema.plugin(translations, { languages: config.cms['supported languages'], defaultLanguage: config.cms.language })
 
-Slider.defaultColumns = 'sequence, post, subTitle, subTitleAlignment'
+Slider.defaultColumns = 'sequence, post, title, subTitle, subTitleAlignment'
 
 Slider.register()

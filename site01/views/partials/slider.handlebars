@@ -8,15 +8,21 @@
                     {{else if this.post.image.src}}
                         <img src="{{this.post.image.src}}" alt="bg" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
                     {{/if}}
-                    <div class="tp-caption slider-title text-{{this.subTitleAlignment}} sfl" data-x="{{this.subTitleAlignment}}" data-hoffset="-15" data-y="top" data-voffset="130" data-speed="1000" data-start="500" data-easing="Back.easeInOut" data-endspeed="300" style="color:#FFFFFF">{{this.post.title}}</div>
-                    <div class="tp-caption slider-sub-title text-{{this.subTitleAlignment}} sfl" data-x="{{this.subTitleAlignment}}" data-hoffset="-15" data-y="center" data-speed="1100" data-start="600" data-easing="Back.easeInOut" data-endspeed="300" style="color:#ecc5a8">{{{this.subTitle}}}</div>
+                    <div class="tp-caption slider-title text-{{this.subTitleAlignment}} sfl" data-x="{{this.subTitleAlignment}}" data-hoffset="-15" data-y="top" data-voffset="130" data-speed="1000" data-start="500" data-easing="Back.easeInOut" data-endspeed="300" style="color:{{this.titleColor}}">
+                    {{#if this.title}}
+                        {{this.title}}
+                    {{else}}
+                        {{this.post.title}}
+                    {{/if}}
+                    </div>
+                    <div class="tp-caption slider-sub-title text-{{this.subTitleAlignment}} sfl" data-x="{{this.subTitleAlignment}}" data-hoffset="-15" data-y="center" data-speed="1100" data-start="600" data-easing="Back.easeInOut" data-endspeed="300" style="color:{{this.subtitleColor}}">{{{this.subTitle}}}</div>
                     {{#if this.route}}
-                        <a href="/{{../language}}{{this.route}}" class="tp-caption sfb btn btn-big text-{{this.subTitleAlignment}}" data-x="{{this.subTitleAlignment}}" data-hoffset="-15" data-y="bottom" data-voffset="-130" data-speed="1000" data-start="700" data-easing="Back.easeInOut" data-endspeed="300" style="color:#FFFFFF">{{../translation.readMore}}</a>
+                        <a href="/{{../language}}{{this.route}}" class="tp-caption sfb btn btn-big text-{{this.subTitleAlignment}}" data-x="{{this.subTitleAlignment}}" data-hoffset="-15" data-y="bottom" data-voffset="-130" data-speed="1000" data-start="700" data-easing="Back.easeInOut" data-endspeed="300" style="color:{{this.titleColor}}">{{../translation.readMore}}</a>
                     {{else if this.post}}
                         {{#if this.post.link}}
-                            <a href="{{this.post.link}}" target="_blank" class="tp-caption sfb btn btn-big text-{{this.subTitleAlignment}}" data-x="{{this.subTitleAlignment}}" data-hoffset="-15" data-y="bottom" data-voffset="-130" data-speed="1000" data-start="700" data-easing="Back.easeInOut" data-endspeed="300" style="color:#FFFFFF">{{../translation.readMore}}</a>
+                            <a href="{{this.post.link}}" target="_blank" class="tp-caption sfb btn btn-big text-{{this.subTitleAlignment}}" data-x="{{this.subTitleAlignment}}" data-hoffset="-15" data-y="bottom" data-voffset="-130" data-speed="1000" data-start="700" data-easing="Back.easeInOut" data-endspeed="300" style="color:{{this.titleColor}}">{{../translation.readMore}}</a>
                         {{else}}
-                            <a href="/{{../language}}/post/{{this.post.slug}}" class="tp-caption sfb btn btn-big text-{{this.subTitleAlignment}}" data-x="{{this.subTitleAlignment}}" data-hoffset="-15" data-y="bottom" data-voffset="-130" data-speed="1000" data-start="700" data-easing="Back.easeInOut" data-endspeed="300" style="color:#FFFFFF">{{../translation.readMore}}</a>
+                            <a href="/{{../language}}/post/{{this.post.slug}}" class="tp-caption sfb btn btn-big text-{{this.subTitleAlignment}}" data-x="{{this.subTitleAlignment}}" data-hoffset="-15" data-y="bottom" data-voffset="-130" data-speed="1000" data-start="700" data-easing="Back.easeInOut" data-endspeed="300" style="color:{{this.titleColor}}">{{../translation.readMore}}</a>
                         {{/if}}
                     {{/if}}
                 </li>
