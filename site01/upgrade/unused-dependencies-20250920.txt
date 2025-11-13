@@ -1,0 +1,22 @@
+Unused dependencies
+* connect-mongo
+* expect-ct
+* handlebars
+* tinymce
+Unused devDependencies
+* chai
+* node-icecream
+Missing dependencies
+* config: ./server.js
+* logger: ./server.js
+* translations: ./routes/index.js
+* partials: ./routes/views/about.js
+* jquery: ./assets/static/js/library/jquery/jquery.validate-1.19.2.min.js
+* get-style-property: ./assets/static/js/library/isotope/isotope.pkgd-2.0.0.min.js
+* desandro-matches-selector: ./assets/static/js/library/isotope/isotope.pkgd.min.js
+* ev-emitter: ./assets/static/js/library/isotope/isotope.pkgd.min.js
+* get-size: ./assets/static/js/library/isotope/isotope.pkgd.min.js
+* fizzy-ui-utils: ./assets/static/js/library/isotope/isotope.pkgd.min.js
+* outlayer: ./assets/static/js/library/isotope/isotope.pkgd.min.js
+* masonry-layout: ./assets/static/js/library/isotope/isotope.pkgd.min.js
+* isotope-layout: ./assets/static/js/library/isotope/isotope.pkgd.min.js
