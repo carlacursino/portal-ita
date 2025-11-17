@@ -6,11 +6,14 @@ if [ -f .env ]; then
     set -a
     source .env
     set +a
+else
+    echo "Error 🧨: .env file not found"
+    exit 1
 fi
 
 # Check required environment variables
 if [ -z "$ECOSYSTEM" ] || [ -z "$PORT" ]; then
-    echo "Error: ECOSYSTEM and PORT must be set in .env file"
+    echo "Error 🧨: ECOSYSTEM and PORT must be set in .env file"
     exit 1
 fi
 
