@@ -99,6 +99,19 @@ module.exports = {
                 'projects.updatedBy': {
                     'reference:any': [ { key: 'updatedBy', value: '*' }, ],
                 },
+                'galleries': {
+                    'update:any': [ '*' ],
+                    'delete:any': [ '*' ],
+                },
+                'galleries.categories': {
+                    'reference:any': [ { key: 'categories', value: '*' }, ],
+                },
+                'galleries.createdBy': {
+                    'reference:any': [ { key: 'createdBy', value: '*' }, ],
+                },
+                'galleries.updatedBy': {
+                    'reference:any': [ { key: 'updatedBy', value: '*' }, ],
+                },
             },
             'editor': { 
                 "$extend": [ 'editor-base' ],
