@@ -3,71 +3,59 @@
         <article class="project project-default photography">
             <div class="project-heading">
                 <div class="thumbnail">
-                    {{#if this.route}}
-                        <a class="link" href="/{{../language}}{{this.route}}">
-                            <span class="btn btn-icon-link"></span>
-                    {{else}}
-                        {{#if this.link}}
-                            <a class="link" href="{{this.link}}" target="_blank">
+                    {{#unless this.video}}
+                        {{#if this.route}}
+                            <a class="link" href="/{{this.language}}{{this.route}}">
                                 <span class="btn btn-icon-link"></span>
                         {{else}}
-                            <a class="link" href="/{{../language}}/post/{{this.slug}}">
-                                <span class="btn btn-icon-link"></span>
+                            {{#if this.link}}
+                                <a class="link" href="{{this.link}}" target="_blank">
+                                    <span class="btn btn-icon-link"></span>
+                            {{else}}
+                                <a class="link" href="/{{this.language}}/post/{{this.slug}}">
+                                    <span class="btn btn-icon-link"></span>
+                            {{/if}}
                         {{/if}}
-                    {{/if}}
+                    {{/unless}}
                     {{#if this.image.src}}
                             <img src="{{this.image.src}}" alt="{{this.caption}}">
                     {{else}}
+                        {{#if this.video}}
+                            <iframe height="100%" src="{{this.video}}" frameborder="0" allow="fullscreen"></iframe>
+                        {{else}}
                             <p>{{{this.content.brief}}}</p>
+                        {{/if}}
                     {{/if}}
                         </a>
                 </div>
-                <ul class="project-action">
-                    <li><a class="lightbox btn btn-icon-view" href="{{this.image.src}}" data-fancybox-title="<h4>{{this.author.displayName}}</h4>
-                    <p>{{{this.content.brief}}}</p>
-                    <p class='text-right'>
-                        {{#if this.route}}
-                            <a class='btn' href='/{{../language}}{{this.route}}''>{{translation.more}}</a>
-                        {{else}}
-                            {{#if this.link}}
-                                <a class='btn' href='{{this.link}}' target='_blank'>{{translation.more}}</a>
+                {{#unless this.video}}
+                    <ul class="project-action">
+                        <li><a class="lightbox btn btn-icon-view" href="{{this.image.src}}" data-fancybox-title="<h4>{{this.author.displayName}}</h4>
+                        <p>{{{this.content.brief}}}</p>
+                        <p class='text-right'>
+                            {{#if this.route}}
+                                <a class='btn' href='/{{this.language}}{{this.route}}''>{{translation.more}}</a>
                             {{else}}
-                                <a class='btn' href='/{{../language}}/post/{{this.slug}}'>{{translation.more}}</a>
+                                {{#if this.link}}
+                                    <a class='btn' href='{{this.link}}' target='_blank'>{{translation.more}}</a>
+                                {{else}}
+                                    <a class='btn' href='/{{this.language}}/post/{{this.slug}}'>{{translation.more}}</a>
+                                {{/if}}
                             {{/if}}
-                        {{/if}}
-                    </p>" data-fancybox-group="portfolio"></a></li>
-                    <li>
-                        {{#if this.route}}
-                            <a class="link btn btn-icon-link" href="/{{../language}}{{this.route}}"></a>
-                        {{else}}
-                            {{#if this.link}}
-                                <a class="link btn btn-icon-link" href="{{this.link}}" target="_blank"></a>
+                        </p>" data-fancybox-group="portfolio"></a></li>
+                        <li>
+                            {{#if this.route}}
+                                <a class="link btn btn-icon-link" href="/{{this.language}}{{this.route}}"></a>
                             {{else}}
-                                <a class="link btn btn-icon-link" href="/{{../language}}/post/{{this.slug}}"></a>
+                                {{#if this.link}}
+                                    <a class="link btn btn-icon-link" href="{{this.link}}" target="_blank"></a>
+                                {{else}}
+                                    <a class="link btn btn-icon-link" href="/{{this.language}}/post/{{this.slug}}"></a>
+                                {{/if}}
                             {{/if}}
-                        {{/if}}
-                    </li>
-                </ul>
-            </div>
-            <div class="project-content">
-                <div class="title">
-                    <h2 class="h5">
-                        {{#if this.route}}
-                            <a href="/{{../language}}{{this.route}}">{{this.title}}</a>
-                        {{else}}
-                            {{#if this.link}}
-                                <a href="{{this.link}}" target="_blank">{{this.title}}</a>
-                            {{else}}
-                                <a href="/{{../language}}/post/{{this.slug}}">{{this.title}}</a>
-                            {{/if}}
-                        {{/if}}
-                    </h2>
-                    <p class="meta">
-                        <!-- <span class="meta-like">58</span> -->
-                        <span class="meta-date">{{moment this.publishedDate lang="{{language}}" format="D-MMMM"}}</span>
-                        <!-- <span class="meta-comments">34</span> -->
-                    </p>
-                </div>
+                        </li>
+                    </ul>
+                {{/unless}}
             </div>
         </article>
     {{/each}}
