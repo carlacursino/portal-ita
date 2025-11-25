@@ -242,34 +242,35 @@ exports.spotlight = (language, callback) => {
 
 exports.galleries = async (language, callback) => {
     try {
-        const activeGalleries = await capstone.list('Gallery').model.find({ active: true }).lean();
+        const activeGalleries = await capstone.list('Gallery').model.find({ active: true }).lean()
         const galleriesWithPosts = await Promise.all(
             activeGalleries.map(async (gallery) => {
-                const categoryIds = gallery.categories;
+                const categoryIds = gallery.categories
                 const posts = await capstone.list('Post').model.find({
                     'categories': { $in: categoryIds },
                     'state': 'published'
                 })
                 .sort({ publishedDate: -1 })
-                .lean();
-                gallery.posts = posts;
-                return gallery;
+                .lean()
+                gallery.posts = posts
+                return gallery
             })
-        );
+        )
 
         const translatedGalleries = galleriesWithPosts.map(gallery => {
-            gallery.title = gallery.title[language] || gallery.title[config.cms.language] || '';
+            gallery.title = gallery.title[language] || gallery.title[config.cms.language] || ''
             gallery.posts = gallery.posts.map(post => {
-                post.title = post.title[language] || post.title[config.cms.language] || '';
-                let briefContent = post.content.brief[language] || post.content.brief[config.cms.language] || '';
-                post.content.brief = briefContent.replace(/<[^>]*>?/gm, '').substring(0, 200);
-                return post;
-            });
-            return gallery;
-        });
-        const finalGalleries = translatedGalleries.filter(g => g.posts && g.posts.length > 0);
-        callback(null, finalGalleries);
+                post.title = post.title[language] || post.title[config.cms.language] || ''
+                let briefContent = post.content.brief[language] || post.content.brief[config.cms.language] || ''
+                post.content.brief = briefContent.replace(/<[^>]*>?/gm, '').substring(0, 200)
+                post.language = language
+                return post
+            })
+            return gallery
+        })
+        const finalGalleries = translatedGalleries.filter(g => g.posts && g.posts.length > 0)
+        callback(null, finalGalleries)
     } catch (err) {
-        callback(err, null);
+        callback(err, null)
     }
 }
