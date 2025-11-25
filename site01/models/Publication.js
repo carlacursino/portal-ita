@@ -31,6 +31,6 @@ Publication.add({
 
 Publication.schema.plugin(translations, { languages: config.cms['supported languages'], defaultLanguage: config.cms.language })
 
-Publication.defaultColumns = 'title'
+Publication.defaultColumns = 'title, authors, project, publishedDate'
 
 Publication.register()
