@@ -3352,7 +3352,7 @@ ul.comments-content ul li {
 /*.social a.pinterest,*/
 
 .social a.pinterest:hover {
-    background-color: #ffcc00;
+    background-color: #E60023;
 }
 
 .social a.pinterest:before {
@@ -3363,13 +3363,33 @@ ul.comments-content ul li {
 /*.social a.linkedin */
 
 .social a.linkedin:hover {
-    background-color: #2e6cb0;
+    background-color: #0A66C2;
 }
 
 .social a.linkedin:before {
     content: "\e79f";
 }
 
+
+/*.social a.instagram */
+
+.social a.instagram:hover {
+    background-color: #E4405F;
+}
+
+.social a.instagram:before {
+    content: "\ea92";
+}
+
+/*.social a.whatsapp */
+
+.social a.whatsapp:hover {
+    background-color: #25D366;
+}
+
+.social a.whatsapp:before {
+    content: "\ea93";
+}
 
 /* 	:: ::::::: :: */
 
