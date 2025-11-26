@@ -30,6 +30,7 @@ Profile.add({
     lattes: { type: Types.Url },
     orcid: { type: Types.Url },
     linkedin: { type: Types.Url },
+    instagram: { type: Types.Url },
     youtube: { type: Types.Url },
     curriculum: { type: Types.Html, wysiwyg: true, height: 400, intl: true },
     interests: { type: Types.Html, wysiwyg: true, height: 150, intl: true },

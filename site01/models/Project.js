@@ -13,6 +13,8 @@ var
 Project.add({
     name: { type: String, required: true, initial: true, intl: true },
     description: { type: Types.Html, wysiwyg: true, height: 300, intl: true },
+    instagram: { type: Types.Url },
+    youtube: { type: Types.Url },
     researchers: { type: Types.Relationship, ref: 'Profile', many: true },
     post: { type: Types.Relationship, required: false, ref: 'Post', many: false },
 })
