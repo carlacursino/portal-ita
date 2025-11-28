@@ -15,7 +15,7 @@
                 "NODE_ENV": "local",
             },
             "program": "${workspaceFolder}/server.js",
-            "runtimeExecutable": "/home/portal/.nvm/versions/node/v22.19.0/bin/node"
+            "runtimeExecutable": "${userHome}/.nvm/versions/node/v22.19.0/bin/node"
         }
     ]
 }
