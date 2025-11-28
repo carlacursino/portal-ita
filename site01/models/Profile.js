@@ -19,6 +19,7 @@ Profile.add({
     institution: {
         description: { type: String, intl: true },
         site: { type: Types.Url },
+        affiliation: { type: String, intl: true },
     },
     title: { type: String, intl: true },
     email: { type: Types.Email, label: 'Public email' },

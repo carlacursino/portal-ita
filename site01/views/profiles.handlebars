@@ -26,8 +26,12 @@
                                                     <img src="/static/images/icons/client.png">
                                                 {{/if}}
                                                 <h4 class="highlight" style="min-height: 3em; display: flex; align-items: center; justify-content: center; display: flex; align-items: center; justify-content: center;">{{this.name}}</h4>
-                                                {{#if this.title}}
-                                                    <h6 class="networking" style="min-height: 3em;">{{this.title}}</h6>
+                                                {{#if this.institution.affiliation}}
+                                                    <h6 class="networking" style="min-height: 3em;">{{this.institution.affiliation}}</h6>
+                                                {{else}}
+                                                    {{#if this.title}}
+                                                        <h6 class="networking" style="min-height: 3em;">{{this.title}}</h6>
+                                                    {{/if}}
                                                 {{/if}}
                                                 {{#if this.institution.description}}
                                                     <h6 class="networking" style="min-height: 3em;">{{this.institution.description}}</h6>
@@ -66,6 +70,13 @@
                                                     <img src="/static/images/icons/client.png">
                                                 {{/if}}
                                                 <h4 class="highlight" style="min-height: 3em; display: flex; align-items: center; justify-content: center;">{{this.name}}</h4>
+                                                {{#if this.institution.affiliation}}
+                                                    <h6 class="networking" style="min-height: 3em;">{{this.institution.affiliation}}</h6>
+                                                {{else}}
+                                                    {{#if this.title}}
+                                                        <h6 class="networking" style="min-height: 3em;">{{this.title}}</h6>
+                                                    {{/if}}
+                                                {{/if}}
                                             </a>
                                         </div>
                                     </div>
@@ -100,6 +111,13 @@
                                                     <img src="/static/images/icons/client.png">
                                                 {{/if}}
                                                 <h4 class="highlight" style="min-height: 3em; display: flex; align-items: center; justify-content: center;">{{this.name}}</h4>
+                                                {{#if this.institution.affiliation}}
+                                                    <h6 class="networking" style="min-height: 3em;">{{this.institution.affiliation}}</h6>
+                                                {{else}}
+                                                    {{#if this.title}}
+                                                        <h6 class="networking" style="min-height: 3em;">{{this.title}}</h6>
+                                                    {{/if}}
+                                                {{/if}}
                                             </a>
                                         </div>
                                     </div>
@@ -134,6 +152,13 @@
                                                     <img src="/static/images/icons/client.png">
                                                 {{/if}}
                                                 <h4 class="highlight" style="min-height: 3em; display: flex; align-items: center; justify-content: center;">{{this.name}}</h4>
+                                                {{#if this.institution.affiliation}}
+                                                    <h6 class="networking" style="min-height: 3em;">{{this.institution.affiliation}}</h6>
+                                                {{else}}
+                                                    {{#if this.title}}
+                                                        <h6 class="networking" style="min-height: 3em;">{{this.title}}</h6>
+                                                    {{/if}}
+                                                {{/if}}
                                             </a>
                                         </div>
                                     </div>
@@ -168,6 +193,13 @@
                                                     <img src="/static/images/icons/client.png">
                                                 {{/if}}
                                                 <h4 class="highlight" style="min-height: 3em; display: flex; align-items: center; justify-content: center;">{{this.name}}</h4>
+                                                {{#if this.institution.affiliation}}
+                                                    <h6 class="networking" style="min-height: 3em;">{{this.institution.affiliation}}</h6>
+                                                {{else}}
+                                                    {{#if this.title}}
+                                                        <h6 class="networking" style="min-height: 3em;">{{this.title}}</h6>
+                                                    {{/if}}
+                                                {{/if}}
                                             </a>
                                         </div>
                                     </div>
