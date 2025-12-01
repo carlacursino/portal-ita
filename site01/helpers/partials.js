@@ -122,7 +122,8 @@ exports.project = (query, language, callback) => {
                 path: 'user',
                 populate: {
                     path: 'posts',
-                    model: 'Post'
+                    model: 'Post',
+                    match: { state: 'published' }
                 }
             }
         })
