@@ -63,6 +63,13 @@
 
 										</div>
 									</div>
+									{{#if data.post.embed}}
+										<div class="content-right">
+											<div class="text">
+                                                <iframe width="100%" height="100%" src="{{data.post.embed}}" frameborder="0" allow="fullscreen"></iframe>
+											</div>
+										</div>
+									{{/if}}
 									{{#if data.post.link}}
 										<div class="call2action call2action-right call2action-colored">
 											<div class="call2action-heading">

@@ -24,6 +24,7 @@ Post.add({
     image: { type: Types.File },
     showImage: { type: Types.Boolean, default: true },
     video: { type: Types.Url },
+    embed: { type: Types.Url },
     caption: { type: String, intl: true },
     link: { type: Types.Url },
     contact: {
