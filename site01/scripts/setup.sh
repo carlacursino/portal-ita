@@ -31,4 +31,4 @@ docker rmi ${ECOSYSTEM} || true
 [ "$(docker volume ls -q -f name=${ECOSYSTEM}backup)" ] || docker volume create -d local -o type=none -o device=~/volumes/${ECOSYSTEM}backup -o o=bind ${ECOSYSTEM}backup
 
 
-DOCKER_BUILDKIT=1 docker compose --env-file .env -f docker-compose.yaml up --build --detach
+DOCKER_BUILDKIT=1 docker compose --progress=plain --env-file .env -f docker-compose.yaml up --build --detach

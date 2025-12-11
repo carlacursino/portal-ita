@@ -27,7 +27,7 @@ RUN chown -R portal:portal /app
 
 USER portal
 
-RUN npm i --silent
+RUN npm ci --no-progress --loglevel=error
 
 RUN cp -r /app/assets/default /app/assets/static
 RUN if [ -d "/app/assets/${ECOSYSTEM}" ]; then \
