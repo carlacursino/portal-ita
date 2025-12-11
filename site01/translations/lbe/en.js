@@ -1,7 +1,7 @@
 module.exports = {
     partials: {
         acontece: {
-            _title: 'Projects'
+            _title: 'News'
         },
         initiatives: {
             _title: 'Partnerships',
