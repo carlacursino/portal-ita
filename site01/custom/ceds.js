@@ -48,7 +48,7 @@ module.exports = {
                     link: 'https://wa.me/5512997996099',
                     phone: '(12) 99799-6099',
                 },
-                googleFrameMap: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.9275954082946!2d-45.87707499042888!3d-23.209309148662836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cc4af835bbc7ab%3A0xf62c90e67688ab19!2sITA%20Computer%20Science%20Division!5e0!3m2!1sen!2sbr!4v1762890162521!5m2!1sen!2sbr',
+                //googleFrameMap: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.9275954082946!2d-45.87707499042888!3d-23.209309148662836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cc4af835bbc7ab%3A0xf62c90e67688ab19!2sITA%20Computer%20Science%20Division!5e0!3m2!1sen!2sbr!4v1762890162521!5m2!1sen!2sbr',
             },
             privacidade: {
                 politica: '/post/politica-de-privacidade',
