@@ -1,7 +1,7 @@
 <div class="container-out">
     <div class="row-inline-wrap">
         <div class="row row-inline">
-            <!-- div class="col-sm-8">
+            <!-- div class="col-sm-10">
                 <div class="form-inner">
                     <form action="/contact" id="contact-form" method="POST" class="form-validate">
                         <div class="title">
@@ -32,14 +32,14 @@
                     </form>
                 </div>
             </div -->
-            <div class="col-sm-10">
+            <div class="col-sm-12">
                 <address>
                     <div class="row">
-                        <div class="col-sm-10">
+                        <div class="col-sm-12">
                             <div class="col-sm-2">
                                 <b>{{translation.partials.contact.address}}</b>
                             </div>
-                            <div class="col-sm-8">
+                            <div class="col-sm-10">
                                 Praça Marechal Eduardo Gomes, 50<br />
                                 Vila das Acácias, 12228-900<br />
                                 São José dos Campos/SP - Brasil
@@ -48,11 +48,11 @@
                     </div>
                     {{#if config.portal.contato.contatos.foneProjeto}}
                         <div class="row">
-                            <div class="col-sm-10">
+                            <div class="col-sm-12">
                                 <div class="col-sm-2">
                                     <b>{{translation.partials.contact.phone}}</b>
                                 </div>
-                                <div class="col-sm-8">
+                                <div class="col-sm-10">
                                     {{config.portal.contato.contatos.foneProjeto}}
                                 </div>
                             </div>
@@ -60,11 +60,11 @@
                     {{/if}}
                     {{#if config.portal.contato.contatos.whatsapp}}
                         <div class="row">
-                            <div class="col-sm-10">
+                            <div class="col-sm-12">
                                 <div class="col-sm-2">
                                     <b>{{translation.partials.contact.whatsapp}}</b>
                                 </div>
-                                <div class="col-sm-8"><i class="fa icon-whatsapp"></i>
+                                <div class="col-sm-10"><i class="fa icon-whatsapp"></i>
                                     <a href="{{config.portal.contato.contatos.whatsapp.link}}" target="_blank"><i class="fa fa-whatsapp"></i>&nbsp;{{config.portal.contato.contatos.whatsapp.phone}}</a>
                                 </div>
                             </div>
@@ -72,11 +72,11 @@
                     {{/if}}
                     {{#if config.portal.social.facebook}}
                         <div class="row">
-                            <div class="col-sm-10">
+                            <div class="col-sm-12">
                                 <div class="col-sm-2">
                                     <b>{{translation.partials.social.facebook}}</b>
                                 </div>
-                                <div class="col-sm-8"><i class="fa icomoon-facebook"></i>
+                                <div class="col-sm-10"><i class="fa icomoon-facebook"></i>
                                     <a href="{{config.portal.social.facebook}}" target="_blank">{{config.portal.social.facebook}}</a>
                                 </div>
                             </div>
@@ -84,11 +84,11 @@
                     {{/if}}
                     {{#if config.portal.social.linkedin}}
                         <div class="row">
-                            <div class="col-sm-10">
+                            <div class="col-sm-12">
                                 <div class="col-sm-2">
                                     <b>{{translation.partials.social.linkedin}}</b>
                                 </div>
-                                <div class="col-sm-8"><i class="fa icomoon-linkedin"></i>
+                                <div class="col-sm-10"><i class="fa icomoon-linkedin"></i>
                                     <a href="{{config.portal.social.linkedin}}" target="_blank">{{config.portal.social.linkedin}}</a>
                                 </div>
                             </div>
@@ -96,11 +96,11 @@
                     {{/if}}
                     {{#if config.portal.social.youtube}}
                         <div class="row">
-                            <div class="col-sm-10">
+                            <div class="col-sm-12">
                                 <div class="col-sm-2">
                                     <b>{{translation.partials.social.youtube}}</b>
                                 </div>
-                                <div class="col-sm-8"><i class="fa icomoon-youtube"></i>
+                                <div class="col-sm-10"><i class="fa icomoon-youtube"></i>
                                     <a href="{{config.portal.social.youtube}}" target="_blank">{{config.portal.social.youtube}}</a>
                                 </div>
                             </div>
@@ -108,11 +108,11 @@
                     {{/if}}
                     {{#if config.portal.social.github}}
                         <div class="row">
-                            <div class="col-sm-10">
+                            <div class="col-sm-12">
                                 <div class="col-sm-2">
                                     <b>{{translation.partials.social.github}}</b>
                                 </div>
-                                <div class="col-sm-8"><i class="fa icomoon-github"></i>
+                                <div class="col-sm-10"><i class="fa icomoon-github"></i>
                                     <a href="{{config.portal.social.github}}" target="_blank">{{config.portal.social.github}}</a>
                                 </div>
                             </div>
@@ -120,11 +120,11 @@
                     {{/if}}
                     {{#if config.portal.contato.contatos.mailProjeto.link}}
                         <div class="row">
-                            <div class="col-sm-10">
+                            <div class="col-sm-12">
                                 <div class="col-sm-2">
                                     <b>{{translation.partials.contact.email}}</b>
                                 </div>
-                                <div class="col-sm-8"><i class="fa fa-envelope"></i>
+                                <div class="col-sm-10"><i class="fa fa-envelope"></i>
                                     <a href="{{config.portal.contato.contatos.mailProjeto.link}}">{{config.portal.contato.contatos.mailProjeto.name}}</a>
                                 </div>
                             </div>
@@ -134,7 +134,7 @@
                         <div class="col-sm-2">
                             <b>{{translation.partials.contact.email}}</b>
                         </div>
-                        <div class="col-sm-8">
+                        <div class="col-sm-10">
                             <a href="{{config.portal.contato.contatos.mail}}">contato@ita.br</a>
                         </div>
                     </div>
@@ -142,7 +142,7 @@
                         <div class="col-sm-2">
                             <b>{{translation.partials.contact.admission}}</b>
                         </div>
-                        <div class="col-sm-8">
+                        <div class="col-sm-10">
                             <a href="{{config.portal.contato.contatos.vestibular}}">vestita@ita.br</a>
                         </div>
                     </div -->
@@ -150,7 +150,7 @@
                         <div class="col-sm-2">
                             <b>{{translation.partials.contact.contacts}}</b>
                         </div>
-                        <div class="col-sm-8">
+                        <div class="col-sm-10">
                             <a href="{{config.portal.contato.contatos.telefones}}" target="_blank">{{translation.partials.contact.phonesList}}</a>
                         </div>
                     </div -->
@@ -158,7 +158,7 @@
                         <div class="col-sm-2">
                             <b>{{translation.partials.contact.extensions}}</b>
                         </div>
-                        <div class="col-sm-8">
+                        <div class="col-sm-10">
                             <a href="{{config.portal.contato.contatos.ramais}}" target="_blank">{{translation.partials.contact.extensionsList}}</a>
                         </div>
                     </div -->

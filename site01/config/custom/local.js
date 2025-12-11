@@ -63,11 +63,17 @@ module.exports = {
         color: 'orange',
         'view home': 'home',
         social: {
-            github: '/github',
-            facebook: '/facebook',
-            linkedin: '/linkedin',
-            youtube: '/youtube',
-        }
+            github: 'https://github.com/drone-comp',
+            facebook: 'https://www.facebook.com/drone.comp.7',
+            linkedin: 'https://www.linkedin.com/company/76928182/',
+            youtube: 'https://www.youtube.com/@drone.comp.research6450',
+        },
+        // social: {
+        //     github: '/github',
+        //     facebook: '/facebook',
+        //     linkedin: '/linkedin',
+        //     youtube: '/youtube',
+        // },
     },
     cookies: {
         enabled: true,
