@@ -34,8 +34,10 @@ module.exports = {
         contato: {
             contatos: {
                 mail: 'mailto:contato@ita.br',
-                comunicacao: 'mailto:lkteles@ita.br',
-                nome: 'Profa. Lara Kühl Teles<br/>Coordenadora da PG-FIS<br/>telefone (12) 3305-8495, sala FO-241, 2o. andar',
+                mailProjeto: {
+                    link: 'mailto:lkteles@ita.br',
+                    name: 'lkteles@ita.br',
+                },
                 vestibular: 'mailto:vestita@ita.br',
                 ramais: 'http://www.portal2.ita.br/contatos',
                 telefones: '/post/contatos',

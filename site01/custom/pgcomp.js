@@ -35,6 +35,10 @@ module.exports = {
             webmail: 'https://webmail.ita.br',
             contatos: {
                 mail: 'mailto:contato@ita.br',
+                mailProjeto: {
+                    link: 'mailto:pgcomp@ita.br',
+                    name: 'pgcomp@ita.br',
+                },
                 comunicacao: 'mailto:comunicacao@ita.br',
                 vestibular: 'mailto:vestita@ita.br',
                 ramais: 'http://www.portal2.ita.br/contatos',

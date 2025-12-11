@@ -34,7 +34,10 @@ module.exports = {
             webmail: 'https://webmail.ita.br',
             contatos: {
                 mail: 'mailto:contato@ita.br',
-                mailProjeto: 'mailto:ceds@ita.br',
+                mailProjeto: {
+                    link: 'mailto:ceds@ita.br',
+                    name: 'ceds@ita.br',
+                },
                 comunicacao: 'mailto:comunicacao@ita.br',
                 vestibular: 'mailto:vestita@ita.br',
                 ramais: 'http://www.portal2.ita.br/contatos',

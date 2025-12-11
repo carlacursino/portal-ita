@@ -65,6 +65,12 @@ module.exports = {
             extensionsList: 'Lista de ramais',
             whatsapp: 'Whatsapp',
         },
+        social: {
+            facebook: 'Facebook',
+            linkedin: 'Linkedin',
+            youtube: 'YouTube',
+            github: 'GitHub',
+        },
         credits: {
             terms: 'Termos de Uso',
             privacy: 'Política de Privacidade',

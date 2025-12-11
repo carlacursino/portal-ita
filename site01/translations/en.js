@@ -65,6 +65,12 @@ module.exports = {
             extensionsList: 'Extensions list',
             whatsapp: 'Whatsapp',
         },
+        social: {
+            facebook: 'Facebook',
+            linkedin: 'Linkedin',
+            youtube: 'YouTube',
+            github: 'GitHub',
+        },
         credits: {
             terms: 'Terms of Use',
             privacy: 'Privacy Policy',

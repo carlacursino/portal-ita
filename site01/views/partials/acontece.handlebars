@@ -66,13 +66,15 @@
                                 </div>
                                 <div class="text">
                                     <p>{{{this.content.brief}}}
-                                        {{#if this.route}}
-                                            <a href="/{{../language}}{{this.route}}">{{this.title}}, {{translation.more}}</a>
-                                        {{else}}
-                                            {{#if this.link}}
-                                                <a href="{{this.link}}" target="_blank">{{this.title}}, {{translation.more}}</a>
+                                        {{#if this.content.extended}}
+                                            {{#if this.route}}
+                                                <a href="/{{../language}}{{this.route}}">{{../translation.readMore}}</a>
                                             {{else}}
-                                                <a href="/{{../language}}/post/{{this.slug}}">{{this.title}}, {{translation.more}}</a>
+                                                {{#if this.link}}
+                                                    <a href="{{this.link}}" target="_blank">{{../translation.readMore}}</a>
+                                                {{else}}
+                                                    <a href="/{{../language}}/post/{{this.slug}}">{{../translation.readMore}}</a>
+                                                {{/if}}
                                             {{/if}}
                                         {{/if}}
                                     </p>
