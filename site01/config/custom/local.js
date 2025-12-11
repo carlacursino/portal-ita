@@ -63,10 +63,10 @@ module.exports = {
         color: 'orange',
         'view home': 'home',
         social: {
-            github: 'https://github.com/projeto',
-            facebook: 'https://facebook.com/projeto',
-            linkedin: 'https://linkedin.com/projeto',
-            youtube: 'https://youtube.com/projeto',
+            github: '/github',
+            facebook: '/facebook',
+            linkedin: '/linkedin',
+            youtube: '/youtube',
         }
     },
     cookies: {
