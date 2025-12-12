@@ -11,6 +11,7 @@
     "dependencies": {
         "app-module-path": "^2.2.0",
         "app-root-path": "^3.0.0",
+        "axios": "^1.13.2",
         "capstone-email": "github:Portal-ITA/capstone-email",
         "capstone-file-manager": "^1.0.3",
         "capstone-intl": "^3.1.6",
@@ -21,6 +22,7 @@
         "express": "^4.17.1",
         "express-handlebars": "^3.1.0",
         "express-winston": "^4.0.5",
+        "googleapis": "^168.0.0",
         "handlebars": "4.5.3",
         "handlebars-helpers": "^0.10.0",
         "helmet": "^4.4.1",

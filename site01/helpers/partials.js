@@ -2,6 +2,7 @@ require('app-module-path').addPath(__dirname + '/helpers')
 
 const config = require('config')
 const capstone = require('capstonejs')
+const gdrive = require('gdrive')
 
 exports.menu = (language, callback) => {
     capstone.list('Menu').model.find({ main: true, enabled: true })
@@ -274,4 +275,15 @@ exports.galleries = async (language, callback) => {
     } catch (err) {
         callback(err, null)
     }
+}
+
+exports.files = (folderId, callback) => {
+  gdrive.list(folderId)
+    .then((files) => {
+      callback(null, files)
+    })
+    .catch((err) => {
+      callback(err)
+      console.log(err)
+    })
 }

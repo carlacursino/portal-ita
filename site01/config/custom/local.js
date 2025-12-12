@@ -78,4 +78,12 @@ module.exports = {
     cookies: {
         enabled: true,
     },
+    embed: {
+        google: {
+            keyFile: './.docs-481019-816f408ee52e.json',
+        },
+        airtable: {
+            
+        },
+    },
 }

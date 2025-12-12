@@ -16,6 +16,7 @@ module.exports = (req, res) => {
         contacts: [],
         project: {},
         publications: [],
+        files: [],
         news: [],
         version: capstone.version,
     }
@@ -61,6 +62,13 @@ module.exports = (req, res) => {
     view.on('init', (next) => {
         partials.publications({ project: res.locals.filters }, res.locals.language, (err, result) => {
             res.locals.data.publications = result
+            next(err)
+        })
+    })
+
+    view.on('init', (next) => {
+        partials.files('1E2wsOPmElaOgH6bHc3qjFm1xLbK6Lc58', (err, result) => {
+            res.locals.data.files = result
             next(err)
         })
     })
