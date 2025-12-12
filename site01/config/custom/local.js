@@ -80,7 +80,7 @@ module.exports = {
     },
     embed: {
         google: {
-            keyFile: './.docs-481019-816f408ee52e.json',
+            keyFile: './.gdrive.json',
         },
         airtable: {
             

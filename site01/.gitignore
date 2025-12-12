@@ -164,3 +164,4 @@ dist
 
 # Ignore sites configurations
 *.env
+*.gdrive.json
