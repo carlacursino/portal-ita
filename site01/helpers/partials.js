@@ -276,14 +276,3 @@ exports.galleries = async (language, callback) => {
         callback(err, null)
     }
 }
-
-exports.files = (folderId, callback) => {
-  gdrive.list(folderId)
-    .then((files) => {
-      callback(null, files)
-    })
-    .catch((err) => {
-      callback(err)
-      console.log(err)
-    })
-}

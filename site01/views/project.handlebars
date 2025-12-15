@@ -115,13 +115,9 @@
 					<hr class="devider-margin-medium" />
 				</div>
 			{{/if}}
-			{{#if data.files}}
-				{{#each data.files}}
-					<ul>
-						<li>{{this.name}}, {{this.mimeType}}, {{moment this.modifiedTime lang="{{language}}" format="D-MMM-YYYY"}}, {{this.size}}</li>
-					</ul>
-				{{/each}}
-			{{/if}}
+
+            {{> publicFiles}}
+            
 		</div>
 	</div>
 </div>

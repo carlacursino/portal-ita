@@ -3,6 +3,7 @@ require('app-module-path').addPath(__dirname + '/helpers')
 const 
     partials = require('partials'),
     capstone = require('capstonejs')
+    gdrive = require('gdrive')
 
 module.exports = (req, res) => {
     const view = new capstone.View(req, res)
@@ -51,24 +52,25 @@ module.exports = (req, res) => {
 
     view.on('init', (next) => {
         partials.project({ _id: res.locals.filters }, res.locals.language, (err, result) => {
+            if (err) return next(err)
             res.locals.data.project = result
             res.locals.data.news = result.researchers
                 .filter(researcher => researcher.user && researcher.user.posts)
-                .flatMap(researcher => researcher.user.posts)            
-            next(err)
+                .flatMap(researcher => researcher.user.posts)
+            gdrive.list(result.files)
+                .then((files) => {
+                    res.locals.data.files = files
+                    next()
+                })
+                .catch((err) => {
+                    next(err)
+                })
         })
     })
 
     view.on('init', (next) => {
         partials.publications({ project: res.locals.filters }, res.locals.language, (err, result) => {
             res.locals.data.publications = result
-            next(err)
-        })
-    })
-
-    view.on('init', (next) => {
-        partials.files('1E2wsOPmElaOgH6bHc3qjFm1xLbK6Lc58', (err, result) => {
-            res.locals.data.files = result
             next(err)
         })
     })

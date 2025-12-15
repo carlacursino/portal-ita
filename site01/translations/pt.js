@@ -87,6 +87,9 @@ module.exports = {
             postedBy: 'Postado por',
             in: 'em',
             download: 'baixe o documento...',
+            name: 'Nome',
+            date: 'Data',
+            size: 'Tam.',
         },
         footerBrasil: {
 

@@ -3,7 +3,7 @@ require('app-module-path').addPath(__dirname + '/helpers')
 const 
     partials = require('partials'),
     capstone = require('capstonejs')
-const { profile } = require('../../helpers/partials')
+    gdrive = require('gdrive')
 
 module.exports = (req, res) => {
     const view = new capstone.View(req, res)
@@ -52,7 +52,14 @@ module.exports = (req, res) => {
     view.on('init', (next) => {
         partials.profile({ _id: res.locals.filters._id }, res.locals.language, (err, result) => {
             res.locals.data.profile = result
-            next(err)
+            gdrive.list(result.files)
+                .then((files) => {
+                    res.locals.data.files = files
+                    next()
+                })
+                .catch((err) => {
+                    next(err)
+                })
         })
     })
 

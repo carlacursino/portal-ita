@@ -22,6 +22,7 @@ Profile.add({
         affiliation: { type: String, intl: true },
     },
     title: { type: String, intl: true },
+    files: { type: Types.Url },
     email: { type: Types.Email, label: 'Public email' },
     picture: { type: Types.File },
     user: { type: Types.Relationship, ref: 'User', required: false },

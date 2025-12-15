@@ -1,0 +1,40 @@
+{{#if data.files}}
+    <div class="container-in">
+        <div class="row">
+            <div class="col-sm-12">
+                <table class="table table-striped">
+                    <caption><h4>{{translation.partials.fileList._title}}</h4></caption>
+                    <thead>
+                        <tr>
+                            <th class="icone"></th>
+                            <th>{{translation.partials.fileList.name}}</th>
+                            <th>{{translation.partials.fileList.date}}</th>
+                            <th class="text-right">{{translation.partials.fileList.size}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each data.files}}
+                            <tr>
+                                <td class="icone">
+                                    {{#if this.iconLink}}
+                                        <img src="{{this.iconUrl}}">
+                                    {{/if}}
+                                </td>
+                                <td>
+                                    {{#if this.isFolder}}
+                                        <a href="{{this.downloadLink}}" target="_blank">{{this.name}}</a>
+                                    {{else}}
+                                        <a href="{{this.downloadLink}}">{{this.name}}</a>
+                                    {{/if}}
+                                </td>
+                                <td>{{moment this.modifiedTime lang="{{language}}" format="D-MMM-YYYY"}}</td>
+                                <td class="text-right important!">{{this.size}}</td>
+                            </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <hr class="devider-margin-medium" />
+    </div>
+{{/if}}
