@@ -4,19 +4,19 @@ describe('Test posts', function() {
     const safari = require('selenium-webdriver/safari')
 
     before(() => {
-        console.log('BEFORE SUITE')
+        console.info('BEFORE SUITE')
     })
 
     after(() => {
-        console.log('AFTER SUITE')
+        console.info('AFTER SUITE')
     })
 
     beforeEach(() => {
-        console.log('BEFORE UNIT')
+        console.info('BEFORE UNIT')
     })
 
     afterEach(() => {
-        console.log('AFTER UNIT')
+        console.info('AFTER UNIT')
     })
 
     it('Get post', (done) => {
@@ -32,7 +32,7 @@ describe('Test posts', function() {
         //         await driver.get('http://localhost:3001')
         //     }
         //     catch(e) {
-        //         console.log(e)
+        //         console.info(e)
         //     }
         //     finally {
         //         if (driver) {

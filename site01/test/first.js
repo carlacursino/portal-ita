@@ -6,7 +6,7 @@ describe('Test env', () => {
     let driver
 
     before(() => {
-        console.log('BEFORE SUITE')
+        console.info('BEFORE SUITE')
         driver = new Builder()
             .forBrowser('safari')
             .build()
@@ -18,11 +18,11 @@ describe('Test env', () => {
     })
 
     beforeEach(() => {
-        console.log('BEFORE UNIT')
+        console.info('BEFORE UNIT')
     })
 
     afterEach(() => {
-        console.log('AFTER UNIT')
+        console.info('AFTER UNIT')
     })
 
     it('Verify webdriver in safari', () => {

@@ -11,8 +11,9 @@ services:
       - PORT=${PORT:-3000}
       - ECOSYSTEM=${ECOSYSTEM:-portal}
       - DOMAIN=${DOMAIN}
+      - HTTP=${HTTP:-portal}
     volumes:
-      - $PWD/config/nginx/portal.conf.template:/etc/nginx/templates/default.conf.template
+      - $PWD/config/nginx/$HTTP.conf.template:/etc/nginx/templates/default.conf.template
       - certbotcerts:/etc/letsencrypt
       - certbotchallenges:/var/www/certbot
     depends_on:

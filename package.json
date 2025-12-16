@@ -1,0 +1,14 @@
+{
+    "name": "portal",
+    "private": true,
+    "workspaces": [
+        "site01",
+        "capstone-accesscontrol",
+        "capstone-auth",
+        "capstone-email",
+        "capstone-file-manager",
+        "capstone-intl",
+        "capstone-tinymce",
+        "CapstoneJS"
+    ]
+}

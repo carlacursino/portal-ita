@@ -7,20 +7,20 @@ const
     appRoot = require('app-root-path'),
     path = require('path'),
     config = require('config'),
-    capstone = require('capstonejs'),
     expressWinston = require('express-winston'),
     applog = require('logger').applog,
-    errlog = require('logger').errlog
+    errlog = require('logger').errlog,
+    capstone = require('capstonejs')
 
 process.on('SIGINT', function() {
-    console.log('Server stop')
+    console.info('Server stop')
     process.exit()
 })
 
-console.log('Server setup')
+console.info('Server setup')
 
 if (config.env === 'maintenance' || config.env === 'construction') {
-    console.log(`Server in ${config.env} mode`)
+    console.info(`Server in ${config.env} mode`)
 
     const
         express = require('express'),
@@ -40,7 +40,7 @@ if (config.env === 'maintenance' || config.env === 'construction') {
         })
         .listen(config.cms.port)
 } else {
-    console.log('Server in default mode')
+    console.info('Server in default mode')
 
     const app = capstone.express()
     
@@ -92,4 +92,4 @@ if (config.env === 'maintenance' || config.env === 'construction') {
 
 msg = `Server started, port: ${config.cms.port}, path: ${appRoot.path}, config: ${config.env}`
 applog.info(msg)
-console.log(msg)
+console.info(msg)

@@ -15,7 +15,8 @@
                 "NODE_ENV": "local",
             },
             "program": "${workspaceFolder}/server.js",
-            "runtimeExecutable": "${userHome}/.nvm/versions/node/v22.19.0/bin/node"
+            "runtimeExecutable": "${userHome}/.nvm/versions/node/v22.19.0/bin/node",
+            "runtimeArgs": ["--preserve-symlinks"]
         }
     ]
 }

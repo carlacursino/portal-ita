@@ -914,7 +914,7 @@ var Aero = {
         }
 
         function t() {
-            if (0 === n ? $("html").removeClass("scroll") : $("html").is(".scroll") || ($("html").addClass("scroll"), console.log("ita")), $(window).outerWidth() < $.mobile.width) return s = !1, !1;
+            if (0 === n ? $("html").removeClass("scroll") : $("html").is(".scroll") || ($("html").addClass("scroll"), console.info("ita")), $(window).outerWidth() < $.mobile.width) return s = !1, !1;
             if (s === !1) {
                 var t = e(o.nav, "padding-bottom"),
                     l = e(o.navbar, "margin-top"),

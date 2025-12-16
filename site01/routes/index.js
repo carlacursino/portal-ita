@@ -53,7 +53,7 @@ exports = module.exports = (app) => {
     else {
         seclog.warn('CSP rules disabled')
         applog.warn('CSP rules disabled')
-        console.log('CSP rules disabled')
+        console.info('CSP rules disabled')
     }
     
     app
