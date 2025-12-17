@@ -2,13 +2,19 @@ require('app-module-path').addPath(__dirname + '/helpers')
 
 const 
     fs = require('fs'),
+    Handlebars = require('handlebars'),
     engine = require('express-handlebars'),
+    {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access'),
     handlebarsHelpers = require('handlebars-helpers')(),
-    templateHelpers = require('template-helpers')(),
     helperMoment = require('helper-moment'),
     log = require('logger'),
     UPLOADS = './assets/static/core/uploads',
-    customLayout = 'views/layouts/' + process.env.NODE_ENV + '.handlebars'
+    customLayout = 'views/layouts/' + process.env.NODE_ENV + '.handlebars',
+    helpersList = Object.assign(
+        {},
+        handlebarsHelpers,
+        { moment: helperMoment }
+    )
 
 module.exports = {
     storage: {
@@ -51,11 +57,8 @@ module.exports = {
         'views': 'views',
 
         'custom engine': engine({
-            helpers: [
-                handlebarsHelpers,
-                templateHelpers,
-                helperMoment,
-            ],
+            handlebars: allowInsecurePrototypeAccess(Handlebars),
+            helpers: helpersList,
             layoutsDir: 'views/layouts',
             partialsDir: 'views/partials',
             defaultLayout: fs.existsSync(customLayout) ? process.env.NODE_ENV + '.handlebars' : 'default.handlebars',
