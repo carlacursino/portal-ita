@@ -9,7 +9,7 @@ var
         defaultSort: 'sequence',
     })
 
-new fileManager(Slider).init()
+new fileManager(Slider).init(capstone)
 
 Slider.add({
     sequence: { type: Types.Number, required: true, default: 0 },

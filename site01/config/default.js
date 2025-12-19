@@ -5,16 +5,18 @@ const
     Handlebars = require('handlebars'),
     engine = require('express-handlebars'),
     {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access'),
-    handlebarsHelpers = require('handlebars-helpers')(),
+    handlebarsHelpers = require('handlebars-helpers')({
+        handlebars: Handlebars
+    }),
     helperMoment = require('helper-moment'),
-    log = require('logger'),
-    UPLOADS = './assets/static/core/uploads',
-    customLayout = 'views/layouts/' + process.env.NODE_ENV + '.handlebars',
     helpersList = Object.assign(
         {},
         handlebarsHelpers,
         { moment: helperMoment }
-    )
+    ),
+    log = require('logger'),
+    UPLOADS = './assets/static/core/uploads',
+    customLayout = 'views/layouts/' + process.env.NODE_ENV + '.handlebars'
 
 module.exports = {
     storage: {

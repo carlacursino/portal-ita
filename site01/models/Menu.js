@@ -11,7 +11,7 @@ var
         defaultSort: 'sequence',
     })
 
-new fileManager(Menu).init()
+new fileManager(Menu).init(capstone)
 
 Menu.add({
     sequence: { type: Types.Number, required: true, default: 0 },

@@ -11,7 +11,7 @@ var
         defaultSort: 'name',
     })
 
-new fileManager(Profile).init()
+new fileManager(Profile).init(capstone)
 
 Profile.add({
     name: { type: String, required: true, initial: true },

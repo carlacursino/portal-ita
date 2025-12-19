@@ -9,7 +9,7 @@ var
         defaultSort: 'updatedAt',
     })
 
-new fileManager(Spotlight).init()
+new fileManager(Spotlight).init(capstone)
 
 Spotlight.add({
     title: { type: String, intl: true },

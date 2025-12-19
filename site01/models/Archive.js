@@ -9,7 +9,7 @@ var
         track: true,
     })
 
-new fileManager(Archive).init()
+new fileManager(Archive).init(capstone)
 
 Archive.add({
     fileName: { type: String, required: true },

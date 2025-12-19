@@ -11,7 +11,7 @@ var
         defaultSort: '-publishedDate',
     })
 
-new fileManager(Publication).init()
+new fileManager(Publication).init(capstone)
 
 Publication.add({
     title: { type: String, required: true, intl: true },

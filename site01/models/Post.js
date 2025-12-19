@@ -12,7 +12,7 @@ var
         defaultSort: '-publishedDate',
     })
 
-new fileManager(Post).init()
+new fileManager(Post).init(capstone)
 
 Post.add({
     title: { type: String, required: true, intl: true },

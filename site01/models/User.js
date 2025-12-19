@@ -10,7 +10,7 @@ var
         track: true,
     })
 
-new fileManager(User).init()
+new fileManager(User).init(capstone)
 
 var rules = []
 Object.keys(config.cms['access rules']).forEach((item, i) => {

@@ -11,7 +11,7 @@
         "app-root-path": "^3.0.0",
         "axios": "^1.13.2",
         "capstone-email": "github:Portal-ITA/capstone-email#main",
-        "capstone-file-manager": "^1.0.3",
+        "capstone-file-manager": "github:Portal-ITA/capstone-file-manager#main",
         "capstone-intl": "github:Portal-ITA/capstone-intl#main",
         "capstonejs": "^4.2.23-b",
         "connect-mongo": "^3.2.0",
