@@ -8,19 +8,25 @@ ssh -p 2030 ita_user@www.xxx.yyy.zzz
 
 ## Instalar Docker
 
-```sh
-sudo apt update
+```bash
+# 1. Preparar diretório de chaves
+apt update
+apt install -y ca-certificates curl
+install -m 0755 -d /etc/apt/keyrings
 
-sudo apt install apt-transport-https ca-certificates curl gnupg
+# 2. Baixar a chave GPG oficial do Docker
+curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
+chmod a+r /etc/apt/keyrings/docker.asc
 
-curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker.gpg
+# 3. Adicionar o repositório usando a variável do sistema ($(lsb_release -cs))
+# Isso garante que ele pegue 'trixie' (13) ou 'bookworm' (12) automaticamente
+"deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | tee /etc/apt/sources.list.d/docker.list > /dev/null
 
-echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker.gpg] https://download.docker.com/linux/debian bookworm stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-
-sudo apt update
-
-sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+# 4. Instalar o Docker Engine
+apt update
+apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
+
 
 ### Criar usuário portal
 
@@ -32,8 +38,8 @@ echo 'USR_PASSWORD='$(openssl rand -hex 8) >> .env
 
 source .env
 
-sudo adduser --disabled-password --gecos "" portal
-sudo usermod --password $(echo ${USR_PASSWORD} | openssl passwd -1 -stdin) portal
+adduser --disabled-password --gecos "" portal
+usermod --password $(echo ${USR_PASSWORD} | openssl passwd -1 -stdin) portal
 ```
 
 ### Dar permissão no uso do Docker
@@ -41,11 +47,9 @@ sudo usermod --password $(echo ${USR_PASSWORD} | openssl passwd -1 -stdin) porta
 Ao final terminar a sessão para iniciar a configuração do portal com o novo usuário:
 
 ```sh
-sudo usermod -aG docker ${USER}
+usermod -aG docker ${USER}
 
-sudo usermod -aG docker portal
-
-exit
+usermod -aG docker portal
 ```
 
 ## Abrir sessão com usuário “portal”
@@ -53,62 +57,65 @@ exit
 Usando a senha criada mais acima (por exemplo `b36cdea4350847b7`):
 
 ```sh
-ssh -p 2030 portal@www.xxx.yyy.zzz
-```
-
-### Criar volumes para containers
-
-```sh
-mkdir -p volumes/dronedata
-mkdir -p volumes/mongodata
-
-docker volume create -d local -o type=none -o device="/home/portal/volumes/dronedata" -o o=bind dronedata
-docker volume create -d local -o type=none -o device="/home/portal/volumes/mongodata" -o o=bind mongodata
+ssh portal@www.xxx.yyy.zzz
 ```
 
 ### Obter projeto do portal
 
 ```sh
-git clone https://github.com/carlacursino/portal-ita.git
+git clone https://github.com/Portal-ITA/portal.git
 
-cd portal-ita/site01
+cd portal/site01
 ```
 
-### Criar chave para mongodb
+### Criar um arquivo de configuração do ambiente
 
-É gerada uma senha aleatória (por exemplo `67bc6cb66f54888c`):
+Crie um arquivo `.env` com o seguinte conteúdo:
 
-```sh
-echo 'SVC_PWD='$(openssl rand -hex 8) > .env
-    67bc6cb66f54888c
+```ini
+DOMAIN="drone-comp.ita.br www.drone-comp.ita.br"
+HTTP=demo
+LETSENCRYPT_EMAIL=mail@ita.br
+ECOSYSTEM=ZZZZZ
+PORT=3003
+SMTPUSR=dronecomp@ita.br
+SMTPPWD=XXXXXXXXXXXX
+SMTPSRV=smtp.ita.br
+SMTPPRT=587
+```
+
+Substitua `ZZZZZ` pela configuração desejada na pasta `custom`.
+
+Adicione o id/gid usuário e uma chave para o mongodb:
+
+```bash
+echo "USER_ID=$(id -u)" >> .env
+echo "GROUP_ID=$(id -g)" >> .env
+echo "SVC_PWD=$(openssl rand -hex 8)" >> .env
 
 source .env
 ```
 
-### Configurar autologin
-
-Usando a senha criada mais acima (por exemplo `67bc6cb66f54888c`):
+### Inicalizar o MongoDB pela primeira vez
 
 ```sh
-echo 'uri: "mongodb://root:'$SVC_PWD'@localhost:27017"' > ./config/mongodb/drone/config/.mdbpass
+mkdir -p ~/volumes/$(ECOSYSTEM)$dbdata
+docker volume create -d local -o type=none -o device=~/volumes/${ECOSYSTEM}dbdata -o o=bind ${ECOSYSTEM}dbdata
+docker compose up -d mongodb
+docker exec -it ${ECOSYSTEM}-db mongo  -u root -p ${SVC_PWD}
+```
+
+No console criar o banco de dados e usuário inicial:
+
+```js
+use portal
+db.createUser({ user: "portalAdmin", pwd: "p4ssw0rd", roles: [ "dbOwner" ]})
 ```
 
 ### Criar containers
 
 ```sh
-./scripts/container.drone.sh
-```
-
-### Criar banco de dados do portal
-
-Usando a senha criada mais acima (por exemplo `67bc6cb66f54888c`):
-
-```sh
-docker exec -it mongodb mongo  -u root -p 67bc6cb66f54888c 
-
-    use portal
-    db.createUser({ user: "portalAdmin", pwd: "p4ssw0rd", roles: [ "dbOwner" ]})
-    exit
+./scripts/setup.sh
 ```
 
 ### Abrir página administrativa do portal num browser
