@@ -20,7 +20,7 @@ chmod a+r /etc/apt/keyrings/docker.asc
 
 # 3. Adicionar o repositório usando a variável do sistema ($(lsb_release -cs))
 # Isso garante que ele pegue 'trixie' (13) ou 'bookworm' (12) automaticamente
-"deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | tee /etc/apt/sources.list.d/docker.list > /dev/null
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 # 4. Instalar o Docker Engine
 apt update
@@ -73,18 +73,18 @@ cd portal/site01
 Crie um arquivo `.env` com o seguinte conteúdo:
 
 ```ini
-DOMAIN="drone-comp.ita.br www.drone-comp.ita.br"
+DOMAIN="site.ita.br www.site.ita.br"
 HTTP=demo
-LETSENCRYPT_EMAIL=mail@ita.br
+LETSENCRYPT_EMAIL=email@ita.br
 ECOSYSTEM=ZZZZZ
 PORT=3003
-SMTPUSR=dronecomp@ita.br
+SMTPUSR=email@ita.br
 SMTPPWD=XXXXXXXXXXXX
 SMTPSRV=smtp.ita.br
 SMTPPRT=587
 ```
 
-Substitua `ZZZZZ` pela configuração desejada na pasta `custom`.
+Substitua `ZZZZZ` pela configuração desejada na pasta `custom` e `XXX..` pela senha da conta de e-mail.
 
 Adicione o id/gid usuário e uma chave para o mongodb:
 
@@ -99,13 +99,13 @@ source .env
 ### Inicalizar o MongoDB pela primeira vez
 
 ```sh
-mkdir -p ~/volumes/$(ECOSYSTEM)$dbdata
+mkdir -p ~/volumes/${ECOSYSTEM}dbdata
 docker volume create -d local -o type=none -o device=~/volumes/${ECOSYSTEM}dbdata -o o=bind ${ECOSYSTEM}dbdata
 docker compose up -d mongodb
 docker exec -it ${ECOSYSTEM}-db mongo  -u root -p ${SVC_PWD}
 ```
 
-No console criar o banco de dados e usuário inicial:
+No console do MongoDB criar o banco de dados e usuário inicial:
 
 ```js
 use portal
@@ -113,6 +113,8 @@ db.createUser({ user: "portalAdmin", pwd: "p4ssw0rd", roles: [ "dbOwner" ]})
 ```
 
 ### Criar containers
+
+De volta ao console do sistema operacional:
 
 ```sh
 ./scripts/setup.sh
