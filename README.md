@@ -6,5 +6,6 @@ Documentação detalhada:
 * [Administradores e desenvolvedores](docs/man-tec.pdf)
 * [Usuários finais (editores/redatores)](docs/man-usu.pdf)
 
-> Em `_archive` estão (**temporariamente**) os arquivos do  portal ATUAL.
-> 
+Em [SETUP](SETUP.md) está a documentação para configurar containers docker para executar o projeto.
+
+Em [RUN](RUN.md) está a documentação para executar o projeto trabalhando com um Workspace no VSCode.

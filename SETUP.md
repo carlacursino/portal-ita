@@ -1,5 +1,9 @@
 # Setup para servidor DCTA
 
+Executar este SETUP **antes** de clonar o repositório de fontes.
+
+Use a documentação em [RUN](RUN.md) para instruções de como clonar o repositório corretamente e executá-lo na máquina local corretamente.
+
 ## Acessar  o servidor
 
 ```sh
@@ -26,7 +30,6 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.
 apt update
 apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
-
 
 ### Criar usuário portal
 
@@ -84,7 +87,7 @@ SMTPSRV=smtp.ita.br
 SMTPPRT=587
 ```
 
-Substitua `ZZZZZ` pela configuração desejada na pasta `custom` e `XXX..` pela senha da conta de e-mail.
+Substitua `ZZZZZ` pela configuração desejada na pasta [custom](./site01/custom/) (ou crie uma baseada numa delas) e `XXX..` pela senha da conta de e-mail para o site.
 
 Adicione o id/gid usuário e uma chave para o mongodb:
 
