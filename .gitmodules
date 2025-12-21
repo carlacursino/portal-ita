@@ -1,0 +1,21 @@
+[submodule "CapstoneJS"]
+	path = CapstoneJS
+	url = https://github.com/Portal-ITA/CapstoneJS
+[submodule "capstone-accesscontrol"]
+	path = capstone-accesscontrol
+	url = https://github.com/Portal-ITA/capstone-accesscontrol
+[submodule "capstone-auth"]
+	path = capstone-auth
+	url = https://github.com/Portal-ITA/capstone-auth
+[submodule "capstone-email"]
+	path = capstone-email
+	url = https://github.com/Portal-ITA/capstone-email
+[submodule "capstone-file-manager"]
+	path = capstone-file-manager
+	url = https://github.com/Portal-ITA/capstone-file-manager
+[submodule "capstone-intl"]
+	path = capstone-intl
+	url = https://github.com/Portal-ITA/capstone-intl
+[submodule "capstone-tinymce"]
+	path = capstone-tinymce
+	url = https://github.com/Portal-ITA/capstone-tinymce
