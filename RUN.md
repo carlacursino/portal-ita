@@ -42,6 +42,8 @@ Se houverem customizações do conteúdo estático copie-as também:
 cp -r assets/customizado/* assets/static
 ```
 
+O arquivo de configuração para execução local ([local.js](./site01/config/custom/local.js)) é uma cópia das configurações customizadas de cada site que existem na pasta [custom](./site01/custom/), porém com ajustes específicos para executar localmente (MongoDB por exemplo aponta para `localhost`). A aplicação rodando e utilizando este arquivo de configuração irá usar uma porta diferente da configurada para os containers.
+
 Execute o projeto no VSCode. Se você seguiu as instruções em [SETUP](SETUP.md), já terá o banco de dados pronto. Basta usar o [launch.json](./.vscode/launch.json) pronto e executar a opção "Workspace Portal ITA".
 
 O site estará disponível em [http://localhost:3001](http://localhost:3001) e o painel administrativo em [http://localhost:3001/admin](http://localhost:3001/admin) (usuário `cursino@ita.br` e senha `p4ssw0rd` - mude a senha deste usuário antes de prosseguir).

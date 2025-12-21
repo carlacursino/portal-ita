@@ -2,7 +2,7 @@ require('app-module-path').addPath(__dirname + '/helpers')
 
 module.exports = {
     cms: {
-        'port': 3001,
+        'port': 3000,
         
         // 'mongo': 'mongodb://portalAdmin:P%40ssw0rdD0P0rt%40l1t%402019@localhost:27017/portal',
         'mongo': 'mongodb://portalAdmin:p4ssw0rd@localhost:27017/portal',
