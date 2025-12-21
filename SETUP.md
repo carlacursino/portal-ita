@@ -89,6 +89,28 @@ SMTPPRT=587
 
 Substitua `ZZZZZ` pela configuração desejada na pasta [custom](./site01/custom/) (ou crie uma baseada numa delas) e `XXX..` pela senha da conta de e-mail para o site.
 
+**Obs**.: caso deseje criar uma configuração, além do arquivo com o nome da configuração na pasta [custom](./site01/custom/) você deverá ajustar corretamente a conexão com o serviço MongoDB e ajustar o diretório de configurações [ecosystem.config.js](./site01/ecosystem.config.js) para adicionar a nova configuração:
+
+_Arquivo de configuração de sites_:
+```json
+require('app-module-path').addPath(__dirname + '/helpers')
+
+module.exports = {
+    cms: {
+        'port': 3002,
+        
+        'mongo': 'mongodb://portalAdmin:p4ssw0rd@ZZZZZ-db:27017/portal',
+        
+
+```
+
+_Diretório de configurações `ecosystem.config.js`_:
+```js
+    env_paic: {
+        NODE_ENV: "ZZZZZ",
+    },
+```
+
 Adicione o id/gid usuário e uma chave para o mongodb:
 
 ```bash

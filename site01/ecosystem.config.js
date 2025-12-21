@@ -2,17 +2,11 @@ module.exports = {
   apps : [{
     name: "portal",
     script: "server.js",
-    env_construction: {
-      NODE_ENV: "construction",
-    },
     env_ita: {
       NODE_ENV: "ita",
     },
     env_lbe: {
       NODE_ENV: "lbe",
-    },
-    env_maintenance: {
-      NODE_ENV: "maintenance",
     },
     env_pgfis: {
       NODE_ENV: "pgfis",
@@ -28,6 +22,9 @@ module.exports = {
     },
     env_pgcomp: {
       NODE_ENV: "pgcomp",
+    },
+    env_paic: {
+        NODE_ENV: "paic",
     },
   },],
 }
