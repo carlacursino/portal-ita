@@ -80,7 +80,7 @@ DOMAIN="site.ita.br www.site.ita.br"
 HTTP=demo
 LETSENCRYPT_EMAIL=email@ita.br
 ECOSYSTEM=ZZZZZ
-PORT=3003
+PORT=3008
 SMTPUSR=email@ita.br
 SMTPPWD=XXXXXXXXXXXX
 SMTPSRV=smtp.ita.br
@@ -91,7 +91,7 @@ Substitua `ZZZZZ` pela configuração desejada na pasta [custom](./site01/custom
 
 #### Criar novas configurações
 
-Caso deseje criar uma configuração, além do arquivo com o nome da configuração na pasta [custom](./site01/custom/) você deverá ajustar corretamente a conexão com o serviço MongoDB e ajustar o diretório de configurações [ecosystem.config.js](./site01/ecosystem.config.js) para adicionar a nova configuração:
+Caso deseje criar uma configuração, além do arquivo com o nome da configuração na pasta [custom](./site01/custom/) você deverá ajustar corretamente a porta (**3008** no exemplo), a conexão com o serviço MongoDB, e ajustar o diretório de configurações [ecosystem.config.js](./site01/ecosystem.config.js) para adicionar a nova configuração:
 
 _Arquivo de configuração de sites_:
 ```json
@@ -99,7 +99,7 @@ require('app-module-path').addPath(__dirname + '/helpers')
 
 module.exports = {
     cms: {
-        'port': 3002,
+        'port': 3008,
         
         'mongo': 'mongodb://portalAdmin:p4ssw0rd@ZZZZZ-db:27017/portal',
         
@@ -122,6 +122,39 @@ echo "SVC_PWD=$(openssl rand -hex 8)" >> .env
 
 source .env
 ```
+
+#### Traduções do site
+
+Caso deseje criar traduções particulares para termos utilizados no site, basta encontrar o termo num dos arquivos de idiomas:
+
+* [Português - pt.js](./site01/translations/pt.js)
+* [Inglês - pt.js](./site01/translations/pt.js)
+
+Crie uma pasta com a configuração (por exemplo `ZZZZZ`) e insira a tradução seguindo o caminho de chaves dos arquivos acima:
+
+```json
+module.exports = {
+    partials: {
+        credits: {
+            author: "Criação: <a href='mailto:ceds@ita.br'>ceds@ita.br</a>",
+        },
+    }
+}
+```
+
+Faça o mesmo para os demais idiomas disponíveis (atualmente apenas **Português** e **Inglês**).
+
+#### Template `demo` do NGINX
+
+No arquivo `.env` está especificado:
+
+```ini
+HTTP=demo
+```
+
+Isto se refere à template NGINX [demo.conf.template](./site01/config/nginx/demo.conf.template).
+
+Use uma template customizada (se necessário) ou mude para [portal.conf.template](./site01/config/nginx/portal.conf.template) antes de enviar para produção.
 
 ### Inicalizar o MongoDB pela primeira vez
 

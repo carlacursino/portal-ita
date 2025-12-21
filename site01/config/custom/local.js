@@ -60,7 +60,7 @@ module.exports = {
                 uso: '/post/termo-de-uso',
             },
         },
-        color: 'orange',
+        color: 'brown',
         'view home': 'home',
         social: {
             github: 'https://github.com/drone-comp',
