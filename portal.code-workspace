@@ -1,31 +1,6 @@
 {
 	"folders": [
         {
-            "name": "site01",
-            "path": "site01"
-        },
-        {
-            "path": "capstone-accesscontrol"
-        },
-        {
-            "path": "capstone-auth"
-        },
-        {
-            "path": "capstone-email"
-        },
-        {
-            "path": "capstone-file-manager"
-        },
-        {
-            "path": "capstone-intl"
-        },
-        {
-            "path": "capstone-tinymce"
-        },
-        {
-            "path": "CapstoneJS"
-        },
-        {
             "path": "."
         }
     ],
