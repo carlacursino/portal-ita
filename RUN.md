@@ -46,7 +46,7 @@ O arquivo de configuração para execução local ([local.js](./site01/config/cu
 
 Execute o projeto no VSCode. Se você seguiu as instruções em [SETUP](SETUP.md), já terá o banco de dados pronto. Basta usar o [launch.json](./.vscode/launch.json) pronto e executar a opção "Workspace Portal ITA".
 
-O site estará disponível em [http://localhost:3001](http://localhost:3001) e o painel administrativo em [http://localhost:3001/admin](http://localhost:3001/admin) (usuário `cursino@ita.br` e senha `p4ssw0rd` - mude a senha deste usuário antes de prosseguir).
+O site estará disponível em [http://localhost:3000](http://localhost:3000) e o painel administrativo em [http://localhost:3000/admin](http://localhost:3000/admin) (usuário `cursino@ita.br` e senha `p4ssw0rd` - mude a senha deste usuário antes de prosseguir).
 
 Restante da documentação detalhada:
 * [Administradores e desenvolvedores](docs/man-tec.pdf)
