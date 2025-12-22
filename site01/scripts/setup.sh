@@ -11,17 +11,29 @@ else
     exit 1
 fi
 
-# Check required environment variables
 if [ -z "$ECOSYSTEM" ] || [ -z "$PORT" ]; then
     echo "Error 🧨: ECOSYSTEM and PORT must be set in .env file"
     exit 1
 fi
 
+# Create missing values in .env file
+if [ -z "$USER_ID" ] || [ -z "$GROUP_ID" ] || [ -z "$SVC_PWD" ]; then
+    echo "USER_ID=$(id -u)" >> .env
+    echo "GROUP_ID=$(id -g)" >> .env
+    echo "SVC_PWD=$(openssl rand -hex 8)" >> .env
+    set -a
+    source .env
+    set +a
+fi
+
+
 docker stop ${ECOSYSTEM}-app || true
 docker rm ${ECOSYSTEM}-app || true
-docker stop ${ECOSYSTEM}-http || true
-docker rm ${ECOSYSTEM}-http || true
 docker rmi ${ECOSYSTEM} || true
+if [[ "$*" != *"--dev"* ]]; then
+    docker stop ${ECOSYSTEM}-http || true
+    docker rm ${ECOSYSTEM}-http || true
+fi
 
 [ -d ~/volumes/${ECOSYSTEM}data ] || mkdir -p ~/volumes/${ECOSYSTEM}data
 [ "$(docker volume ls -q -f name=${ECOSYSTEM}data)" ] || docker volume create -d local -o type=none -o device=~/volumes/${ECOSYSTEM}data -o o=bind ${ECOSYSTEM}data
@@ -29,8 +41,16 @@ docker rmi ${ECOSYSTEM} || true
 [ -d ~/volumes/${ECOSYSTEM}dbdata ] || mkdir -p ~/volumes/${ECOSYSTEM}dbdata
 [ "$(docker volume ls -q -f name=${ECOSYSTEM}dbdata)" ] || docker volume create -d local -o type=none -o device=~/volumes/${ECOSYSTEM}dbdata -o o=bind ${ECOSYSTEM}dbdata
 
-[ -d ~/volumes/${ECOSYSTEM}backup ] || mkdir -p ~/volumes/${ECOSYSTEM}backup
-[ "$(docker volume ls -q -f name=${ECOSYSTEM}backup)" ] || docker volume create -d local -o type=none -o device=~/volumes/${ECOSYSTEM}backup -o o=bind ${ECOSYSTEM}backup
+if [[ "$*" != *"--dev"* ]]; then
+    [ -d ~/volumes/${ECOSYSTEM}backup ] || mkdir -p ~/volumes/${ECOSYSTEM}backup
+    [ "$(docker volume ls -q -f name=${ECOSYSTEM}backup)" ] || docker volume create -d local -o type=none -o device=~/volumes/${ECOSYSTEM}backup -o o=bind ${ECOSYSTEM}backup
+fi
 
-
-DOCKER_BUILDKIT=1 docker compose --progress=plain --env-file .env -f docker-compose.yaml up --build --detach
+# Check developer mode
+if [[ "$*" == *"--dev"* ]]; then
+    echo "🚀 Starting in developer mode..."
+    DOCKER_BUILDKIT=1 docker compose --progress=plain --env-file .env -f docker-compose.yaml up --build --detach mongodb console app
+else
+    echo "🚀 Starting all services..."
+    DOCKER_BUILDKIT=1 docker compose --progress=plain --env-file .env -f docker-compose.yaml up --build --detach
+fi
