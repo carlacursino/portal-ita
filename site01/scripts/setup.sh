@@ -19,6 +19,8 @@ fi
 
 docker stop ${ECOSYSTEM}-app || true
 docker rm ${ECOSYSTEM}-app || true
+docker stop ${ECOSYSTEM}-http || true
+docker rm ${ECOSYSTEM}-http || true
 docker rmi ${ECOSYSTEM} || true
 
 [ -d ~/volumes/${ECOSYSTEM}data ] || mkdir -p ~/volumes/${ECOSYSTEM}data
