@@ -31,7 +31,7 @@ module.exports = {
 
         'auto update': true,
         'user model': 'User',
-        'default role': ['admin'],
+        'default role': 'admin',
         'default model user id': 'displayName',
         'default model role id': 'role',
 
