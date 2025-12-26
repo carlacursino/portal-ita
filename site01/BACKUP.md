@@ -74,3 +74,48 @@ mv portaldbdata ../portaldbdata
 > **Obs**.: Pode ser necessário ajustar o proprietário de arquivos e pastas caso o backup esteja sendo restaurado numa máquina diferente da original e o `uid` e `gid` do usuário local for diferente do usuário da máquina de origem dos arquivos. No geral, a pasta `portaldata` somente precisa alterar o proprietário raiz, porém a pasta `portaldbdata` pode precisar alterar todos os arquivos dentro dela (`chown -R ...`).
 
 > **Obs**.: Substituir `portal` neste documento para o nome do ECOSYSTEM alvo (ver pasta [custom](./custom)).
+
+## Backup de diferentes versões do MongoDB
+
+Para migrar a versão do banco de dados para uma nova antes é necessário fazer um backup dos dados ainda na versão antiga. Antes registrar as variáveis de ambiente:
+
+```sh
+cd portal/site01
+source .env
+```
+
+Fazer o backup do banco de dados:
+
+```sh
+docker exec -i ${ECOSYSTEM}-db -u root -p ${SVC_PWD} mongodump --out /data/backup/
+docker exec -i ${ECOSYSTEM}-db tar -cvzf /backup_mongodb.tar.gz /data/backup
+```
+
+Copiar o backup compactado para o host:
+
+```sh
+docker cp ${ECOSYSTEM}-db:/backup_mongodb.tar.gz ./backup_mongodb.tar.gz
+```
+
+Transferir para outro host:
+
+```sh
+sftp user@123.123.123.12
+```
+
+```sftp
+get backup_mongodb.tar.gz
+```
+
+Copiar para o container destino:
+
+```sh
+docker cp  ./backup_mongodb.tar.gz ${ECOSYSTEM}-db:/backup_mongodb.tar.gz
+docker exec -it ${ECOSYSTEM}-db tar -xzf ./backup_mongodb.tar.gz -C /
+```
+
+Restaurar o banco de dados:
+
+```sh
+docker exec -it ${ECOSYSTEM}-db mongorestore -u root -p ${SVC_PWD} --drop --dir /data/backup
+```
