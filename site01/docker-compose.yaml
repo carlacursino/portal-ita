@@ -71,6 +71,8 @@ services:
         - PORT=${PORT:-3000}
         - ECOSYSTEM=${ECOSYSTEM:-portal}
     image: ${ECOSYSTEM:-portal}:latest
+    ports:
+      - "${PORT:-3000}"
     expose:
       - "${PORT:-3000}"
     environment:
