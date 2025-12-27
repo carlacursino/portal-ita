@@ -13,7 +13,7 @@
         "capstone-email": "github:Portal-ITA/capstone-email#main",
         "capstone-file-manager": "github:Portal-ITA/capstone-file-manager#main",
         "capstone-intl": "github:Portal-ITA/capstone-intl#main",
-        "capstonejs": "^4.2.23-b",
+        "capstonejs": "github:Portal-ITA/CapstoneJS#fix/email",
         "connect-mongo": "^3.2.0",
         "dotenv": "^8.1.0",
         "expect-ct": "^0.3.0",
