@@ -16,6 +16,8 @@ Configure o git para operar o projeto localmente:
 git config submodule.recurse true
 ```
 
+**Atenção**: *Se for desenvolvedor, **SEMPRE** atualize os submódulos primeiro e por último o projeto raiz!*
+
 Em [SETUP](SETUP.md) está a documentação para configurar containers docker para executar o projeto.
 
 Em [RUN](RUN.md) está a documentação para executar o projeto trabalhando com um Workspace no VSCode.
