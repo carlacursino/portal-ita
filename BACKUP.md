@@ -114,8 +114,51 @@ docker cp  ./backup_mongodb.tar.gz ${ECOSYSTEM}-db:/backup_mongodb.tar.gz
 docker exec -it ${ECOSYSTEM}-db tar -xzf ./backup_mongodb.tar.gz -C /
 ```
 
-Restaurar o banco de dados:
+Apagar o banco de dados anterior (se existir):
+
+```sh
+docker exec -it ${ECOSYSTEM}-db mongo -u root -p ${SVC_PWD}
+```
+
+Na shell do banco de dados executar:
+
+```js
+use portal
+db.dropDatabase()
+exit
+```
+
+Restaurar:
 
 ```sh
 docker exec -it ${ECOSYSTEM}-db mongorestore -u root -p ${SVC_PWD} --drop --dir /data/backup
+```
+
+### Renomear as coleções para os nomes da versão antiga
+
+Abrir a shell do banco de dados:
+
+```sh
+docker exec -it ${ECOSYSTEM}-db mongo -u root -p ${SVC_PWD}
+```
+
+Executar a sequencia de comandos a seguir:
+
+```js
+use portal
+db.getCollection("app_updates").renameCollection("App_Update")
+db.getCollection("archives").renameCollection("Archive")
+db.getCollection("categories").renameCollection("Category")
+db.getCollection("contacts").renameCollection("Contact")
+db.getCollection("galleries").renameCollection("Gallery")
+db.getCollection("menus").renameCollection("Menu")
+db.getCollection("posts").renameCollection("Post")
+db.getCollection("profiles").renameCollection("Profile")
+db.getCollection("projects").renameCollection("Project")
+db.getCollection("publications").renameCollection("Publication")
+db.getCollection("sliders").renameCollection("Slider")
+db.getCollection("spotlights").renameCollection("Spotlight")
+db.getCollection("testimonials").renameCollection("Testimonial")
+db.getCollection("users").renameCollection("User")
+exit
 ```
