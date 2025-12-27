@@ -10,6 +10,12 @@ Use `git clone --recursive https://github.com/Portal-ITA/portal.git` para clonar
 
 Na raiz do projeto use `npm i --legacy-peer-deps` para instalar as dependências.
 
+Configure o git para operar o projeto localmente:
+
+```sh
+git config submodule.recurse true
+```
+
 Em [SETUP](SETUP.md) está a documentação para configurar containers docker para executar o projeto.
 
 Em [RUN](RUN.md) está a documentação para executar o projeto trabalhando com um Workspace no VSCode.
