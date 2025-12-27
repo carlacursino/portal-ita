@@ -162,3 +162,27 @@ db.getCollection("testimonials").renameCollection("Testimonial")
 db.getCollection("users").renameCollection("User")
 exit
 ```
+
+#### Apagar novas tabelas se aplicação foi executada nates de renomear as coleções
+
+Se a aplicação foi executada "antes" de renomear as coleções é necessário apagar as novas coleções criadas automaticamente para podermos usar as coleções originais:
+
+
+```js
+use portal
+db.App_Update.drop()
+db.Archive.drop()
+db.Category.drop()
+db.Contact.drop()
+db.Gallery.drop()
+db.Menu.drop()
+db.Post.drop()
+db.Profile.drop()
+db.Project.drop()
+db.Publication.drop()
+db.Slider.drop()
+db.Spotlight.drop()
+db.Testimonial.drop()
+db.User.drop()
+exit
+``
