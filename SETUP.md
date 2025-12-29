@@ -158,6 +158,8 @@ Use uma template customizada (se necessário) ou mude para [portal.conf.template
 
 ### Inicalizar o MongoDB pela primeira vez
 
+Para a variável `${ECOSYSTEM}` funcionar, basta executar sempre `source .env` na pasta `site01`.
+
 ```sh
 mkdir -p ~/volumes/${ECOSYSTEM}dbdata
 docker volume create -d local -o type=none -o device=~/volumes/${ECOSYSTEM}dbdata -o o=bind ${ECOSYSTEM}dbdata
