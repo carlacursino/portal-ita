@@ -174,12 +174,47 @@ db.createUser({ user: "portalAdmin", pwd: "p4ssw0rd", roles: [ "dbOwner" ]})
 
 ### Criar containers
 
-De volta ao console do sistema operacional:
+De volta ao console do sistema operacional, criar os containers de acordo com o ambiente:
+
+* **Desenvolvimento** - versão que executa os serviços de banco de dados, console para consulta ao banco de dados (usando [Mongo Express]()) e a aplicação
+* **Produção** - versão que executa os serviços de banco de dados, backup, renovação de certificados digitais e a aplicação
+* **Total** - versão que executa todos os serviços, tanto de desenvolvimento quanto de produção -- **ATENÇÃO**: *esta versão não deve ser mantida em ambientes de produção e somente usada em exceções, como para diagnosticar problemas*
+
+#### Para executar em modo **Desenvolvimento**
+
+```sh
+./scripts/setup.sh --dev
+```
+
+#### Para executar em modo **Produção**
+
+```sh
+./scripts/setup.sh --dev
+```
+
+#### Para executar **todos** os serviços
+
+```sh
+./scripts/setup.sh --all
+```
+
+#### Para encerrar **todos** os serviços
+
+Basta informar setup sem nenhum parâmetro:
 
 ```sh
 ./scripts/setup.sh
 ```
 
+Para encerrar serviços individuais basta parar cada um individualmente:
+
+* **Banco de Dados** - `docker stop ${ECOSYSTEM}-db`
+* **Console do DB** - `docker stop ${ECOSYSTEM}-console`
+* **Backup** - `docker stop ${ECOSYSTEM}-backup`
+* **Proxy HTTP** - `docker stop ${ECOSYSTEM}-http`
+* **Certbot** - `docker stop ${ECOSYSTEM}-certbot`
+* **Aplicação** - `docker stop ${ECOSYSTEM}-app`
+ 
 ### Abrir página administrativa do portal num browser
 
 O usuário previamente configurado pelo sistema está em [First User](./site01/updates/1.0.1-first-user.js)
