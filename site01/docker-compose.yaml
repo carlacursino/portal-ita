@@ -16,8 +16,6 @@ services:
       - $PWD/config/nginx/$HTTP.conf.template:/etc/nginx/templates/default.conf.template
       - certbotcerts:/etc/letsencrypt
       - certbotchallenges:/var/www/certbot
-    depends_on:
-      - certbot
     entrypoint: |
       /bin/sh -c '
         export CERT_DOMAIN=$(echo "$DOMAIN" | cut -d" " -f1)
