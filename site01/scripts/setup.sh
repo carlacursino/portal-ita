@@ -28,11 +28,10 @@ fi
 
 
 docker stop ${ECOSYSTEM}-app || true
-if [[ "$*" != ** ]]; then
+if [ $# -ne 0 ]; then
+    echo "💣 Removing old containers..."
     docker rm ${ECOSYSTEM}-app || true
     docker rmi ${ECOSYSTEM} || true
-fi
-if [[ "$*" != *"--dev"* ]]; then
     docker stop ${ECOSYSTEM}-http || true
     docker rm ${ECOSYSTEM}-http || true
 fi

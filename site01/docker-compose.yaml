@@ -38,8 +38,8 @@ services:
     container_name: ${ECOSYSTEM:-portal}-db
     image: mongodb/mongodb-community-server:5.0.32-ubuntu2204
     restart: always
-    ports:
-      - '27017:27017'
+    expose:
+      - '27017'
     volumes:
       - mongodata:/data/db:rw
     environment:
@@ -69,8 +69,6 @@ services:
         - PORT=${PORT:-3000}
         - ECOSYSTEM=${ECOSYSTEM:-portal}
     image: ${ECOSYSTEM:-portal}:latest
-    ports:
-      - "${PORT:-3000}"
     expose:
       - "${PORT:-3000}"
     environment:
