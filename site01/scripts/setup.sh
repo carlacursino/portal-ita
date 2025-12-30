@@ -28,8 +28,10 @@ fi
 
 
 docker stop ${ECOSYSTEM}-app || true
-docker rm ${ECOSYSTEM}-app || true
-docker rmi ${ECOSYSTEM} || true
+if [[ "$*" != ** ]]; then
+    docker rm ${ECOSYSTEM}-app || true
+    docker rmi ${ECOSYSTEM} || true
+fi
 if [[ "$*" != *"--dev"* ]]; then
     docker stop ${ECOSYSTEM}-http || true
     docker rm ${ECOSYSTEM}-http || true
