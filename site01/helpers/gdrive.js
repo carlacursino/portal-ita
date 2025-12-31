@@ -13,10 +13,15 @@ if (config.embed)
 
 async function getAccessToken() {
     if (auth) {
-        const client = await auth.getClient()
-        const tokens = await client.getAccessToken()
+        try {
+            const client = await auth.getClient()
+            const tokens = await client.getAccessToken()
 
-        return tokens.token
+            return tokens.token
+        } catch (e) {
+            console.error(e)
+            return null
+        }
     }
     else 
         return null
