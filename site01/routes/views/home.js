@@ -23,72 +23,119 @@ module.exports = (req, res) => {
     }
 
     view.on('init', (next) => {
-        partials.menu(res.locals.language, (err, result) => {
-            res.locals.data.menu = result
-            next(err)
-        })
-    })
-
-    view.on('init', (next) => {
-        partials.posts({ state: 'published', panel: 'acontece' }, res.locals.language, (err, result) => {
-            res.locals.data.acontece = result
-            next(err)
-        })
-    })
-
-    view.on('init', (next) => {
-        partials.posts({ state: 'published', panel: 'destaque' }, res.locals.language, (err, result) => {
-            res.locals.data.destaque = result
-            next(err)
-        })
-    })
-
-    view.on('init', (next) => {
-        partials.contacts({ active: true }, (err, result) => {
-            res.locals.data.contacts = result
-            next(err)
-        })
-    })
-
-    view.on('init', (next) => {
-        partials.categories({ $or: [{ slug: setup.portal.initiatives[0] }, { slug: setup.portal.initiatives[1] }] }, res.locals.language, (err, result) => {
-            result.forEach((record) => {
-                partials.initiatives(record, res.locals.language, (err, result) => {
-                    if (err)
-                        return
-                    res.locals.data.initiatives = result.concat(res.locals.data.initiatives)
-                })
+        new Promise((resolve, reject) => {
+            partials.menu(res.locals.language, (err, result) => {
+                if (err) return reject(err)
+                resolve(result)
             })
-            next(err)
-        })
+        }).then((result) => {
+            res.locals.data.menu = result
+            next()
+        }).catch((err) => next(err))
     })
 
     view.on('init', (next) => {
-        partials.testimonials(res.locals.language, (err, result) => {
+        new Promise((resolve, reject) => {
+            partials.posts({ state: 'published', panel: 'acontece' }, res.locals.language, (err, result) => {
+                if (err) return reject(err)
+                resolve(result)
+            })
+        }).then((result) => {
+            res.locals.data.acontece = result
+            next()
+        }).catch((err) => next(err))
+    })
+
+    view.on('init', (next) => {
+        new Promise((resolve, reject) => {
+            partials.posts({ state: 'published', panel: 'destaque' }, res.locals.language, (err, result) => {
+                if (err) return reject(err)
+                resolve(result)
+            })
+        }).then((result) => {
+            res.locals.data.destaque = result
+            next()
+        }).catch((err) => next(err))
+    })
+
+    view.on('init', (next) => {
+        new Promise((resolve, reject) => {
+            partials.contacts({ active: true }, (err, result) => {
+                if (err) return reject(err)
+                resolve(result)
+            })
+        }).then((result) => {
+            res.locals.data.contacts = result
+            next()
+        }).catch((err) => next(err))
+    })
+
+    view.on('init', (next) => {
+        new Promise((resolve, reject) => {
+            partials.categories({ $or: [{ slug: setup.portal.initiatives[0] }, { slug: setup.portal.initiatives[1] }] }, res.locals.language, (err, result) => {
+                if (err) return reject(err)
+                resolve(result)
+            })
+        }).then((result) => {
+            const tasks = []
+            result.forEach((record) => {
+                tasks.push(new Promise((resolve) => {
+                    partials.initiatives(record, res.locals.language, (err, result) => {
+                        if (!err && result) res.locals.data.initiatives = result.concat(res.locals.data.initiatives)
+                        resolve()
+                    })
+                }))
+            })
+            return Promise.all(tasks)
+        }).then(() => next()).catch((err) => next(err))
+    })
+
+    view.on('init', (next) => {
+        new Promise((resolve, reject) => {
+            partials.testimonials(res.locals.language, (err, result) => {
+                if (err) return reject(err)
+                resolve(result)
+            })
+        }).then((result) => {
             res.locals.data.testimonials = result
-            next(err)
-        })
+            next()
+        }).catch((err) => next(err))
     })
 
     view.on('init', (next) => {
-        partials.slider(res.locals.language, (err, result) => {
+        new Promise((resolve, reject) => {
+            partials.slider(res.locals.language, (err, result) => {
+                if (err) return reject(err)
+                resolve(result)
+            })
+        }).then((result) => {
             res.locals.data.sliders = result
-            next(err)
-        })
+            next()
+        }).catch((err) => next(err))
     })
 
     view.on('init', (next) => {
-        partials.spotlight(res.locals.language, (err, result) => {
+        new Promise((resolve, reject) => {
+            partials.spotlight(res.locals.language, (err, result) => {
+                if (err) return reject(err)
+                resolve(result)
+            })
+        }).then((result) => {
             res.locals.data.spotlight = result
-            next(err)
-        })
+            next()
+        }).catch((err) => next(err))
     })
 
     view.on('init', (next) => {
-        partials.galleries(res.locals.language, (err, result) => {
+        new Promise((resolve, reject) => {
+            partials.galleries(res.locals.language, (err, result) => {
+                if (err) return reject(err)
+                resolve(result)
+            })
+        }).then((result) => {
             res.locals.data.galleries = result
-            next(err)
-        })
+            next()
+        }).catch((err) => next(err))
     })
 
     view.render(setup.portal['view home'])

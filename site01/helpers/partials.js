@@ -6,15 +6,21 @@ const gdrive = require('gdrive')
 
 exports.menu = (language, callback) => {
     capstone.list('Menu').model.find({ main: true, enabled: true })
+        .populate('category post')
         .populate({
-            path: 'items category post',
-            populate: {
-                path: 'items category post',
-                populate: {
-                    path: 'items category post',
-                    populate: { path: 'post' },
+            path: 'items',
+            populate: [
+                { path: 'category' },
+                { path: 'post' },
+                {
+                    path: 'items',
+                    populate: [
+                        { path: 'category' },
+                        { path: 'post' },
+                        { path: 'items', populate: { path: 'post' } }
+                    ]
                 }
-            }
+            ]
         })
         .sort({ sequence: 1 })
         .exec((err, result) => {
