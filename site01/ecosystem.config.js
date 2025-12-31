@@ -24,7 +24,7 @@ module.exports = {
       NODE_ENV: "pgcomp",
     },
     env_paic: {
-        NODE_ENV: "paic",
+      NODE_ENV: "paic",
     },
   },],
 }
