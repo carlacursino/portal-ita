@@ -36,6 +36,8 @@ function getId(url) {
 }
 
 exports.list = async (url) => {
+    if(!url) return null
+    
     const folderId = getId(url)
     const token = await getAccessToken()
     if (token) {
