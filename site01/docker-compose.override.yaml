@@ -2,3 +2,7 @@ services:
   app:
     ports:
       - "${PORT:-3000}:${PORT:-3000}"
+
+  mongodb:
+    ports:
+      - '27017:27017'
