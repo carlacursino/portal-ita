@@ -12,6 +12,7 @@
         "CapstoneJS"
     ],
     "overrides": {
-        "form-data": "^4.0.0"
+        "form-data": "^4.0.0",
+        "watchify": "^4.0.0"
     }
 }
