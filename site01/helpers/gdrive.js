@@ -70,6 +70,8 @@ exports.list = async (url) => {
                 action = item.webViewLink || `https://drive.google.com/drive/folders/${item.id}`
             else if (item.webContentLink)
                 action = item.webContentLink;
+            else if (item.webViewLink)
+                action = item.webViewLink;
             else
                 action = `https://drive.google.com/uc?export=download&id=${item.id}`;
             return {

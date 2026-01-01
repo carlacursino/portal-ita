@@ -21,11 +21,7 @@
                                     {{/if}}
                                 </td>
                                 <td>
-                                    {{#if this.isFolder}}
-                                        <a href="{{this.downloadLink}}" target="_blank">{{this.name}}</a>
-                                    {{else}}
-                                        <a href="{{this.downloadLink}}">{{this.name}}</a>
-                                    {{/if}}
+                                    <a href="{{this.downloadLink}}" target="_blank">{{this.name}}</a>
                                 </td>
                                 <td>{{moment this.modifiedTime lang="{{language}}" format="D-MMM-YYYY"}}</td>
                                 <td class="text-right important!">{{this.size}}</td>
