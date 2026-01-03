@@ -4,6 +4,7 @@
     "license": "MIT",
     "private": true,
     "dependencies": {
+        "@budibase/handlebars-helpers": "^0.14.2",
         "@handlebars/allow-prototype-access": "^1.0.5",
         "app-module-path": "^2.2.0",
         "app-root-path": "^3.0.0",
@@ -20,7 +21,6 @@
         "express-winston": "^4.0.5",
         "googleapis": "^168.0.0",
         "handlebars": "^4.7.8",
-        "handlebars-helpers": "^0.10.0",
         "helmet": "^4.4.1",
         "helper-moment": "^0.2.0",
         "lodash": "^4.17.21",

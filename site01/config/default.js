@@ -5,7 +5,7 @@ const
     Handlebars = require('handlebars'),
     engine = require('express-handlebars'),
     {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access'),
-    handlebarsHelpers = require('handlebars-helpers')({
+    handlebarsHelpers = require('@budibase/handlebars-helpers')({
         handlebars: Handlebars
     }),
     helperMoment = require('helper-moment'),

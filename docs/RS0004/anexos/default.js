@@ -1,7 +1,7 @@
 require('app-module-path').addPath(__dirname + '/helpers')
 
 const engine = require('express-handlebars')
-const handlebarsHelpers = require('handlebars-helpers')()
+const handlebarsHelpers = require('@budibase/handlebars-helpers')()
 const templateHelpers = require('template-helpers')()
 const helperMoment = require('helper-moment')
 
