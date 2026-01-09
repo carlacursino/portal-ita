@@ -2,7 +2,7 @@ server {
     listen 80;
     server_name ${DOMAIN};
     resolver 127.0.0.11 valid=30s; 
-    set $backend_upstream "http://${ECOSYSTEM}-app:3002";
+    set $backend_upstream "http://${ECOSYSTEM}-app:${PORT}";
     client_max_body_size 2M;
     location / {
         proxy_pass $backend_upstream;
