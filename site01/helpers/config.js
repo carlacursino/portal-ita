@@ -17,7 +17,7 @@ const
             port: process.env.SMTPPRT
         }
     }
-    custom = require('../config/custom/'.concat(env).concat('.js'))
+    custom = require('../custom/'.concat(env).concat('.js'))
     config = _.merge({}, defaults, access, validation, editor, headers, smtp, custom)
 
 config.env = env
