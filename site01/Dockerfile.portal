@@ -41,9 +41,9 @@ RUN npm i --legacy-peer-deps --no-audit
 
 USER portal
 
-RUN cp -r /app/assets/default /app/assets/static
-RUN if [ -d "/app/assets/${ECOSYSTEM}" ]; then \
-        cp -r /app/assets/${ECOSYSTEM}/. /app/assets/static/; \
+RUN cp -r /app/site01/assets/default /app/site01/assets/static
+RUN if [ -d "/app/site01/assets/${ECOSYSTEM}" ]; then \
+        cp -r /app/site01/assets/${ECOSYSTEM}/. /app/site01/assets/static/; \
     fi
 
 CMD pm2-runtime start ecosystem.config.js --env ${ECOSYSTEM}
