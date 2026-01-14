@@ -61,7 +61,7 @@ services:
   app:
     container_name: ${ECOSYSTEM:-portal}-app
     build:
-      context: .
+      context: ..
       dockerfile: Dockerfile.portal
       args:
         - USER_ID=${USER_ID:-1000}
