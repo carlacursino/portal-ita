@@ -62,7 +62,7 @@ services:
     container_name: ${ECOSYSTEM:-portal}-app
     build:
       context: ..
-      dockerfile: Dockerfile.portal
+      dockerfile: site01/Dockerfile.portal
       args:
         - USER_ID=${USER_ID:-1000}
         - GROUP_ID=${GROUP_ID:-1000}
