@@ -58,6 +58,6 @@ elif [[ "$*" == *"--all"* ]]; then
     echo "🚀 Starting all services..."
     DOCKER_BUILDKIT=1 docker compose --progress=plain --env-file .env -f docker-compose.yaml up --build --detach
 else
-    echo "💣 No service started..."
+    echo "💣 All services stopped..."
     DOCKER_BUILDKIT=1 docker compose --progress=plain --env-file .env -f docker-compose.yaml stop
 fi

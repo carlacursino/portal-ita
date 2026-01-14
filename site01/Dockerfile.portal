@@ -15,19 +15,25 @@ RUN apk add --no-cache tzdata git openssh && \
     addgroup -g ${GROUP_ID} portal && \
     adduser -u ${USER_ID} -G portal -s /bin/sh -D portal
 
+RUN npm i pm2 -g
+
 WORKDIR /app
 
-COPY package.json .
-
-RUN npm i pm2 -g
+COPY package.json package-lock.json ./
+COPY site01 ./site01
+COPY capstone-accesscontrol ./capstone-accesscontrol
+COPY capstone-auth ./capstone-auth
+COPY capstone-email ./capstone-email
+COPY capstone-file-manager ./capstone-file-manager
+COPY capstone-intl ./capstone-intl
+COPY capstone-tinymce ./capstone-tinymce
+COPY CapstoneJS ./CapstoneJS
 
 RUN mkdir -p /app/node_modules && chown -R portal:portal /app
 
 USER portal
 
 COPY --chown=portal:portal . .
-
-RUN ls -la ../app
 
 RUN npm i --legacy-peer-deps --no-audit
 
