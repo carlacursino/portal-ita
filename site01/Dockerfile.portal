@@ -27,6 +27,8 @@ USER portal
 
 COPY --chown=portal:portal . .
 
+RUN ls -la
+
 RUN npm i --legacy-peer-deps --no-audit
 
 USER portal
