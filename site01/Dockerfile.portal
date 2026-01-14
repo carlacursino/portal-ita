@@ -25,7 +25,7 @@ RUN mkdir -p /app/node_modules && chown -R portal:portal /app
 
 USER portal
 
-RUN npm i --legacy-peer-deps --no-audit
+RUN npm i --no-progress --loglevel=error --legacy-peer-deps --no-audit
 
 COPY --chown=portal:portal . .
 
