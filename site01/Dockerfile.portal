@@ -35,9 +35,10 @@ USER portal
 
 COPY --chown=portal:portal . .
 
-WORKDIR /app/site01
+RUN npm i --legacy-peer-deps --no-audit && \
+    npm run build
 
-RUN npm i --legacy-peer-deps --no-audit
+WORKDIR /app/site01
 
 USER portal
 
