@@ -75,7 +75,7 @@ services:
       - PORT=${PORT:-3000}
     volumes:
       - $PWD/custom/${ECOSYSTEM:-portal}.js:/app/config/custom/${ECOSYSTEM:-portal}.js
-      - portaldata:/app/assets/static/core/uploads
+      - portaldata:/app/site01/assets/static/core/uploads
 
   backup:
     container_name: ${ECOSYSTEM:-portal}-backup
@@ -107,3 +107,4 @@ volumes:
     name: ${ECOSYSTEM:-portal}backup
     external: true
 
+ 
