@@ -47,12 +47,6 @@ build/Release
 node_modules/
 jspm_packages/
 
-# TypeScript v1 declaration files
-typings/
-
-# TypeScript cache
-*.tsbuildinfo
-
 # Optional npm cache directory
 .npm
 
@@ -400,3 +394,5 @@ TSWLatexianTemp*
 .mdbpass
 site01/config/mongodb/drone/config/.mdbpass
 audit.json
+
+.test*
