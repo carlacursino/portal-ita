@@ -6,6 +6,7 @@ db
 files
 scripts
 test
+**/bundles/
 log/*
 node_modules
 package-lock.json
