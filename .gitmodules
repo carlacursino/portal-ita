@@ -19,3 +19,6 @@
 [submodule "capstone-tinymce"]
 	path = capstone-tinymce
 	url = https://github.com/Portal-ITA/capstone-tinymce
+[submodule "grappling-hook"]
+	path = grappling-hook
+	url = https://github.com/Portal-ITA/grappling-hook.git

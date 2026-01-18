@@ -3,6 +3,7 @@
     "private": true,
     "workspaces": [
         "site01",
+        "grappling-hook",
         "capstone-accesscontrol",
         "capstone-auth",
         "capstone-email",
