@@ -21,6 +21,7 @@ WORKDIR /app
 
 COPY package.json package-lock.json ./
 COPY site01 ./site01
+COPY grappling-hook ./grappling-hook
 COPY capstone-accesscontrol ./capstone-accesscontrol
 COPY capstone-auth ./capstone-auth
 COPY capstone-email ./capstone-email
