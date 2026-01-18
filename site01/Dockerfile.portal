@@ -37,8 +37,7 @@ COPY --chown=portal:portal . .
 
 RUN npm i --legacy-peer-deps --no-audit && \
     npm run build && \
-    npm prune --production --legacy-peer-deps && \
-    npm audit fix --legacy-peer-deps
+    npm prune --omit=dev --legacy-peer-deps
 
 WORKDIR /app/site01
 
