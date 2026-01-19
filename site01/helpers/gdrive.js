@@ -8,7 +8,7 @@ let auth = null
 if (config.embed)
     auth = new google.auth.GoogleAuth({
         keyFile: config.embed.google.keyFile,
-        scopes: ["https://www.googleapis.com/auth/drive.readonly"],
+        scopes: ["https://www.googleapis.com/auth/drive.metadata.readonly"],
     })
 
 async function getAccessToken() {
@@ -60,6 +60,7 @@ exports.list = async (url) => {
                 }
             )
             .catch(err => {
+                console.error(err)
                 throw err
             })
 
