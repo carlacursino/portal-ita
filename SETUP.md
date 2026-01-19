@@ -78,6 +78,7 @@ Crie um arquivo `.env` com o seguinte conteúdo:
 ```ini
 DOMAIN="site.ita.br www.site.ita.br"
 HTTP=demo
+DBCONF=default
 LETSENCRYPT_EMAIL=email@ita.br
 ECOSYSTEM=ZZZZZ
 PORT=3008

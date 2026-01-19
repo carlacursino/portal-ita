@@ -42,6 +42,9 @@ services:
       - '27017'
     volumes:
       - mongodata:/data/db:rw
+      - mongoconfig:/data/configdb:rw
+      - $PWD/config/mongodb/${DBCONF}.conf:/etc/mongod.conf:ro
+    command: ["mongod", "--config", "/etc/mongod.conf"]
     environment:
       MONGODB_INITDB_ROOT_USERNAME: root
       MONGODB_INITDB_ROOT_PASSWORD: ${SVC_PWD}
@@ -93,6 +96,9 @@ services:
 volumes:
   mongodata:
     name: ${ECOSYSTEM:-portal}dbdata
+    external: true
+  mongoconfig:
+    name: ${ECOSYSTEM:-portal}dbconfig
     external: true
   portaldata:
     name: ${ECOSYSTEM:-portal}data
