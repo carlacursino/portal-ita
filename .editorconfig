@@ -1,0 +1,23 @@
+# Indica que este é o arquivo de configuração raiz (para de procurar em pastas superiores)
+root = true
+
+# Configurações globais para todos os arquivos
+[*]
+indent_style = space
+indent_size = 4
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+end_of_line = lf
+
+# Regras específicas para arquivos JavaScript/TypeScript
+[*.{js,ts,jsx,tsx}]
+quote_type = single
+
+# Regras para arquivos de configuração JSON e YAML
+[*.{json,yml,yaml}]
+indent_size = 4
+
+# Markdown pode ter regras de whitespace diferentes
+[*.md]
+trim_trailing_whitespace = false
