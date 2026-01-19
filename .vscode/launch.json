@@ -1,0 +1,29 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Workspace Portal ITA",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "env": {
+                "NODE_ENV": "local",
+                "NODE_PATH": "${workspaceFolder}/node_modules"
+            },
+            "program": "${workspaceFolder}/site01/server.js",
+            "cwd": "${workspaceFolder}/site01",
+            "runtimeExecutable": "${userHome}/.nvm/versions/node/v22.21.1/bin/node",
+            "runtimeArgs": ["--preserve-symlinks"],
+            "sourceMaps": true,
+            "resolveSourceMapLocations": [
+                "${workspaceFolder}/**",
+                "!**/node_modules/**"
+            ]
+        }
+    ]
+}
