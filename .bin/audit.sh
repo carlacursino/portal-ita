@@ -42,7 +42,7 @@ if [[ "$*" == "--critical" ]]; then
 fi
 
 if [[ "$*" == "--all" ]]; then
-    echo "🌐 Audit **ALLLOW**"
+    echo "🌐 Audit **ALL**"
     low
     moderate
     high
