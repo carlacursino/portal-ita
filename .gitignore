@@ -390,7 +390,8 @@ TSWLatexianTemp*
 ### MongoDB
 .mdbpass
 site01/config/mongodb/drone/config/.mdbpass
-audit.json
 
 .test*
 !.envrc
+
+.audit*
