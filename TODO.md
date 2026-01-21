@@ -14,12 +14,18 @@ Obs.:
 * A dependência crítica restante irá demandar maior esforço de migração e será abordada numa próxima fase
 * Estamos no momento eliminando os problemas críticos restantes
 
+## Documentação
+
+* 👩‍💻 - (em andamento) - Manual do Usuário
+* 👩‍💻 - (em andamento) - Manual do Desenvolvedor
+
 ## Atualizar componentes
 
 * Mongoose - componente de ORM para MongoDB
+    * ✅ - Dependia do MongoDB que já foi atualizado
 * TinyMCE - editor HTML (não é prioridade pois a facilidade de edição não é aberta e está limitada a comandos HTML básicos)
 
 ## Atualizar arquitetura
 
-* ✅ - MongoDB - 5.0.32 - versão ativamente mantida
+* ✅ - MongoDB - 5.0.32 - versão compatível, atualizada e ativamente mantida
 * ✅ - NodeJS - 22.21.1 - versão estável, LTS
