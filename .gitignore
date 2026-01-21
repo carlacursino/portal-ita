@@ -395,3 +395,5 @@ site01/config/mongodb/drone/config/.mdbpass
 !.envrc
 
 .audit*
+
+.tmp
