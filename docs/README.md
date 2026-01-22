@@ -10,6 +10,17 @@ sudo apt upgrade -y
 sudo apt install -y texlive-latex-recommended texlive-bibtex-extra texlive-xetex latexmk texlive-lang-portuguese texlive-science
 ```
 
+## Copiar `classes` e `estilos`
+
+Na pasta do projeto (i.e. `portal`):
+
+```sh
+mkdir `kpsewhich -var-value=TEXMFHOME`
+cp docs/_common/*.cls `kpsewhich -var-value=TEXMFHOME`/
+cp docs/_common/*.sty `kpsewhich -var-value=TEXMFHOME`/
+ls -la `kpsewhich -var-value=TEXMFHOME`
+```
+
 ## Gerar a documentação.
 
 Cada pasta contém um manual:
