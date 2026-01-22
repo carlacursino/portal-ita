@@ -15,9 +15,11 @@ sudo apt install -y texlive-latex-recommended texlive-bibtex-extra texlive-xetex
 Na pasta do projeto (i.e. `portal`):
 
 ```sh
-mkdir `kpsewhich -var-value=TEXMFHOME`
-cp docs/_common/*.cls `kpsewhich -var-value=TEXMFHOME`/
-cp docs/_common/*.sty `kpsewhich -var-value=TEXMFHOME`/
+mkdir -p `kpsewhich -var-value=TEXMFHOME`/tex/latex
+cp docs/_common/*.cls `kpsewhich -var-value=TEXMFHOME`/tex/latex
+cp docs/_common/*.sty `kpsewhich -var-value=TEXMFHOME`/tex/latex
+cp docs/_common/*.bbx `kpsewhich -var-value=TEXMFHOME`/tex/latex
+cp docs/_common/*.cbx `kpsewhich -var-value=TEXMFHOME`/tex/latex
 ls -la `kpsewhich -var-value=TEXMFHOME`
 ```
 

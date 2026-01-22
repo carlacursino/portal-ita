@@ -139,15 +139,15 @@
 
 \RequirePackage[portuguese,english]{babel}
 
-\RequirePackage[backend=biber,style=alphanumeric-hybrid,citestyle=numeric]{biblatex}
-\newrobustcmd*{\citefullauthor}{\AtNextCite{\DeclareNameAlias{labelname}{given-family}}\citeauthor}
-
-\RequirePackage{biblatex-ext-tabular}
-
 \RequirePackage[T1]{fontenc}
 \tracinglostchars=2
 
 \RequirePackage[utf8]{inputenc}
+
+\RequirePackage[backend=biber,style=alphanumeric-hybrid,citestyle=numeric]{biblatex}
+\newrobustcmd*{\citefullauthor}{\AtNextCite{\DeclareNameAlias{labelname}{given-family}}\citeauthor}
+
+\RequirePackage{biblatex-ext-tabular}
 
 \RequirePackage{multirow}
 
@@ -165,7 +165,7 @@
 \pgfplotsset{
     compat=1.17,
     colormap={bluegrad}{
-        rgb(0cm)=(0,1,1); 
+        rgb(0cm)=(0,1,1);
         rgb(1cm)=(0,.5,1)
     },
 }
@@ -277,7 +277,7 @@
     \newcommand{\authortag}[1]{$^{#1}$}
 
     \def\address#1{\gdef\@address{#1}}
-    
+
     \def\@maketitle{\newpage
      %\null % isso dava um espaco extra antes do title
      \begin{center}
@@ -353,8 +353,8 @@
             \fi
         \fi
     \fi
-    
-    
+
+
     \iftoggle{portrait}
     {
         \newdimen\tausch
@@ -368,18 +368,18 @@
     {
         \relax
     }
-    
+
     %% Setting proper dimensions for the HP2500CP printer (height = 36 in)
     %%   Landscape: unprintable areas
     %%   	L: 27.6mm
     %%   	R: 27.1mm
     %%   	T: 18.4mm
     %%   	B: 18.1mm
-    
-    
+
+
     \voffset -1in
     \hoffset -1in
-    
+
     \setlength{\headheight}{0 cm}
     \setlength{\headsep}{0 cm}
     \setlength{\topmargin}{5 cm} %% 3 cm for unprintable at top
@@ -387,11 +387,11 @@
     \setlength{\oddsidemargin}{5 cm} %% 3 cm for unprintable at left
                         %% (landscape) + 2 cm from border
     \setlength{\topskip}{0 cm}
-    
+
     \input{a0size.sty}
-    
+
     \renewcommand{\tiny}{\fontsize{12}{14}\selectfont}
-    \renewcommand{\scriptsize}{\fontsize{14.4}{18}\selectfont}   
+    \renewcommand{\scriptsize}{\fontsize{14.4}{18}\selectfont}
     \renewcommand{\footnotesize}{\fontsize{17.28}{22}\selectfont}
     \renewcommand{\small}{\fontsize{20.74}{25}\selectfont}
     \renewcommand{\normalsize}{\fontsize{24.88}{30}\selectfont}
@@ -403,23 +403,23 @@
     \newcommand{\veryHuge}{\fontsize{74.3}{93}\selectfont}
     \newcommand{\VeryHuge}{\fontsize{89.16}{112}\selectfont}
     \newcommand{\VERYHuge}{\fontsize{107}{134}\selectfont}
-    
+
     \setlength\smallskipamount{6pt plus 2pt minus 2pt}
     \setlength\medskipamount{12pt plus 4pt minus 4pt}
     \setlength\bigskipamount{24pt plus 8pt minus 8pt}
-    
+
     \setlength\abovecaptionskip{25pt}
     \setlength\belowcaptionskip{0pt}
     \setlength\abovedisplayskip{25pt plus 6pt minus 15 pt}
     \setlength\abovedisplayshortskip{0pt plus 6pt}
     \setlength\belowdisplayshortskip{13pt plus 7pt minus 6pt}
     \setlength\belowdisplayskip\abovedisplayskip
-    
+
     \normalsize
 
     \RequirePackage{multicol}
     \columnsep=100pt
-    \columnseprule=3pt    
+    \columnseprule=3pt
 }
 
 \ifthenelse{\boolean{gt:article}\OR\boolean{gt:poster}}
@@ -429,7 +429,7 @@
 {
     \renewcommand{\maketitlehooka}
     {
-        \par\begin{center} 
+        \par\begin{center}
             \includegraphics[width = 20mm]{brasao-republica}\\
             \large
             \textbf{SERVIÇO PÚBLICO FEDERAL\\
@@ -577,7 +577,7 @@
     {\textquotedblright}
 
 \ifthenelse{\boolean{gt:article}\OR\boolean{gt:report}}{
-    \RequirePackage{geometry}        
+    \RequirePackage{geometry}
 
     \geometry{a4paper,top=3.5cm,left=3cm,right=2cm,bottom=3cm}
 }
@@ -733,7 +733,7 @@
 }
 
 \renewcommand{\mkbegdispquote}[2]{\itshape}
-    
+
 \newcommand{\cmark}{\ding{51}}
 \newcommand{\xmark}{\ding{55}}
 
@@ -776,7 +776,7 @@
         \IfFileExists{#1}
         {
             \clearpage
-            
+
             \includepdf[pages=-,offset=5.25mm -20mm,pagecommand={\section{#2}\label{#3}},nup=2x2,landscape=true,delta=10 15,frame=true,scale=0.68]{#1}
             \clearpage
         }
@@ -792,7 +792,7 @@
             \section{#2}\label{#3}
 
             Posicione o cursor do \textit{mouse} sobre o ícone \noattachfile[icon=Paperclip] para obter uma cópia do arquivo anexo.
-        
+
             \attachfile[icon=Paperclip,description={#2}]{#1} - \textit{#2}
             \clearpage
         }
@@ -806,7 +806,7 @@
         \IfFileExists{#1}
         {
             \clearpage
-        
+
             \includepdf[pages=-,offset=5.25mm -20mm,pagecommand={\section{#2}\label{#3}},nup=1x2,landscape=true,delta=10 15,frame=true,scale=0.68]{#1}
             \clearpage
         }
@@ -820,7 +820,7 @@
         \IfFileExists{#1}
         {
             \clearpage
-        
+
             \includepdf[pages=-,offset=5.25mm -20mm,pagecommand={\section{#2}\label{#3}},nup=1x1,landscape=false,delta=10 15,frame=true,scale=.65]{#1}
             \clearpage
         }
@@ -834,7 +834,7 @@
         \IfFileExists{#1}
         {
             \clearpage
-        
+
             \includepdf[pages=-,offset=5.25mm -20mm,,pagecommand={\section{#2}\label{#3}},nup=1x1,landscape=true,delta=10 15,frame=true,scale=.65]{#1}
             \clearpage
         }
@@ -906,7 +906,7 @@
                 1 & Relato da observação de princípios básicos \\ \hline
             \end{tabular}
             \captionof{table}{``\textit{Technical Readines Level}''\label{tab:trl}}
-        \end{table}    
+        \end{table}
     }
 
     \newcolumntype{C}[1]
@@ -937,12 +937,12 @@
             \renewcommand*{\arraystretch}{1.2}
             \begin{longtable}
             {
-                @{} 
+                @{}
                 >{\footnotesize}C{\dimexpr0.1\textwidth-\tabcolsep\relax}
                 |
-                L{\dimexpr0.3\textwidth-\tabcolsep\relax} 
+                L{\dimexpr0.3\textwidth-\tabcolsep\relax}
                 |
-                >{\footnotesize}L{\dimexpr0.55\textwidth-\tabcolsep\relax} 
+                >{\footnotesize}L{\dimexpr0.55\textwidth-\tabcolsep\relax}
                 @{}
             }
             \hline
@@ -965,9 +965,9 @@
         }
         {
             \anchorlang{\usebibmacro{tabular:labelnumber}} &
-            \anchorlang{\usebibmacro{tabular:sortname}} & 
-            \driver{\usebibmacro{tabular:omitsortname}} 
-            \\ 
+            \anchorlang{\usebibmacro{tabular:sortname}} &
+            \driver{\usebibmacro{tabular:omitsortname}}
+            \\
             \hline
         }
 
@@ -1025,25 +1025,25 @@
             \ifpgfcalendar@matches\pgfcalendarmatchestrue\pgfcalendar@matchesfalse\fi
         }
     }
-    \def\pgfcalendarmonthname#1{ 
-        \translate{ 
-            \ifcase#1\or Janeiro\or Fevereiro\or Março\or Abril\or Maio\or Junho\or Julho\or Agosto\or Setembro\or Outubro\or Novembro\or Dezembro\fi 
-        } 
+    \def\pgfcalendarmonthname#1{
+        \translate{
+            \ifcase#1\or Janeiro\or Fevereiro\or Março\or Abril\or Maio\or Junho\or Julho\or Agosto\or Setembro\or Outubro\or Novembro\or Dezembro\fi
+        }
     }
-    \def\pgfcalendarmonthshortname#1{ 
-        \translate{ 
-            \ifcase#1\or Jan\or Fev\or Mar\or Abr\or Mai\or Jun\or Jul\or Ago\or Set\or Out\or Nov\or Dez\fi 
-        } 
+    \def\pgfcalendarmonthshortname#1{
+        \translate{
+            \ifcase#1\or Jan\or Fev\or Mar\or Abr\or Mai\or Jun\or Jul\or Ago\or Set\or Out\or Nov\or Dez\fi
+        }
     }
-    \def\pgfcalendarweekdayshortname#1{ 
-        \translate{ 
-            \ifcase#1\or Seg\or Ter\or Qua\or Qui\or Sex\or Sab\or Dom\fi 
-        } 
+    \def\pgfcalendarweekdayshortname#1{
+        \translate{
+            \ifcase#1\or Seg\or Ter\or Qua\or Qui\or Sex\or Sab\or Dom\fi
+        }
     }
-    \def\pgfcalendarweekdayname#1{ 
-        \translate{ 
-            \ifcase#1\or Segunda\or Terça\or Quarta\or Quinta\or Sexta\or Sábado\or Domingo\fi 
-        } 
+    \def\pgfcalendarweekdayname#1{
+        \translate{
+            \ifcase#1\or Segunda\or Terça\or Quarta\or Quinta\or Sexta\or Sábado\or Domingo\fi
+        }
     }
 }
 {
@@ -1174,7 +1174,7 @@
     {
         \fancyhead{}
         \setlength{\headheight}{52pt}
-        
+
         \maketitle
 
         \thispagestyle{empty}
