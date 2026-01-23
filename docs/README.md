@@ -7,7 +7,7 @@ Recomendamos instalar o `LaTeX` num computador *Linux* para manter a atualizar e
 ```sh
 sudo apt update
 sudo apt upgrade -y
-sudo apt install -y texlive-latex-recommended texlive-bibtex-extra texlive-xetex latexmk texlive-lang-portuguese texlive-science
+sudo apt install -y texlive-latex-recommended texlive-bibtex-extra biber texlive-xetex latexmk texlive-lang-portuguese texlive-science
 ```
 
 ## Copiar `classes` e `estilos`
@@ -37,3 +37,37 @@ Cada pasta contém um manual:
 |5|[RS0005](./RS0005)| Controle de Acesso |
 |6|[RS0006](./RS0006)| Guia do Editor de Conteúdo |
 ---
+
+O seguinte arquivo [`.latexmkrc`], utilizando conjuntamente com a ferramente *Latexmk*, compila os documentos do projeto:
+
+```perl
+@default_files = ('_relatorio.tex');
+$pdf_mode = 1;
+$pdflatex = 'xelatex --shell-escape %O %S';
+$clean_ext = 'acn bcf bbl dvi frm glg glo gls ist loa lol mw run.xml xwm glhidden glhiddenin acr alg bbl synctex.gz';
+add_cus_dep('glo', 'gls', 0, 'makeglo2gls');
+add_cus_dep('acn', 'acr', 0, 'makeacn2acr');
+sub makeglo2gls {
+    if ( $silent ) {
+        system("makeindex -q -s '$_[0].ist' -t '$_[0].glg' -o '$_[0].gls' '$_[0].glo'");
+    }
+    else {
+        system("makeindex -s '$_[0].ist' -t '$_[0].glg' -o '$_[0].gls' '$_[0].glo'");
+    }
+}
+sub makeacn2acr {
+  if ( $silent ) {
+    system("makeglossaries -q '$_[0]'");
+  }
+  else {
+    system("makeglossaries '$_[0]'");
+  };
+}
+```
+
+O comando `latexmk` irá gerar qualquer um dos documentos desejado:
+
+```sh
+cd <PASTA DO DOCUMENTO RS...>
+latexmk -r ../.latexmkrc -xelatex -synctex=1 -interaction=nonstopmode -file-line-error <NOME DO DOCUMENTO RS...>
+```

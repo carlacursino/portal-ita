@@ -102,16 +102,19 @@ site01/assets/static
 ### LaTeX ###
 ## Core latex/pdflatex auxiliary files:
 *.aux
+*.cb
+*.cb2
+*.fls
+*.fmt
+*.fot
+*.glhidden
+*.glhiddenin
 *.lof
 *.log
 *.lot
-*.fls
 *.out
 *.toc
-*.fmt
-*.fot
-*.cb
-*.cb2
+*.ist
 .*.lb
 
 ## Intermediate documents:

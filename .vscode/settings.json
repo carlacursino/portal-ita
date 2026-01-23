@@ -1,0 +1,17 @@
+{
+    "latex-workshop.latex.tools": [
+        {
+            "name": "latexmk (xelatex)",
+            "command": "latexmk",
+            "args": [
+                "-xelatex",
+                "-r",
+                "../.latexmkrc",
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ]
+        }
+    ]
+}
