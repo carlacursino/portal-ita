@@ -17,7 +17,8 @@ exports.menu = (language, callback) => {
             }
         })
         .sort({ sequence: 1 })
-        .exec((err, result) => {
+        .exec()
+        .then((result) => {
             if (result)
                 result.forEach((record) => {
                     record.setLanguage(language)
@@ -31,7 +32,10 @@ exports.menu = (language, callback) => {
                         })
                     })
                 })
-            callback(err, result)
+            callback(null, result)
+        })
+        .catch((err) => {
+            callback(err)
         })
 }
 
@@ -42,19 +46,27 @@ exports.posts = (query, language, callback) => {
     capstone.list('Post').model.find(filter)
         .limit(100)
         .sort({ publishedDate: -1 })
-        .exec((err, result) => {
+        .exec()
+        .then((result) => {
             if (result)
                 result.forEach((record) => {
                     record.setLanguage(language)
                 })
-            callback(err, result)
+            callback(null, result)
+        })
+        .catch((err) => {
+            callback(err)
         })
 }
 
 exports.distinctPosts = (distinct, query, callback) => {
     capstone.list('Post').model.distinct(distinct, query)
-        .exec((err, result) => {
-            callback(err, result)
+        .exec()
+        .then((result) => {
+            callback(null, result)
+        })
+        .catch((err) => {
+            callback(err)
         })
 }
 
@@ -62,18 +74,26 @@ exports.post = (query, language, callback) => {
     capstone.list('Post').model.findOne(query)
         .sort({ publishedDate: -1 })
         .limit(1)
-        .exec((err, result) => {
+        .exec()
+        .then((result) => {
             if (result)
                 result.setLanguage(language)
-            callback(err, result)
+            callback(null, result)
+        })
+        .catch((err) => {
+            callback(err)
         })
 }
 
 exports.category = (query, language, callback) => {
     capstone.list('Category').model.findOne(query)
-    .exec((err, result) => {
+    .exec()
+    .then((result) => {
         if (result)
             result.setLanguage(language)
-        callback(err, result)
+        callback(null, result)
+    })
+    .catch((err) => {
+        callback(err)
     })
 }
