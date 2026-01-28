@@ -11,13 +11,13 @@ else
     exit 1
 fi
 
-if [ -z "$ECOSYSTEM" ] || [ -z "$PORT" ]; then
+if [ -z "${ECOSYSTEM:-}" ] || [ -z "${PORT:-}" ]; then
     echo "Error 🧨: ECOSYSTEM and PORT must be set in .env file"
     exit 1
 fi
 
 # Create missing values in .env file
-if [ -z "$USER_ID" ] || [ -z "$GROUP_ID" ] || [ -z "$SVC_PWD" ]; then
+if [ -z "${USER_ID:-}" ] || [ -z "${GROUP_ID:-}" ] || [ -z "${SVC_PWD:-}" ]; then
     echo "USER_ID=$(id -u)" >> .env
     echo "GROUP_ID=$(id -g)" >> .env
     echo "SVC_PWD=$(openssl rand -hex 8)" >> .env
