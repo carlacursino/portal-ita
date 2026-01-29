@@ -1,19 +1,12 @@
-/* ::::::::::::: */
-/* : Body copy : */
-/* ::::::::::::: */
 h1 a:hover, h2 a:hover, h3 a:hover,
 h4 a:hover, h5 a:hover, h6 a:hover,
 a,
 .dropcap.clean {
-	color: #00B74C;
+	color: #ff3b30;
 }
 .highlight {
-	background-color: #00B74C;
+	background-color: #ff3b30;
 }
-
-/* ::::::::::::::::: */
-/* : END Body copy : */
-/* ::::::::::::::::: */
 
 
 
@@ -21,7 +14,7 @@ a,
 /* : Dropcaps : */
 /* :::::::::::: */
 .dropcap.clean {
-	color: #00B74C;
+	color: #ff3b30;
 }
 /* :::::::::::::::: */
 /* : END Dropcaps : */
@@ -34,7 +27,7 @@ a,
 /* ::::::::::::: */
 blockquote:before,
 blockquote .author {
-	color: #00B74C;
+	color: #ff3b30;
 }
 /* ::::::::::::::::: */
 /* : END Bockquote : */
@@ -47,7 +40,7 @@ blockquote .author {
 /* :::::::: */
 .arrow li:before, .circle li:before, .check li:before,
 .plus li:before, .dash li:before {
-	color: #00B74C;
+	color: #ff3b30;
 }
 /* :::::::::::: */
 /* : END List : */
@@ -59,15 +52,15 @@ blockquote .author {
 /* : Buttons : */
 /* ::::::::::: */
 .btn {
-	background-color: #00B74C;
-	border: 1px solid #00B74C;
+	background-color: #ff3b30;
+	border: 1px solid #ff3b30;
 }
 	.btn:hover {
-		background-color: #33c570;
-		border-color: #33c570;
+		background-color: #180501;
+		border-color: #180501;
 	}
 	.btn:active {
-		border-color: #00B74C;
+		border-color: #ff3b30;
 	}
 /* ::::::::::::::: */
 /* : END Buttons : */
@@ -80,7 +73,7 @@ blockquote .author {
 /* :::::::::::: */
 .skill .bar,
 .progress .bar {
-	background-color: #00B74C;
+	background-color: #ff3b30;
 }
 /* :::::::::::::::: */
 /* : END Progress : */
@@ -93,9 +86,9 @@ blockquote .author {
 /* :::::::: */
 select:focus,
 .form-control:focus {
-	border-color: #00B74C;
-	-webkit-box-shadow: 0 0 0 2px #00B74C;
-	box-shadow: 0 0 0 2px #00B74C;
+	border-color: #ff3b30;
+	-webkit-box-shadow: 0 0 0 2px #ff3b30;
+	box-shadow: 0 0 0 2px #ff3b30;
 }
 /* :::::::::::: */
 /* : END Form : */
@@ -108,7 +101,7 @@ select:focus,
 /* ::::::::::::::: */
 body #page-header .breadcrumbs ul li.current a,
 body #page-header .breadcrumbs ul li a:hover {
-	color: #00B74C;
+	color: #ff3b30;
 }
 /* ::::::::::::::::::: */
 /* : END Breadceumbs : */
@@ -121,10 +114,10 @@ body #page-header .breadcrumbs ul li a:hover {
 /* :::::::::::::::: */
 .project-filter ul li a:hover,
 .project-filter ul li a.active {
-	color: #00B74C;
+	color: #ff3b30;
 }
 .project-filter ul:hover li.selector {
-	background-color: #00B74C;
+	background-color: #ff3b30;
 }
 /* :::::::::::::::::::: */
 /* : END Filter & Nav : */
@@ -135,59 +128,59 @@ body #page-header .breadcrumbs ul li a:hover {
 /* Twitter */
 .tweet-heading .title a:hover,
 .tweet-content .tweet-actions a:hover {
-	color: #00B74C;
+	color: #ff3b30;
 }
 
 /* Main menu */
 #main-menu ul.megamenu-category .category-content .iconbox:hover .title > * {
-	color: #00B74C;
+	color: #ff3b30;
 }
 @media (min-width: 992px) {
 	#main-menu > li.active > a,
 	#main-menu > li:hover > a {
-		color: #00B74C;
+		color: #ff3b30;
 	}
 }
 
 /* Section title */
 .title.title-section .sticker .icon {
-	background-color: #00B74C;
+	background-color: #ff3b30;
 }
 .title.title-section .sticker .icon:after {
-	border-top-color: #00B74C;
+	border-top-color: #ff3b30;
 }
 /* Site name */
 .site {
-	color: #00B74C;
+	color: #ff3b30;
 }
 /*Nav list */
 #page-content .nav ul li a:hover {
-	color: #00B74C;
+	color: #ff3b30;
 }
 
 /* Date */
 .article-date {
-	background-color: #00B74C;
+	background-color: #ff3b30;
 }
 .article-date:after {
-	border-top-color: #00B74C;
+	border-top-color: #ff3b30;
 }
 
 /* Article Nav */
 .article-nav ul li.selector a:hover {
-	background-color: #00B74C;
+	background-color: #ff3b30;
 }
 .article-nav a:hover,
 .article-nav a:hover:before,
 #page-content .article-nav a:hover,
 #page-content .article-nav a:hover:before {
-	color: #00B74C;
+	color: #ff3b30;
 }
 
 /* Tags */
 #footer .tags p a:hover,
 .tags p a:hover {
-	background: #00B74C;
+	background: #ff3b30;
 }
 
 
@@ -195,15 +188,15 @@ body #page-header .breadcrumbs ul li a:hover {
 /* : POST TYPE : Single
 /* :::: */
 .post-content > .type {
-	background-color: #00B74C;
+	background-color: #ff3b30;
 }
 .post-content > .type:after {
-	border-top-color: #00B74C;
+	border-top-color: #ff3b30;
 }
 
 /* Timeline */
 .timeline li.year {
-	background-color: #00B74C;
+	background-color: #ff3b30;
 }
 
 
@@ -221,7 +214,7 @@ body #page-header .breadcrumbs ul li a:hover {
 .container-image .iconbox.iconbox-style3 .iconbox-heading .icon:before,
 .container-image .iconbox.iconbox-style2 .iconbox-heading .icon:after,
 .container-image .iconbox.iconbox-style3 .iconbox-heading .icon:after {
-	background-color: rgba(0, 183, 76, 0.5);
+	background-color: rgba(0, 122, 255, 0.5);
 }
 /* :::::::::::::::: */
 /* : END Icon Box : */
@@ -235,8 +228,8 @@ body #page-header .breadcrumbs ul li a:hover {
 
 /* Colored */
 .call2action.call2action-colored {
-	border-color: #00B74C;
-	background-color: #33c570;
+	border-color: #ff3b30;
+	background-color: #180501;
 }
 /* ::::::::::::::::::::: */
 /* : END Call 2 Action : */
@@ -250,14 +243,14 @@ body #page-header .breadcrumbs ul li a:hover {
 
 /* Colored */
 .testimonial-wrap.testimonial-colored .testimonial-inner {
-	border-color: #00B74C;
-	background-color: #33c570;
+	border-color: #ff3b30;
+	background-color: #180501;
 }
 .testimonial-wrap.testimonial-colored .testimonial-outer:before {
-	border-top-color: #00B74C;
+	border-top-color: #ff3b30;
 }
 	.testimonial-wrap.testimonial-colored .testimonial-outer:after {
-		border-top-color:  #33c570;
+		border-top-color:  #180501;
 	}
 /* ::::::::::::::::::: */
 /* : END Testimonial : */
@@ -271,15 +264,15 @@ body #page-header .breadcrumbs ul li a:hover {
 
 /* Colored */
 .tab.tab-colored .tab-heading {
-	border-color: #00B74C;
-	background-color: #33c570;
+	border-color: #ff3b30;
+	background-color: #180501;
 }
 	.tab.tab-colored .tab-heading li {
-		border-color: #00B74C;
+		border-color: #ff3b30;
 	}
 		.tab.tab-colored .tab-heading li:hover a,
 		.tab.tab-colored .tab-heading li.current a {
-			background-color: #00B74C;
+			background-color: #ff3b30;
 		}
 /* ::::::::::: */
 /* : END Tab : */
@@ -292,30 +285,18 @@ body #page-header .breadcrumbs ul li a:hover {
 /* ::::::::::::: */
 .accordion > div.active .accordion-heading a,
 .accordion > div .accordion-heading a:hover {
-	color: #00B74C;
+	color: #ff3b30;
 }
 
 /* Colored */
 .accordion.accordion-colored .accordion-heading {
-	border-color: #00B74C;
-	background-color: #33c570;
+	border-color: #ff3b30;
+	background-color: #180501;
 }
 .accordion.accordion-colored .active .accordion-heading a,
 .accordion.accordion-colored .accordion-heading a:hover {
-	background-color: #00B74C;
+	background-color: #ff3b30;
 }
 /* ::::::::::::::::: */
 /* : END Accordion : */
 /* ::::::::::::::::: */
-
-
-
-/* ::::::::::::::::: */
-/* : Pricing Table : */
-/* ::::::::::::::::: */
-.pricing.pricing-style1 .pricing-content h5 {
-	color: #00B74C;
-}
-/* ::::::::::::::::::::: */
-/* : END Pricing Table : */
-/* ::::::::::::::::::::: */
