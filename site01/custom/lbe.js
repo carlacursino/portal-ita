@@ -6,7 +6,7 @@ module.exports = {
 
         //'mongo': 'mongodb://wmlabbioeng:gC%3dVvYf39-C%26S2yR@localhost:27017/DB_LABBIOENG',
         'mongo': 'mongodb://portalAdmin:p4ssw0rd@lbe-db:27017/portal',
-        
+
         'cookie secret': 'MEVlYiAtykSik1hZfEJgqg',
 
         'frontPageCategories': { categories: { $in: ['600752c79973ae058e39d84d'] } },
@@ -30,7 +30,7 @@ module.exports = {
         // },
     },
     portal: {
-        name: 'LBE',
+        name: 'COMP2BIO',
         contato: {
             webmail: 'https://webmail.ita.br',
             contatos: {
@@ -55,7 +55,7 @@ module.exports = {
                 uso: '/post/termo-de-uso',
             },
         },
-        color: 'teal',
+        color: 'redblack',
         'view home': 'home',
     },
     cookies: {
