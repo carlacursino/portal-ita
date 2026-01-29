@@ -8,6 +8,9 @@ module.exports = {
     env_lbe: {
       NODE_ENV: "lbe",
     },
+    env_comp2bio: {
+      NODE_ENV: "comp2bio",
+    },
     env_pgfis: {
       NODE_ENV: "pgfis",
     },
