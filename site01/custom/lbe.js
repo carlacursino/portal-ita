@@ -30,7 +30,7 @@ module.exports = {
         // },
     },
     portal: {
-        name: 'COMP2BIO',
+        name: 'LBE',
         contato: {
             webmail: 'https://webmail.ita.br',
             contatos: {
@@ -55,7 +55,7 @@ module.exports = {
                 uso: '/post/termo-de-uso',
             },
         },
-        color: 'redblack',
+        color: 'teal',
         'view home': 'home',
     },
     cookies: {
