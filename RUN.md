@@ -33,6 +33,7 @@ Crie uma cópia local do conteúdo estático do site:
 
 ```sh
 cd site01
+mkdir -p assets/static
 cp -r assets/default/* assets/static
 ```
 
@@ -40,6 +41,12 @@ Se houverem customizações do conteúdo estático copie-as também:
 
 ```sh
 cp -r assets/customizado/* assets/static
+```
+
+Execute o _script_ [setup.sh](/site01/scripts/setup.sh) no modo desenvolvedor:
+
+```sh
+./scripts/setup.sh --dev
 ```
 
 O arquivo de configuração para execução local ([local.js](./site01/config/custom/local.js)) é uma cópia das configurações customizadas de cada site que existem na pasta [custom](./site01/custom/), porém com ajustes específicos para executar localmente (MongoDB por exemplo aponta para `localhost`). A aplicação rodando e utilizando este arquivo de configuração irá usar uma porta diferente da configurada para os containers.
