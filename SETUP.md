@@ -66,7 +66,15 @@ ssh portal@www.xxx.yyy.zzz
 ### Obter projeto do portal
 
 ```sh
-git clone https://github.com/Portal-ITA/portal.git
+git clone --recurse-submodules https://github.com/Portal-ITA/portal.git
+
+cd portal/site01
+```
+
+... ou utilizando a chave SSH no GitHub
+
+```sh
+git clone --recurse-submodules git@GitHub:Portal-ITA/portal.git
 
 cd portal/site01
 ```
