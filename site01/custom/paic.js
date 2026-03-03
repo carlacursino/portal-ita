@@ -61,7 +61,6 @@ module.exports = {
         color: 'brown',
         'view home': 'home',
         social: {
-            linkedin: 'https://www.linkedin.com/company/80111773',
         }
     },
     cookies: {
