@@ -15,6 +15,7 @@ module.exports = (req, res) => {
         destaque: [],
         contacts: [],
         teachers: [],
+        assessors: [],
         researchers: [],
         students: [],
         volunteers: [],
@@ -53,6 +54,13 @@ module.exports = (req, res) => {
     view.on('init', (next) => {
         partials.profiles({ active: true, group: 'professor' }, res.locals.language, (err, result) => {
             res.locals.data.teachers = result
+            next(err)
+        })
+    })
+
+    view.on('init', (next) => {
+        partials.profiles({ active: true, group: 'assessor' }, res.locals.language, (err, result) => {
+            res.locals.data.assessors = result
             next(err)
         })
     })

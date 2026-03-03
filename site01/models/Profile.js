@@ -15,7 +15,7 @@ new fileManager(Profile).init(capstone)
 
 Profile.add({
     name: { type: String, required: true, initial: true },
-    group: { type: Types.Select, options: 'professor, pesquisador, estudante, voluntário, alumni, organizacao', default: 'pesquisador', index: true, initial: true },
+    group: { type: Types.Select, options: 'professor, assessor, pesquisador, estudante, voluntário, alumni, organizacao', default: 'pesquisador', index: true, initial: true },
     institution: {
         description: { type: String, intl: true },
         site: { type: Types.Url },

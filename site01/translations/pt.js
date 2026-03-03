@@ -249,6 +249,7 @@ module.exports = {
         projects: 'Projetos',
         publications: 'Publicações',
         group: {
+            assessor: 'Assessor',
             researcher: 'Pesquisador',
             student: 'Aluno',
             volunteer: 'Voluntário',
@@ -258,6 +259,7 @@ module.exports = {
     profiles: {
         _title: 'Pessoas',
         group: {
+            assessors: 'Assessores',
             researchers: 'Pesquisadores',
             students: 'Alunos',
             volunteers: 'Voluntários',
