@@ -17,8 +17,8 @@
                             {{/if}}
                         {{/if}}
                     {{/unless}}
-                    {{#if this.image.src}}
-                            <img src="{{this.image.src}}" alt="{{this.caption}}">
+                    {{#if this.image}}
+                        <img src="{{this.image.src}}">
                     {{else}}
                         {{#if this.video}}
                             <iframe height="100%" src="{{this.video}}" frameborder="0" allow="fullscreen"></iframe>
