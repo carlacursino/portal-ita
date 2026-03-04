@@ -347,7 +347,7 @@ exports.galleries = async (language, callback) => {
             return gallery
         })
         const finalGalleries = translatedGalleries.filter(g => g.posts && g.posts.length > 0)
-        callback(err, finalGalleries)
+        callback(null, finalGalleries)
     } catch (err) {
         callback(err)
     }
