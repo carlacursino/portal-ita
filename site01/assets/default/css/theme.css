@@ -448,6 +448,11 @@ ol>li>ol {
     margin: 15px 0;
 }
 
+ul li li, 
+ol li li {
+    padding-left: 35px !important;
+}
+
 ul:first-child,
 ol:first-child {
     margin-top: 0
