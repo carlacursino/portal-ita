@@ -448,7 +448,10 @@ ol>li>ol {
     margin: 15px 0;
 }
 
-ul li li, 
+ul li li {
+    padding-left: 15px !important;
+}
+ 
 ol li li {
     padding-left: 35px !important;
 }
