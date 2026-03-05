@@ -15,4 +15,4 @@ custom
 *.ldif
 *.conf
 docker-compose-*.yaml
-assets/static
+assets/static/
