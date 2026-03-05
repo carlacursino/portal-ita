@@ -31,8 +31,10 @@
                                 {{/if}}
                             {{/if}}
                         {{/if}}
-                        <div class="overlay-title"><h3>{{this.title}}</h3></div>
-                        </a>
+                        {{#unless this.video}}
+                            <div class="overlay-title"><h3>{{this.title}}</h3></div>
+                            </a>
+                        {{/unless}}
                     </div>
                 </div>
             </div>
