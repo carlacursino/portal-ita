@@ -5362,6 +5362,34 @@ body>#boxed #header {
     height: auto;
 }
 
+.thumbnail .media-wrapper {
+    position: relative;               /* permite posicionamento absoluto dos filhos */
+    overflow: hidden;                 /* corta conteúdo que sair fora do bloco */
+}
+
+/* Imagem ou iframe ocupam todo o espaço do wrapper */
+.thumbnail .media-wrapper img,
+.thumbnail .media-wrapper iframe {
+    display: block;
+    width: 100%;
+    height: auto;                     /* ou height: 100% se quiser cobrir verticalmente */
+}
+
+/* Estilo do título sobreposto */
+.thumbnail .overlay-title {
+    position: absolute;
+    bottom: 0;                         /* pode ser top, left, right etc. */
+    left: 0;
+    width: 100%;
+    padding: 0.5rem;
+    background: rgba(0, 0, 0, 0.5);    /* fundo semitransparente para legibilidade */
+    color: #fff;
+    font-size: 1rem;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+
 
 /*Nav list */
 
