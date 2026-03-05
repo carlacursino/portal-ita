@@ -49,17 +49,17 @@ services:
       MONGODB_INITDB_ROOT_USERNAME: root
       MONGODB_INITDB_ROOT_PASSWORD: ${SVC_PWD}
 
-  console:
-    container_name: ${ECOSYSTEM:-portal}-console
-    image: mongo-express
-    restart: unless-stopped
-    ports:
-      - '8081:8081'
-    environment:
-      ME_CONFIG_MONGODB_SERVER: ${ECOSYSTEM:-portal}-db
-      ME_CONFIG_MONGODB_ENABLE_ADMIN: "true"
-      ME_CONFIG_MONGODB_AUTH_USERNAME: root
-      ME_CONFIG_MONGODB_AUTH_PASSWORD: ${SVC_PWD}
+  # console:
+  #   container_name: ${ECOSYSTEM:-portal}-console
+  #   image: mongo-express:1.0.2-20-alpine3.19
+  #   restart: unless-stopped
+  #   ports:
+  #     - '8081:8081'
+  #   environment:
+  #     ME_CONFIG_MONGODB_SERVER: ${ECOSYSTEM:-portal}-db
+  #     ME_CONFIG_MONGODB_ENABLE_ADMIN: "true"
+  #     ME_CONFIG_MONGODB_AUTH_USERNAME: root
+  #     ME_CONFIG_MONGODB_AUTH_PASSWORD: ${SVC_PWD}
 
   app:
     container_name: ${ECOSYSTEM:-portal}-app
