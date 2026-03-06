@@ -300,3 +300,18 @@ body #page-header .breadcrumbs ul li a:hover {
 /* ::::::::::::::::: */
 /* : END Accordion : */
 /* ::::::::::::::::: */
+
+
+.outlined {
+    -webkit-text-stroke: 0.5px #007aff;   /* espessura e cor do contorno */
+    color: white;                      /* cor interna do texto */
+}
+
+/* fallback para navegadores que não suportam -webkit-text-stroke */
+.outlined {
+    text-shadow:
+        0.5px 0.5px 0 #007aff,
+        -0.5px 0.5px 0 #007aff,
+        0.5px -0.5px 0 #007aff,
+        -0.5px -0.5px 0 #007aff;
+}

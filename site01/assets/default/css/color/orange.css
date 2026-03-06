@@ -319,3 +319,18 @@ body #page-header .breadcrumbs ul li a:hover {
 /* ::::::::::::::::::::: */
 /* : END Pricing Table : */
 /* ::::::::::::::::::::: */
+
+
+.outlined {
+    -webkit-text-stroke: 0.5px #ff5d00;   /* espessura e cor do contorno */
+    color: white;                      /* cor interna do texto */
+}
+
+/* fallback para navegadores que não suportam -webkit-text-stroke */
+.outlined {
+    text-shadow:
+        0.5px 0.5px 0 #ff5d00,
+        -0.5px 0.5px 0 #ff5d00,
+        0.5px -0.5px 0 #ff5d00,
+        -0.5px -0.5px 0 #ff5d00;
+}
