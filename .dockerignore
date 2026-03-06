@@ -1,0 +1,16 @@
+!**/.dockerignore
+**/.gitignore
+!**/Dockerfile
+**/.vscode/
+**/db*
+**/files/*
+**/scripts/*
+**/test/
+**/bundles/
+**/log/*
+**/node_modules
+**/*.md
+**/*.ldif
+**/*.conf
+**/docker-compose*.yaml
+**/assets/static/
