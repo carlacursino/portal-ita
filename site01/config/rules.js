@@ -154,6 +154,9 @@ module.exports = {
                 'posts.categories': {
                     'reference:any': [ { key: 'categories', value: '*' }, ],
                 },
+                'posts.related': {
+                    'reference:any': [ { key: 'related', value: '*' }, ],
+                },
                 'sliders': {
                     'update:any': [ '*' ],
                     'delete:any': [ '*' ],

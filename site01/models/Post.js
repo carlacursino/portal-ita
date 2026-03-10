@@ -36,6 +36,8 @@ Post.add({
         extended: { type: Types.Html, wysiwyg: true, height: 400, intl: true },
     },
     categories: { type: Types.Relationship, ref: 'Category', many: true, required: true, initial: true },
+    related: { type: Types.Relationship, ref: 'Category', many: true, required: false, initial: false },
+    listRelated: { type: Types.Boolean, default: false },
     downloads: { type: Types.Relationship, ref: 'Category', many: false },
     panel: { type: Types.Select, options: 'acontece, destaque, noticia', default: 'noticia', index: true, many: true },
     continent: { type: Types.Select, options: 'americas, europa, asia, africa', index: true },
@@ -51,6 +53,6 @@ Post.relationship({ ref: 'Slider', refPath: 'post', path: 'sliders' })
 
 Post.schema.plugin(translations, { languages: config.cms['supported languages'], defaultLanguage: config.cms.language })
 
-Post.defaultColumns = 'title, subtitle, state, publishedDate, categories, downloads, panel'
+Post.defaultColumns = 'title, state, publishedDate, categories, related, downloads, panel'
 
 Post.register()

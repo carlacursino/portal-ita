@@ -18,6 +18,7 @@ module.exports = (req, res) => {
         post: {},
         list: [],
         child: [],
+        news: [],
         sidebar: req.query.sidebar,
     }
 
@@ -60,6 +61,16 @@ module.exports = (req, res) => {
         if (res.locals.data.post) {
             partials.posts({ state: 'published', parent: res.locals.data.post._id.toString() }, res.locals.language, (err, result) => {
                 res.locals.data.child = result
+                next(err)
+            })
+        } else
+            next()
+    })
+
+    view.on('init', (next) => {
+        if (res.locals.data.post.related && res.locals.data.post.listRelated) {
+            partials.posts({ state: 'published', _id: { $ne: res.locals.data.post._id }, related: { $in: [res.locals.data.post.related] } }, res.locals.language, (err, result) => {
+                res.locals.data.news = result
                 next(err)
             })
         } else

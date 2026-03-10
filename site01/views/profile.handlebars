@@ -156,26 +156,9 @@
 					<hr class="devider-margin-medium" />
 				</div>
 			{{/if}}
-			{{#if data.news}}
-				<div class="container-in">
-					<div class="row">
-						<div class="col-md-3">
-							<div class="title">
-								<h4 class="h4">{{translation.partials.postsList._title}}</h4>
-							</div>
-						</div>
-						<div class="col-md-9">
-							<ul class="arrow">
-								{{#each data.news}}
-									<li><a class="link" href="/{{../language}}/post/{{this.slug}}">{{this.title}}</a></li>
-								{{/each}}
-							</ul>
-						</div>
-					</div>
-					<hr class="devider-margin-medium" />
-				</div>
-			{{/if}}
-            
+
+			{{> news }}
+			
             {{> publicFiles}}
 
 			{{> cite }}

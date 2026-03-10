@@ -22,7 +22,6 @@ exports.menu = (language, callback) => {
             ]
         })
         .sort({ sequence: 1 })
-        //.exec()
         .exec((err, result) => {
             if (result)
                 result.forEach((record) => {
@@ -39,14 +38,10 @@ exports.menu = (language, callback) => {
                 })
             callback(err, result)
         })
-        // .catch((err) => {
-        //     callback(err)
-        // })
 }
 
 exports.initiatives = (category, language, callback) => {
     capstone.list('Menu').model.find({ main: false, enabled: true, category: category._id })
-        //.exec()
         .exec((err, result) => {
             if (result !== null)
                 result.forEach((record) => {
@@ -54,14 +49,10 @@ exports.initiatives = (category, language, callback) => {
                 })
             callback(err, result)
         })
-        // .catch((err) => {
-        //     callback(err)
-        // })
 }
 
 exports.profiles = (query, language, callback) => {
     capstone.list('Profile').model.find(query)
-        //.exec()
         .exec((err, result) => {
             if (result)
                 result.forEach((record) => {
@@ -69,43 +60,31 @@ exports.profiles = (query, language, callback) => {
                 })
             callback(err, result)
         })
-        // .catch((err) => {
-        //     callback(err)
-        // })
 }
 
 exports.profile = (query, language, callback) => {
     capstone.list('Profile').model.findOne(query)
         .limit(1)
         .populate('user')
-        //.exec()
         .exec((err, result) => {
             if (result)
                 result.setLanguage(language)
             callback(err, result)
         })
-        // .catch((err) => {
-        //     callback(err)
-        // })
 }
 
 exports.contacts = (query, callback) => {
     capstone.list('Contact').model.find(query)
         .populate('profile')
-        //.exec()
         .exec((err, result) => {
             callback(err, result)
         })
-        // .catch((err) => {
-        //     callback(err)
-        // })
 }
 
 exports.publications = (query, language, callback) => {
     capstone.list('Publication').model.find(query)
         .populate('authors')
         .sort({publishedDate: -1})
-        //.exec()
         .exec((err, result) => {
             if (result)
                 result.forEach((record) => {
@@ -113,9 +92,6 @@ exports.publications = (query, language, callback) => {
                 })
             callback(err, result)
         })
-        // .catch((err) => {
-        //     callback(err)
-        // })
 }
 
 exports.publication = (query, language, callback) => {
@@ -124,21 +100,16 @@ exports.publication = (query, language, callback) => {
         .populate('authors')
         .populate('project')
         .populate('post')
-        //.exec()
         .exec((err, result) => {
             if (result)
                 result.setLanguage(language)
             callback(err, result)
         })
-        // .catch((err) => {
-        //     callback(err)
-        // })
 }
 
 exports.projects = (query, language, callback) => {
     capstone.list('Project').model.find(query)
         .limit(100)
-        //.exec()
         .exec((err, result) => {
             if (result)
                 result.forEach((record) => {
@@ -146,9 +117,6 @@ exports.projects = (query, language, callback) => {
                 })
             callback(err, result)
         })
-        // .catch((err) => {
-        //     callback(err)
-        // })
 }
 
 exports.project = (query, language, callback) => {
@@ -165,15 +133,11 @@ exports.project = (query, language, callback) => {
                 }
             }
         })
-        //.exec()
         .exec((err, result) => {
             if (result)
                 result.setLanguage(language)
             callback(err, result)
         })
-        // .catch((err) => {
-        //     callback(err)
-        // })
 }
 
 exports.posts = (query, language, callback) => {
@@ -183,7 +147,6 @@ exports.posts = (query, language, callback) => {
     capstone.list('Post').model.find(filter)
         .limit(100)
         .sort({ publishedDate: -1 })
-        //.exec()
         .exec((err, result) => {
             if (result)
                 result.forEach((record) => {
@@ -191,53 +154,37 @@ exports.posts = (query, language, callback) => {
                 })
             callback(err, result)
         })
-        // .catch((err) => {
-        //     callback(err)
-        // })
 }
 
 exports.distinctPosts = (distinct, query, callback) => {
     capstone.list('Post').model.distinct(distinct, query)
-        //.exec()
         .exec((err, result) => {
             callback(err, result)
         })
-        // .catch((err) => {
-        //     callback(err)
-        // })
 }
 
 exports.post = (query, language, callback) => {
     capstone.list('Post').model.findOne(query)
         .sort({ publishedDate: -1 })
         .limit(1)
-        //.exec()
         .exec((err, result) => {
             if (result)
                 result.setLanguage(language)
             callback(err, result)
         })
-        // .catch((err) => {
-        //     callback(err)
-        // })
 }
 
 exports.category = (query, language, callback) => {
     capstone.list('Category').model.findOne(query)
-        //.exec()
         .exec((err, result) => {
             if (result)
                 result.setLanguage(language)
             callback(err, result)
         })
-        // .catch((err) => {
-        //     callback(err)
-        // })
 }
 
 exports.categories = (query, language, callback) => {
     capstone.list('Category').model.find(query)
-        //.exec()
         .exec((err, result) => {
             if (result)
                 result.forEach((record) => {
@@ -245,9 +192,6 @@ exports.categories = (query, language, callback) => {
                 })
             callback(err, result)
         })
-        // .catch((err) => {
-        //     callback(err)
-        // })
 }
 
 exports.archives = (filter, language, callback) => {
@@ -255,7 +199,6 @@ exports.archives = (filter, language, callback) => {
         .populate({
             path: 'categories createdBy '
         })
-        //.exec()
         .exec((err, result) => {
             if (result)
                 result.forEach((record) => {
@@ -263,14 +206,10 @@ exports.archives = (filter, language, callback) => {
                 })
             callback(err, result)
         })
-        // .catch((err) => {
-        //     callback(err)
-        // })
 }
 
 exports.testimonials = (language, callback) => {
     capstone.list('Testimonial').model.find()
-        //.exec()
         .exec((err, result) => {
             if (result)
                 result.forEach((record) => {
@@ -278,16 +217,12 @@ exports.testimonials = (language, callback) => {
                 })
             callback(err, result)
         })
-        // .catch((err) => {
-        //     callback(err)
-        // })
 }
 
 exports.slider = (language, callback) => {
     capstone.list('Slider').model.find({ active: true })
         .populate({ path: 'post' })
         .sort({ sequence: 1 })
-        //.exec()
         .exec((err, result) => {
             if (result)
                 result.forEach((record) => {
@@ -298,24 +233,17 @@ exports.slider = (language, callback) => {
                 })
             callback(err, result)
         })
-        // .catch((err) => {
-        //     callback(err)
-        // })
 }
 
 exports.spotlight = (language, callback) => {
     capstone.list('Spotlight').model.findOne()
         .sort({ updatedAt: -1 })
         .limit(1)
-        //.exec()
         .exec((err, result) => {
             if (result)
                 result.setLanguage(language)
             callback(err, result)
         })
-        // .catch((err) => {
-        //     callback(err)
-        // })
 }
 
 exports.galleries = async (language, callback) => {
@@ -333,7 +261,6 @@ exports.galleries = async (language, callback) => {
                 return gallery
             })
         )
-
         callback(null, galleriesWithPosts)
     } catch (err) {
         callback(err)
