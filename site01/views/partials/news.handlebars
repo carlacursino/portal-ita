@@ -1,15 +1,22 @@
 {{#if data.news}}
     <div class="container-in">
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-2">
                 <div class="title">
                     <h4 class="h4">{{translation.partials.postsList._title}}</h4>
                 </div>
             </div>
-            <div class="col-md-9">
+            <div class="col-md-7">
                 <ul class="arrow">
                     {{#each data.news}}
-                        <li><a class="link" href="/{{../language}}/post/{{this.slug}}">{{this.title}}</a></li>
+                        <li>
+                            <h3><a class="link" href="/{{../language}}/post/{{this.slug}}">{{this.title}}</a></h3>
+                            {{#if this.content.brief}}
+                                <ul class="circle">
+                                    <li><p>{{{this.content.brief}}}</p></li>
+                                </ul>
+                            {{/if}}
+                        </li>
                     {{/each}}
                 </ul>
             </div>
