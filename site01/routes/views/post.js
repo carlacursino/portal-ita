@@ -69,7 +69,7 @@ module.exports = (req, res) => {
 
     view.on('init', (next) => {
         if (res.locals.data.post.related && res.locals.data.post.listRelated) {
-            partials.posts({ state: 'published', _id: { $ne: res.locals.data.post._id }, related: { $in: [res.locals.data.post.related] } }, res.locals.language, (err, result) => {
+            partials.posts({ state: 'published', _id: { $ne: res.locals.data.post._id }, related: { $in: res.locals.data.post.related } }, res.locals.language, (err, result) => {
                 res.locals.data.news = result
                 next(err)
             })
