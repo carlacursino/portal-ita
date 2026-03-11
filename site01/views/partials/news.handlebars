@@ -10,7 +10,7 @@
                 <ul class="arrow">
                     {{#each data.news}}
                         <li>
-                            <h3><a class="link" href="/{{../language}}/post/{{this.slug}}">{{this.title}}</a></h3>
+                            <h5><a class="link" href="/{{../language}}/post/{{this.slug}}">{{this.title}}</a></h5>
                             {{#if this.content.brief}}
                                 <ul class="circle">
                                     <li><p>{{{this.content.brief}}}</p></li>
