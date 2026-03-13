@@ -23,7 +23,7 @@ async function getAccessToken() {
             return null
         }
     }
-    else 
+    else
         return null
 }
 
@@ -42,7 +42,7 @@ function getId(url) {
 
 exports.list = async (url) => {
     if(!url) return null
-    
+
     const folderId = getId(url)
     const token = await getAccessToken()
     if (token) {
@@ -70,11 +70,11 @@ exports.list = async (url) => {
             if (IS_FOLDER)
                 action = item.webViewLink || `https://drive.google.com/drive/folders/${item.id}`
             else if (item.webContentLink)
-                action = item.webContentLink;
+                action = item.webContentLink
             else if (item.webViewLink)
-                action = item.webViewLink;
+                action = item.webViewLink
             else
-                action = `https://drive.google.com/uc?export=download&id=${item.id}`;
+                action = `https://drive.google.com/uc?export=download&id=${item.id}`
             return {
                 ...item,
                 iconUrl: item.iconLink,
@@ -82,9 +82,49 @@ exports.list = async (url) => {
                 isFolder: IS_FOLDER
             }
         })
-        
+
         return withLinks
     }
     else
         return null
+}
+
+exports.translate = async (text, target = 'en', source = 'pt', format = 'html') => {
+    if (!text) return null
+
+    const token = await getAccessToken()
+    if (!token) {
+        console.error("Não foi possível obter o token de acesso para tradução.")
+        return null
+    }
+
+    try {
+        const data = {
+            q: text,
+            target: target,
+            format: format
+        }
+
+        if (source) data.source = source
+
+        const response = await axios.post(
+            "https://translation.googleapis.com/language/translate/v2",
+            data,
+            {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                    "Content-Type": "application/json charset=utf-8"
+                }
+            }
+        )
+
+        if (response.data && response.data.data && response.data.data.translations) {
+            return response.data.data.translations[0].translatedText
+        }
+
+        return null
+    } catch (err) {
+        console.error("Erro na tradução:", err.response ? err.response.data : err.message)
+        throw err
+    }
 }

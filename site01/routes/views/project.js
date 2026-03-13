@@ -1,9 +1,9 @@
 require('app-module-path').addPath(__dirname + '/helpers')
 
-const 
+const
     partials = require('partials'),
     capstone = require('capstonejs')
-    gdrive = require('gdrive')
+    googleAPI = require('googleAPI')
 
 module.exports = (req, res) => {
     const view = new capstone.View(req, res)
@@ -57,7 +57,7 @@ module.exports = (req, res) => {
             res.locals.data.news = result.researchers
                 .filter(researcher => researcher.user && researcher.user.posts)
                 .flatMap(researcher => researcher.user.posts)
-            gdrive.list(result.files)
+            googleAPI.list(result.files)
                 .then((files) => {
                     res.locals.data.files = files
                     next()
