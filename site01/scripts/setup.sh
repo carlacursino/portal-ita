@@ -53,10 +53,10 @@ fi
 # Check developer mode
 if [[ "$*" == *"--dev"* ]]; then
     echo "🚀 Starting in developer mode..."
-    DOCKER_BUILDKIT=1 docker compose --env-file .env -f docker-compose.yaml -f docker-compose.override.yaml up --build --detach mongodb nginx app
+    DOCKER_BUILDKIT=1 docker compose --env-file .env -f docker-compose.yaml -f docker-compose.override.yaml up --build --detach mongodb nginx app translator
 elif [[ "$*" == *"--prod"* ]]; then
     echo "🚀 Starting in production mode..."
-    DOCKER_BUILDKIT=1 docker compose --progress=plain --env-file .env -f docker-compose.yaml up --build --detach backup mongodb nginx certbot app
+    DOCKER_BUILDKIT=1 docker compose --progress=plain --env-file .env -f docker-compose.yaml up --build --detach backup mongodb nginx certbot app translator
 elif [[ "$*" == *"--all"* ]]; then
     echo "🚀 Starting all services..."
     DOCKER_BUILDKIT=1 docker compose --progress=plain --env-file .env -f docker-compose.yaml up --build --detach

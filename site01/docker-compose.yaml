@@ -21,7 +21,7 @@ services:
         export CERT_DOMAIN=$(echo "$DOMAIN" | cut -d" " -f1)
         /docker-entrypoint.sh nginx -g "daemon off;"
       '
-    
+
   certbot:
     container_name: ${ECOSYSTEM:-portal}-certbot
     image: certbot/certbot:latest
@@ -80,6 +80,14 @@ services:
       - $PWD/custom/${ECOSYSTEM:-portal}.js:/app/config/custom/${ECOSYSTEM:-portal}.js
       - portaldata:/app/site01/assets/static/core/uploads
 
+  translator:
+    container_name: ${ECOSYSTEM:-portal}-translator
+    image: libretranslate/libretranslate:latest
+    ports:
+        - "5000:5000"
+    environment:
+      - LT_LOAD_ONLY=en,pt
+
   backup:
     container_name: ${ECOSYSTEM:-portal}-backup
     image: offen/docker-volume-backup:latest
@@ -113,4 +121,3 @@ volumes:
     name: ${ECOSYSTEM:-portal}backup
     external: true
 
- 

@@ -400,3 +400,4 @@ site01/config/mongodb/drone/config/.mdbpass
 .audit*
 
 .tmp
+.google.json

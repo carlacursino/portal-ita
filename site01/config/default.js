@@ -1,6 +1,6 @@
 require('app-module-path').addPath(__dirname + '/helpers')
 
-const 
+const
     fs = require('fs'),
     Handlebars = require('handlebars'),
     engine = require('express-handlebars'),
@@ -52,6 +52,7 @@ module.exports = {
 
         'supported languages': ['pt', 'en'],
         'language': 'pt',
+        'translator': 'http://localhost:5000/translate',
 
         'cors allow methods': false,
         'cors allow headers': false,

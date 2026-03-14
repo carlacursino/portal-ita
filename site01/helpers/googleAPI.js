@@ -8,7 +8,9 @@ let auth = null
 if (config.embed)
     auth = new google.auth.GoogleAuth({
         keyFile: config.embed.google.keyFile,
-        scopes: ["https://www.googleapis.com/auth/drive.metadata.readonly"],
+        scopes: [
+            "https://www.googleapis.com/auth/drive.metadata.readonly",
+        ]
     })
 
 async function getAccessToken() {
@@ -87,44 +89,4 @@ exports.list = async (url) => {
     }
     else
         return null
-}
-
-exports.translate = async (text, target = 'en', source = 'pt', format = 'html') => {
-    if (!text) return null
-
-    const token = await getAccessToken()
-    if (!token) {
-        console.error("Não foi possível obter o token de acesso para tradução.")
-        return null
-    }
-
-    try {
-        const data = {
-            q: text,
-            target: target,
-            format: format
-        }
-
-        if (source) data.source = source
-
-        const response = await axios.post(
-            "https://translation.googleapis.com/language/translate/v2",
-            data,
-            {
-                headers: {
-                    Authorization: `Bearer ${token}`,
-                    "Content-Type": "application/json charset=utf-8"
-                }
-            }
-        )
-
-        if (response.data && response.data.data && response.data.data.translations) {
-            return response.data.data.translations[0].translatedText
-        }
-
-        return null
-    } catch (err) {
-        console.error("Erro na tradução:", err.response ? err.response.data : err.message)
-        throw err
-    }
 }

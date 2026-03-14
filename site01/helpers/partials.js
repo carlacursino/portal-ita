@@ -1,7 +1,29 @@
 require('app-module-path').addPath(__dirname + '/helpers')
 
+const translate = require('translations').translate
+
 const config = require('config')
 const capstone = require('capstonejs')
+
+async function preTranslation(result) {
+    var translated = false
+    for (const pathName of Object.keys(result.schema.paths)) {
+        if (pathName.endsWith('.pt')) {
+            const originalText = result.get(pathName)
+            const translationPath = pathName.slice(0, -3) + ".en"
+            var translatedText = result.get(translationPath)
+            if (originalText && !translatedText) {
+                fieldType = 'html'
+                translatedText = await translate(originalText)
+                translated = true
+                console.log(originalText, ' -> ',translatedText)
+                result.set(translationPath, translatedText)
+            }
+        }
+    }
+    if (translated)
+        result.save()
+}
 
 exports.menu = (language, callback) => {
     capstone.list('Menu').model.find({ main: true, enabled: true })
@@ -66,9 +88,11 @@ exports.profile = (query, language, callback) => {
     capstone.list('Profile').model.findOne(query)
         .limit(1)
         .populate('user')
-        .exec((err, result) => {
-            if (result)
+        .exec(async (err, result) => {
+            if (result) {
                 result.setLanguage(language)
+                await preTranslation(result)
+            }
             callback(err, result)
         })
 }
