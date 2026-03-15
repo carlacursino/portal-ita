@@ -6,6 +6,9 @@ const config = require('config')
 const capstone = require('capstonejs')
 
 async function preTranslation(result) {
+    if (!result) return
+    if (!config.cms.translator) return
+
     var translated = false
     for (const pathName of Object.keys(result.schema.paths)) {
         if (pathName.endsWith('.pt')) {
@@ -46,14 +49,18 @@ exports.menu = (language, callback) => {
         .sort({ sequence: 1 })
         .exec((err, result) => {
             if (result)
-                result.forEach((record) => {
+                result.forEach(async (record) => {
                     record.setLanguage(language)
-                    record.items.forEach((item) => {
+                    await preTranslation(record)
+                    record.items.forEach(async (item) => {
                         item.setLanguage(language)
-                        item.items.forEach((subItem) => {
+                        await preTranslation(item)
+                        item.items.forEach(async (subItem) => {
                             subItem.setLanguage(language)
-                            subItem.items.forEach((subSubItem) => {
+                            await preTranslation(subItem)
+                            subItem.items.forEach(async (subSubItem) => {
                                 subSubItem.setLanguage(language)
+                                await preTranslation(subSubItem)
                             })
                         })
                     })
@@ -66,8 +73,9 @@ exports.initiatives = (category, language, callback) => {
     capstone.list('Menu').model.find({ main: false, enabled: true, category: category._id })
         .exec((err, result) => {
             if (result !== null)
-                result.forEach((record) => {
+                result.forEach(async (record) => {
                     record.setLanguage(language)
+                    await preTranslation(record)
                 })
             callback(err, result)
         })
@@ -77,8 +85,9 @@ exports.profiles = (query, language, callback) => {
     capstone.list('Profile').model.find(query)
         .exec((err, result) => {
             if (result)
-                result.forEach((record) => {
+                result.forEach(async (record) => {
                     record.setLanguage(language)
+                    await preTranslation(record)
                 })
             callback(err, result)
         })
@@ -111,8 +120,9 @@ exports.publications = (query, language, callback) => {
         .sort({publishedDate: -1})
         .exec((err, result) => {
             if (result)
-                result.forEach((record) => {
+                result.forEach(async (record) => {
                     record.setLanguage(language)
+                    await preTranslation(record)
                 })
             callback(err, result)
         })
@@ -124,9 +134,11 @@ exports.publication = (query, language, callback) => {
         .populate('authors')
         .populate('project')
         .populate('post')
-        .exec((err, result) => {
-            if (result)
+        .exec(async (err, result) => {
+            if (result) {
                 result.setLanguage(language)
+                await preTranslation(result)
+            }
             callback(err, result)
         })
 }
@@ -136,8 +148,9 @@ exports.projects = (query, language, callback) => {
         .limit(100)
         .exec((err, result) => {
             if (result)
-                result.forEach((record) => {
+                result.forEach(async (record) => {
                     record.setLanguage(language)
+                    await preTranslation(record)
                 })
             callback(err, result)
         })
@@ -157,9 +170,11 @@ exports.project = (query, language, callback) => {
                 }
             }
         })
-        .exec((err, result) => {
-            if (result)
+        .exec(async (err, result) => {
+            if (result) {
                 result.setLanguage(language)
+                await preTranslation(result)
+            }
             callback(err, result)
         })
 }
@@ -173,8 +188,9 @@ exports.posts = (query, language, callback) => {
         .sort({ publishedDate: -1 })
         .exec((err, result) => {
             if (result)
-                result.forEach((record) => {
+                result.forEach(async (record) => {
                     record.setLanguage(language)
+                    await preTranslation(record)
                 })
             callback(err, result)
         })
@@ -191,18 +207,22 @@ exports.post = (query, language, callback) => {
     capstone.list('Post').model.findOne(query)
         .sort({ publishedDate: -1 })
         .limit(1)
-        .exec((err, result) => {
-            if (result)
+        .exec(async (err, result) => {
+            if (result){
                 result.setLanguage(language)
+                await preTranslation
+            }
             callback(err, result)
         })
 }
 
 exports.category = (query, language, callback) => {
     capstone.list('Category').model.findOne(query)
-        .exec((err, result) => {
-            if (result)
+        .exec(async (err, result) => {
+            if (result) {
                 result.setLanguage(language)
+                await preTranslation(result)
+            }
             callback(err, result)
         })
 }
@@ -211,8 +231,9 @@ exports.categories = (query, language, callback) => {
     capstone.list('Category').model.find(query)
         .exec((err, result) => {
             if (result)
-                result.forEach((record) => {
+                result.forEach(async (record) => {
                     record.setLanguage(language)
+                    await preTranslation(record)
                 })
             callback(err, result)
         })
@@ -225,8 +246,9 @@ exports.archives = (filter, language, callback) => {
         })
         .exec((err, result) => {
             if (result)
-                result.forEach((record) => {
+                result.forEach(async (record) => {
                     record.setLanguage(language)
+                    await preTranslation(record)
                 })
             callback(err, result)
         })
@@ -236,8 +258,9 @@ exports.testimonials = (language, callback) => {
     capstone.list('Testimonial').model.find()
         .exec((err, result) => {
             if (result)
-                result.forEach((record) => {
+                result.forEach(async (record) => {
                     record.setLanguage(language)
+                    await preTranslation(record)
                 })
             callback(err, result)
         })
@@ -249,10 +272,12 @@ exports.slider = (language, callback) => {
         .sort({ sequence: 1 })
         .exec((err, result) => {
             if (result)
-                result.forEach((record) => {
+                result.forEach(async (record) => {
                     record.setLanguage(language)
+                    await preTranslation(record)
                     if (result.post) {
                         record.post.setLanguage(language)
+                        await preTranslation(record.post)
                     }
                 })
             callback(err, result)
@@ -263,9 +288,11 @@ exports.spotlight = (language, callback) => {
     capstone.list('Spotlight').model.findOne()
         .sort({ updatedAt: -1 })
         .limit(1)
-        .exec((err, result) => {
-            if (result)
+        .exec(async (err, result) => {
+            if (result) {
                 result.setLanguage(language)
+                await preTranslation(result)
+            }
             callback(err, result)
         })
 }

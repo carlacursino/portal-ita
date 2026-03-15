@@ -15,7 +15,8 @@ const
     en = _.merge({}, en_common, en_custom)
 
 const translate = async (text, target = 'en', source = 'pt', format = 'html') => {
-    if (!text) return null;
+    if (!text) return null
+    if (!config.cms.translator) return null
 
     try {
         const response = await fetch(config.cms.translator, {

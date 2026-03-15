@@ -52,7 +52,7 @@ module.exports = {
 
         'supported languages': ['pt', 'en'],
         'language': 'pt',
-        'translator': 'http://localhost:5000/translate',
+        //'translator': 'http://localhost:5000/translate',
 
         'cors allow methods': false,
         'cors allow headers': false,
