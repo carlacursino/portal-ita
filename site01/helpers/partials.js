@@ -5,29 +5,6 @@ const translate = require('translations').translate
 const config = require('config')
 const capstone = require('capstonejs')
 
-async function preTranslation(result) {
-    if (!result) return
-    if (!config.cms.translator) return
-
-    var translated = false
-    for (const pathName of Object.keys(result.schema.paths)) {
-        if (pathName.endsWith('.pt')) {
-            const originalText = result.get(pathName)
-            const translationPath = pathName.slice(0, -3) + ".en"
-            var translatedText = result.get(translationPath)
-            if (originalText && !translatedText) {
-                fieldType = 'html'
-                translatedText = await translate(originalText)
-                translated = true
-                console.log(originalText, ' -> ',translatedText)
-                result.set(translationPath, translatedText)
-            }
-        }
-    }
-    if (translated)
-        result.save()
-}
-
 exports.menu = (language, callback) => {
     capstone.list('Menu').model.find({ main: true, enabled: true })
         .populate('category post')
@@ -51,16 +28,12 @@ exports.menu = (language, callback) => {
             if (result)
                 result.forEach(async (record) => {
                     record.setLanguage(language)
-                    await preTranslation(record)
                     record.items.forEach(async (item) => {
                         item.setLanguage(language)
-                        await preTranslation(item)
                         item.items.forEach(async (subItem) => {
                             subItem.setLanguage(language)
-                            await preTranslation(subItem)
                             subItem.items.forEach(async (subSubItem) => {
                                 subSubItem.setLanguage(language)
-                                await preTranslation(subSubItem)
                             })
                         })
                     })
@@ -75,7 +48,6 @@ exports.initiatives = (category, language, callback) => {
             if (result !== null)
                 result.forEach(async (record) => {
                     record.setLanguage(language)
-                    await preTranslation(record)
                 })
             callback(err, result)
         })
@@ -87,7 +59,6 @@ exports.profiles = (query, language, callback) => {
             if (result)
                 result.forEach(async (record) => {
                     record.setLanguage(language)
-                    await preTranslation(record)
                 })
             callback(err, result)
         })
@@ -100,7 +71,6 @@ exports.profile = (query, language, callback) => {
         .exec(async (err, result) => {
             if (result) {
                 result.setLanguage(language)
-                await preTranslation(result)
             }
             callback(err, result)
         })
@@ -122,7 +92,6 @@ exports.publications = (query, language, callback) => {
             if (result)
                 result.forEach(async (record) => {
                     record.setLanguage(language)
-                    await preTranslation(record)
                 })
             callback(err, result)
         })
@@ -137,7 +106,6 @@ exports.publication = (query, language, callback) => {
         .exec(async (err, result) => {
             if (result) {
                 result.setLanguage(language)
-                await preTranslation(result)
             }
             callback(err, result)
         })
@@ -150,7 +118,6 @@ exports.projects = (query, language, callback) => {
             if (result)
                 result.forEach(async (record) => {
                     record.setLanguage(language)
-                    await preTranslation(record)
                 })
             callback(err, result)
         })
@@ -173,7 +140,6 @@ exports.project = (query, language, callback) => {
         .exec(async (err, result) => {
             if (result) {
                 result.setLanguage(language)
-                await preTranslation(result)
             }
             callback(err, result)
         })
@@ -190,7 +156,6 @@ exports.posts = (query, language, callback) => {
             if (result)
                 result.forEach(async (record) => {
                     record.setLanguage(language)
-                    await preTranslation(record)
                 })
             callback(err, result)
         })
@@ -210,7 +175,6 @@ exports.post = (query, language, callback) => {
         .exec(async (err, result) => {
             if (result){
                 result.setLanguage(language)
-                await preTranslation
             }
             callback(err, result)
         })
@@ -221,7 +185,6 @@ exports.category = (query, language, callback) => {
         .exec(async (err, result) => {
             if (result) {
                 result.setLanguage(language)
-                await preTranslation(result)
             }
             callback(err, result)
         })
@@ -233,7 +196,6 @@ exports.categories = (query, language, callback) => {
             if (result)
                 result.forEach(async (record) => {
                     record.setLanguage(language)
-                    await preTranslation(record)
                 })
             callback(err, result)
         })
@@ -248,7 +210,6 @@ exports.archives = (filter, language, callback) => {
             if (result)
                 result.forEach(async (record) => {
                     record.setLanguage(language)
-                    await preTranslation(record)
                 })
             callback(err, result)
         })
@@ -260,7 +221,6 @@ exports.testimonials = (language, callback) => {
             if (result)
                 result.forEach(async (record) => {
                     record.setLanguage(language)
-                    await preTranslation(record)
                 })
             callback(err, result)
         })
@@ -274,10 +234,8 @@ exports.slider = (language, callback) => {
             if (result)
                 result.forEach(async (record) => {
                     record.setLanguage(language)
-                    await preTranslation(record)
                     if (result.post) {
                         record.post.setLanguage(language)
-                        await preTranslation(record.post)
                     }
                 })
             callback(err, result)
@@ -291,7 +249,6 @@ exports.spotlight = (language, callback) => {
         .exec(async (err, result) => {
             if (result) {
                 result.setLanguage(language)
-                await preTranslation(result)
             }
             callback(err, result)
         })
