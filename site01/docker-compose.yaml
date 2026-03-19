@@ -86,7 +86,8 @@ services:
     ports:
         - "5000:5000"
     environment:
-      - LT_LOAD_ONLY=en,pt
+      - LT_LOAD_ONLY=en,pt-BR
+      - LT_DISABLE_WEB_UI=true
 
   backup:
     container_name: ${ECOSYSTEM:-portal}-backup
