@@ -86,7 +86,7 @@ services:
     ports:
         - "5000:5000"
     environment:
-      - LT_LOAD_ONLY=en,pt-BR
+      - LT_LOAD_ONLY=en,pb
       - LT_DISABLE_WEB_UI=true
 
   backup:
