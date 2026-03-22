@@ -74,6 +74,8 @@ module.exports = {
         'editor rules': 'config/editor.js',
 
         'trust proxy': true,
+        
+        'translator': 'http://localhost:5000/translate',
 
         'mongo options': {
             useNewUrlParser: true,
