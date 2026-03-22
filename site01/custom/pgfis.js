@@ -28,6 +28,8 @@ module.exports = {
         //     scope: 'sub',
         //     attrs: '*',
         // },
+        
+        'translator': 'http://pgfis-translator:5000/translate',
     },
     portal: {
         name: 'PG Fis',

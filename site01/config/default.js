@@ -52,7 +52,6 @@ module.exports = {
 
         'supported languages': ['pt', 'en'],
         'language': 'pt',
-        //'translator': 'http://localhost:5000/translate',
 
         'cors allow methods': false,
         'cors allow headers': false,
@@ -74,8 +73,6 @@ module.exports = {
         'editor rules': 'config/editor.js',
 
         'trust proxy': true,
-        
-        'translator': 'http://localhost:5000/translate',
 
         'mongo options': {
             useNewUrlParser: true,

@@ -28,6 +28,8 @@ module.exports = {
         //     scope: 'sub',
         //     attrs: '*',
         // },
+        
+        'translator': 'http://ita-translator:5000/translate',
     },
     portal: {
         name: 'ITA',

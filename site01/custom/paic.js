@@ -27,6 +27,8 @@ module.exports = {
         //     scope: 'sub',
         //     attrs: '*',
         // },
+        
+        'translator': 'http://paic-translator:5000/translate',
     },
     portal: {
         name: 'PAIC',

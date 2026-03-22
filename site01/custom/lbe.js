@@ -28,6 +28,8 @@ module.exports = {
         //     scope: 'sub',
         //     attrs: '*',
         // },
+        
+        'translator': 'http://lbe-translator:5000/translate',
     },
     portal: {
         name: 'LBE',

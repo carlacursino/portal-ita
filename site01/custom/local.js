@@ -74,6 +74,8 @@ module.exports = {
         //     linkedin: '/linkedin',
         //     youtube: '/youtube',
         // },
+        
+        'translator': 'http://localhost:5000/translate',
     },
     cookies: {
         enabled: true,

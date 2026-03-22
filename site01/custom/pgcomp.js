@@ -28,6 +28,8 @@ module.exports = {
         //     scope: 'sub',
         //     attrs: '*',
         // },
+        
+        'translator': 'http://pgcomp-translator:5000/translate',
     },
     portal: {
         name: 'PG Comp',

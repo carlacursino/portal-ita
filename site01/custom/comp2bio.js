@@ -28,6 +28,8 @@ module.exports = {
         //     scope: 'sub',
         //     attrs: '*',
         // },
+        
+        'translator': 'http://comp2bio-translator:5000/translate',
     },
     portal: {
         name: 'COMP2BIO',

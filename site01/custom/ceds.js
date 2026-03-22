@@ -27,6 +27,8 @@ module.exports = {
         //     scope: 'sub',
         //     attrs: '*',
         // },
+        
+        'translator': 'http://ceds-translator:5000/translate',
     },
     portal: {
         name: 'CEDS',

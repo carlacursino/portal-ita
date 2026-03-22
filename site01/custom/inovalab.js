@@ -27,6 +27,8 @@ module.exports = {
         //     scope: 'sub',
         //     attrs: '*',
         // },
+        
+        'translator': 'http://inovalab-translator:5000/translate',
     },
     portal: {
         name: 'Inovalab',
