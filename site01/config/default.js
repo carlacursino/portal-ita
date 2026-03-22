@@ -74,6 +74,11 @@ module.exports = {
         'editor rules': 'config/editor.js',
 
         'trust proxy': true,
+
+        'mongo options': {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+        },
     },
     portal: {
         name: 'ITA',
