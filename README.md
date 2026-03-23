@@ -21,3 +21,5 @@ git config submodule.recurse true
 Em [SETUP](SETUP.md) está a documentação para configurar containers docker para executar o projeto.
 
 Em [RUN](RUN.md) está a documentação para executar o projeto trabalhando com um Workspace no VSCode.
+
+Em [PROD](PROD.md) está a documentação para instalar a aplicação em modo de produção.
