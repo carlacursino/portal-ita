@@ -37,8 +37,8 @@ module.exports = {
             contatos: {
                 mail: 'mailto:contato@ita.br',
                 mailProjeto: {
-                    link: 'mailto:paic@ita.br',
-                    name: 'paic@ita.br',
+                    link: 'mailto:caic@ita.br',
+                    name: 'caic@ita.br',
                 },
                 comunicacao: 'mailto:comunicacao@ita.br',
                 vestibular: 'mailto:vestita@ita.br',
