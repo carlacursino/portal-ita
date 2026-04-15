@@ -36,12 +36,14 @@
 								<div class="post-content">
 									{{#compare data.post.state "!=" "archived"}}
 										<div class="content-left">
+                                            {{#if data.post.showDate}}
 											<div class="article-date">
 												<span class="type"></span>
 												<span class="day">{{moment data.post.publishedDate lang="{{language}}" format="D"}}</span>
 												<span class="month">{{moment data.post.publishedDate lang="{{language}}" format="MMM"}}</span>
 												<span class="year">{{moment data.post.publishedDate lang="{{language}}" format="YYYY"}}</span>
 											</div>
+                                            {{/if}}
 											<ul class="article-details"></ul>
 											<!--div class="article-share">
 												<h5><i class="fa fa-share"></i>Share</h5>

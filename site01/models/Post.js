@@ -21,6 +21,7 @@ Post.add({
     author: { type: Types.Relationship, ref: 'User', index: true },
     publishedDate: { type: Types.Date, format: 'YYYY-MM-DD', inputFormat: 'YYYY-MM-DD', index: true },
     approvedDate: { type: Types.Date, format: 'YYYY-MM-DD', inputFormat: 'YYYY-MM-DD', index: true },
+    showDate: { type: Types.Boolean, default: true },
     image: { type: Types.File },
     showImage: { type: Types.Boolean, default: true },
     video: { type: Types.Url },
