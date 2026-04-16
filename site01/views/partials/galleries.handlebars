@@ -1,6 +1,10 @@
 {{#gt data.galleries.length 0}}
     {{#each data.galleries}}
+        {{#if this.light}}
         <div class="container-out container-image" style="background-image:url(/static/images/sections/foto-aerea-ita.jpg);">
+        {{else}}
+        <div class="container-out">
+        {{/if}}
             <div class="title title-section">
                 <h2>{{this.title}}</h2>
                 <p><!-- aqui coloque alguma coisa inteligente, por favor --></p>
