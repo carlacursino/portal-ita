@@ -1,4 +1,4 @@
-limit_req_zone $binary_remote_addr zone=general:10m rate=20r/s;
+limit_req_zone $binary_remote_addr zone=general:10m rate=200r/s;
 limit_req_status 429;
 
 upstream backend {
