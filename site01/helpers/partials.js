@@ -256,7 +256,7 @@ exports.spotlight = (language, callback) => {
 
 exports.galleries = async (language, callback) => {
     try {
-        const activeGalleries = await capstone.list('Gallery').model.find({ active: true })
+        const activeGalleries = await capstone.list('Gallery').model.find({ active: true }).sort({ sequence: 1 })
         const galleriesWithPosts = await Promise.all(
             activeGalleries.map(async (gallery) => {
                 const categoryIds = gallery.categories
