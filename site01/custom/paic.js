@@ -31,7 +31,7 @@ module.exports = {
         'translator': 'http://paic-translator:5000/translate',
     },
     portal: {
-        name: 'PAIC',
+        name: 'CAIC',
         contato: {
             webmail: 'https://webmail.ita.br',
             contatos: {
