@@ -77,7 +77,7 @@ module.exports = {
             author: "Creation: <a href='mailto:cursino@ita.br'>cursino@ita.br</a>",
         },
         destaques: {
-            _title: 'Venues'
+            _title: 'Featured'
         },
         features: {
 
