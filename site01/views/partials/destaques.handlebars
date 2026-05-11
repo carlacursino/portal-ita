@@ -38,19 +38,19 @@
                                     {{/if}}
                                 </div>
                                 <ul class="project-action">
-                                    <li><a class="lightbox btn btn-icon-view" href="{{this.image.src}}" data-fancybox-title="<h4>{{this.author.displayName}}</h4>
+                                    <li><a class="lightbox btn btn-icon-view" href="{{this.image.src}}" data-fancybox-title="<h4>{{this.author.displayName}}</h4>"
                                     <p>{{{this.content.brief}}}</p>
                                     <p class='text-right'>
                                         {{#if this.route}}
-                                            <a class='btn' href='/{{../language}}{{this.route}}''>{{translation.more}}</a>
+                                            <a class='btn' href='/{{../language}}{{this.route}}' data-fancybox-group='portfolio'>{{translation.more}}</a>
                                         {{else}}
                                             {{#if this.link}}
-                                                <a class='btn' href='{{this.link}}' target='_blank'>{{translation.more}}</a>
+                                                <a class='btn' href='{{this.link}}' target='_blank' data-fancybox-group='portfolio'>{{translation.more}}</a>
                                             {{else}}
-                                                <a class='btn' href='/{{../language}}/post/{{this.slug}}'>{{translation.more}}</a>
+                                                <a class='btn' href='/{{../language}}/post/{{this.slug}}' data-fancybox-group='portfolio'>{{translation.more}}</a>
                                             {{/if}}
                                         {{/if}}
-                                    </p>" data-fancybox-group="portfolio"></a></li>
+                                    </p></li>
                                     <li>
                                         {{#if this.route}}
                                             <a class="link btn btn-icon-link" href="/{{../language}}{{this.route}}"></a>
